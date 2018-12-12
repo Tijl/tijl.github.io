@@ -1,6 +1,9 @@
 #!/usr/bin/python
 
+import glob,os
+
 out="""
+    <head>
     <body>
         <div id="all">
             <div class="heading">
@@ -46,17 +49,34 @@ for (i,line) in enumerate(data):
 
 years = set([x[0] for x in entries])
 print(years)
+pdflist = glob.glob('pdf/*.pdf');
+for x in pdflist:
+    os.rename(x,x.replace(' ','_').replace('.pdf','').replace('.','')+'.pdf')
+pdflist = glob.glob('pdf/*.pdf');
+
 
 def formatpub(e):
     [year,authors,title,journal,pages,link]=e   
     
-    fs = '%s%s. %s. <i>%s</i>, %s %s<br><br>'%(
+    f = lambda x: ''.join(filter(str.isalpha, x.lower()))
+    
+    c = [x for x in pdflist if f(title).find(f(x.strip('.pdf').split('_-_')[-1]))>-1]
+    #print(title)
+    #print([x.strip('.pdf').split(' - ')[-1] for x in pdflist])
+    if len(c)==1:
+        url = '%s'%c[0]
+    else:
+        print('\npdf not found for:\n%s'%'\n'.join(e))
+        url=''
+    
+    fs = '%s%s. %s. <i>%s</i>, %s %s%s<br><br>'%(
         authors.replace('Grootswagers T','<strong>Grootswagers T</strong>'),
         ' (%s)'%year.replace('inpress','in press').replace('preprint',''),
         title,
         journal,
         pages,
-        '<a target="_blank" href="%s">[link]</a>'%link)
+        '<a target="_blank" href="%s">[link]</a>'%link,
+        '<a target="_blank" href="%s">[pdf]</a>'%url if url else '')
     
     return fs
     
@@ -99,6 +119,7 @@ for i in range(2100,2000,-1):
 out+="""
     </div>
     </body>
+    </head>
 """
 
 with open('index.html','w') as f:
