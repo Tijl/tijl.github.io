@@ -6,6 +6,16 @@ out="""
     <!DOCTYPE html>
     <html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
     <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130925994-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-130925994-1');
+    </script>
+
     <title>Tijl Grootswagers</title>
     <meta http-equiv="content-type" content="text/xml; charset=utf-8"></meta>
     <link rel="stylesheet" type="text/css" href="tgrootswagers.css"></link>
