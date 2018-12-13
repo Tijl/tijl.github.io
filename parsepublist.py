@@ -3,39 +3,55 @@
 import glob,os
 
 out="""
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+    <html lang="EN" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
     <head>
+    <meta http-equiv="content-type" content="text/xml; charset=utf-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130925994-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-130925994-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="tgrootswagers.css">
+    </head>
+    
+    
     <body>
         <div id="all">
             <div class="heading">
                 Tijl Grootswagers
             </div>
-            <div class="header"> 
+            <div class="photo">
+                <img src="image_home.png" alt="image" width="100px;"></img>
+            </div>
             <p>
- 		            <br>
-                    Postdoctoral Research Associate
-                    <br>
-                    School of Psychology
-                    <br>
-                    The University of Sydney
-                    <br>
-                    </p>
-                    <div class="emailaddress">
-                    tijl.grootswagers@sydney.edu.au
-                    </div>
-            </div>
-            <div class="heading">
-                Research
-            </div>
+                Postdoctoral Research Associate
+                <br>
+                School of Psychology
+                <br>
+                The University of Sydney
+            </p>
+            <p>
+                email:&nbsp;&nbsp;&nbsp;<a target="_blank" href="mailto:tijl.grootswagers@sydney.edu.au">tijl.grootswagers@sydney.edu.au</a>
+                <br>
+                twitter:&nbsp;<a target="_blank" href="https://twitter.com/TGrootswagers">@TGrootswagers</a>
+                <br>
+                github:&nbsp;&nbsp;<a target="_blank" href="https://github.com/Tijl">https://github.com/Tijl</a>
+            </p>
+            </p>
             <p>
               
             </p>
-            
-        </div>
 
     <div class="heading">
         Publications
     </div>
-    <i>*</i> indicates equal contribution
+    <p>
+        * equal contribution
+    </p>
     """
 with open('publicationlist.csv') as f:
     data = f.readlines()
@@ -69,14 +85,14 @@ def formatpub(e):
         print('\npdf not found for:\n%s'%'\n'.join(e))
         url=''
     
-    fs = '%s%s. %s. <i>%s</i>, %s %s%s<br><br>'%(
+    fs = '<p>%s%s. %s. <i>%s</i>, %s %s%s</p>'%(
         authors.replace('Grootswagers T','<strong>Grootswagers T</strong>'),
         ' (%s)'%year.replace('inpress','in press').replace('preprint',''),
         title,
         journal,
         pages,
-        '<a target="_blank" href="%s">[link]</a>'%link,
-        '<a target="_blank" href="%s">[pdf]</a>'%url if url else '')
+        '<a target="_blank" href="%s">[doi]</a>'%link,
+        '<a target="_blank" href="%s"> [pdf]</a>'%url if url else '')
     
     return fs
     
@@ -119,7 +135,7 @@ for i in range(2100,2000,-1):
 out+="""
     </div>
     </body>
-    </head>
+    </html>
 """
 
 with open('index.html','w') as f:
