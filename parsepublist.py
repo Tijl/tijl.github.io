@@ -20,17 +20,13 @@ out="""
                 <img src="image_home.png" alt="image" width="100px;"></img>
             </div>
             <p>
-                Postdoctoral Research Associate
-                <br></br>
-                School of Psychology
-                <br></br>
+                Postdoctoral Research Associate  <br />
+                School of Psychology   <br />
                 The University of Sydney
             </p>
             <p>
-                email:&nbsp;&nbsp;&nbsp;<a target="_blank" href="mailto:tijl.grootswagers@sydney.edu.au">tijl.grootswagers@sydney.edu.au</a>
-                <br></br>
-                twitter:&nbsp;<a target="_blank" href="https://twitter.com/TGrootswagers">@TGrootswagers</a>
-                <br></br>
+                email:&nbsp;&nbsp;&nbsp;<a target="_blank" href="mailto:tijl.grootswagers@sydney.edu.au">tijl.grootswagers@sydney.edu.au</a><br />
+                twitter:&nbsp;<a target="_blank" href="https://twitter.com/TGrootswagers">@TGrootswagers</a><br />
                 github:&nbsp;&nbsp;<a target="_blank" href="https://github.com/Tijl">https://github.com/Tijl</a>
             </p>
 
@@ -121,6 +117,7 @@ for i in range(2100,2000,-1):
         """%formatpub(e)
     
 out+="""
+    <p style="margin-bottom: 50px;"><br /></p>
     </div>
     </body>
     </html>
