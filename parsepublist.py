@@ -82,14 +82,15 @@ def formatpub(e):
         print('\npdf not found for:\n%s'%'\n'.join(e))
         url=''
     
-    fs = '<p>%s%s. %s. <i>%s</i>%s %s%s</p>'%(
+    fs = '<p>%s%s. %s. <i>%s</i>%s %s%s%s</p>'%(
         authors.replace('Grootswagers T','<strong>Grootswagers T</strong>'),
         ' (%s)'%year.replace('inpress','in press').replace('preprint',''),
         title,
         journal,
         ', '+pages if pages else '',
         '<a target="_blank" href="%s">[doi]</a>'%link,
-        '<a target="_blank" href="%s"> [pdf]</a>'%url if url else '')
+        '<a target="_blank" href="%s"> [pdf]</a>'%url if url else '',
+        '<span class="__dimensions_badge_embed__" data-doi="%s" data-style="small_rectangle"></span>'%link)
     
     return fs
     
