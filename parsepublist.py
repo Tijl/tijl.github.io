@@ -18,6 +18,8 @@ out="""
 
     <title>Tijl Grootswagers</title>
     <meta http-equiv="content-type" content="text/xml; charset=utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Publications by Tijl Grootswagers" />
     <link rel="stylesheet" type="text/css" href="tgrootswagers.css">
     </head>    
     
