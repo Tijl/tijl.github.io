@@ -90,7 +90,7 @@ def formatpub(e):
         ', '+pages if pages else '',
         '<a target="_blank" href="%s">[doi]</a>'%link,
         '<a target="_blank" href="%s"> [pdf]</a>'%url if url else '',
-        '<span class="__dimensions_badge_embed__" data-doi="%s" data-style="small_rectangle"></span>'%link)
+        '<span class="__dimensions_badge_embed__" data-doi="%s" data-style="small_rectangle"></span>'%(link.replace('https://doi.org/','')))
     
     return fs
     
