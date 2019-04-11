@@ -62,10 +62,10 @@ for (i,line) in enumerate(data):
 
 years = set([x[0] for x in entries])
 print(years)
-pdflist = glob.glob('pdf/*.pdf');
+pdflist = glob.glob('tijl-grootswagers-pdf/*.pdf');
 for x in pdflist:
     os.rename(x,x.replace(' ','_').replace('.pdf','').replace('.','')+'.pdf')
-pdflist = glob.glob('pdf/*.pdf');
+pdflist = glob.glob('tijl-grootswagers-pdf/*.pdf');
 
 
 def formatpub(e):
