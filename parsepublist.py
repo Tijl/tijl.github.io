@@ -25,9 +25,9 @@ out="""
     
     <body>
         <div id="all">
-            <div class="heading">
+            <h1 class="heading">
                 Tijl Grootswagers
-            </div>
+            </h1>
             <div class="photo">
                 <img src="tijl-grootswagers.png" alt="Tijl Grootswagers" width="100px;">
             </div>
@@ -43,9 +43,9 @@ out="""
             </p>
             <div style="clear:both;"></div>
 
-    <div class="heading">
+    <h2 class="heading">
         Publications
-    </div>
+    </h2>
     <p>
         * equal contribution
     </p>
