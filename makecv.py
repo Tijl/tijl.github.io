@@ -77,7 +77,7 @@ out="""
     <p>2018-2019: Australian Cognitive Neuroscience Society executive committee member</p>
     <p>2016-current: Contributor to the CoSMoMVPA multi-variate pattern analysis toolbox in Matlab <a target="_blank" href="www.cosmomvpa.org">www.cosmomvpa.org</a></p>
 
-    <h2 class="heading">
+    <h2 class="heading"><br />
         Grants, Awards, and nominations
     </h2>
     <p>2018: Australian Cognitive Neuroscience Society Best Poster Presentation by an Early Career Post-Doc</p>
@@ -103,12 +103,14 @@ out="""
         Book chapter
     </div>
 
-    <p>Carlson T, <strong>Grootswagers T</strong>, Robinson A (in press). An introduction to time-resolved decoding analysis for M/EEG. in: (Gazzaniga, Mangun, & Poeppel, eds.) <i>The Cognitive Neurosciences, 6th edition.</i></p>
+    <p>1. Carlson T, <strong>Grootswagers T</strong>, Robinson A (in press). An introduction to time-resolved decoding analysis for M/EEG. in: (Gazzaniga, Mangun, & Poeppel, eds.) <i>The Cognitive Neurosciences, 6th edition.</i></p>
 
     <div class="year">
         Refereed journal publications
     </div>
     """
+
+totalpub=1
 
 with open('publicationlist.csv') as f:
     data = f.readlines()
@@ -127,8 +129,10 @@ def formatpub(e):
     [year,authors,title,journal,pages,link]=e   
     
     f = lambda x: ''.join(filter(str.isalpha, x.lower()))
-    
-    fs = '<p>%s%s. %s. <i>%s</i>%s %s</p>'%(
+    global totalpub
+    totalpub+=1
+
+    fs = '<p>%i. %s%s. %s. <i>%s</i>%s %s</p>'%(totalpub,
         authors.replace('Grootswagers T','<strong>Grootswagers T</strong>'),
         ' (%s)'%year.replace('inpress','in press').replace('preprint',''),
         title,
@@ -166,26 +170,27 @@ if 'preprint' in ''.join(years):
         %s
         """%formatpub(e)
 
+totalpub+=1
 out+="""
     <div class="year">
         Fully refereed conference proceedings
     </div>
-    <p><strong>Grootswagers T</strong>, Dijkstra K, ten Bosch L, Brandmeyer A, Sadakata M (2013). Word identification using phonetic features: towards a method to support multivariate fMRI speech decoding. In: <i>INTERSPEECH</i>. 3201-3205.</p>
-    <p>Gerke P, Langevoort J, Lagarde S, Bax L, <strong>Grootswagers T</strong>, Drenth R, Slieker V, Vuurpijl L, Haselager W, Sprinkhuizen-Kuyper I (2011). BioMAV: bio-inspired intelligence for autonomous flight. In: <i>Proceedings International Micro Air Vehicle Conference and Flight Competition</i>.</p>
+    <p>%i. <strong>Grootswagers T</strong>, Dijkstra K, ten Bosch L, Brandmeyer A, Sadakata M (2013). Word identification using phonetic features: towards a method to support multivariate fMRI speech decoding. In: <i>INTERSPEECH</i>. 3201-3205.</p>
+    <p>%i. Gerke P, Langevoort J, Lagarde S, Bax L, <strong>Grootswagers T</strong>, Drenth R, Slieker V, Vuurpijl L, Haselager W, Sprinkhuizen-Kuyper I (2011). BioMAV: bio-inspired intelligence for autonomous flight. In: <i>Proceedings International Micro Air Vehicle Conference and Flight Competition</i>.</p>
 
     <div class="year">
         Refereed conference abstracts
     </div>
-    <p>Teichmann L, <strong>Grootswagers T</strong>, Carlson T, Rich A (2018). Tomatoes are red, cucumbers are green: Decoding the temporal dynamics of object-colour knowledge using Magnetoencephalography. <i>Journal of Vision</i>, 18(10), 861-861.</p>
-    <p><strong>Grootswagers T</strong>, Cichy R, Carlson T (2016). Predicting behavior from decoded searchlight representations shows where decodable information relates to behavior. <i>Perception</i>, 45, 360-360.</p>
-    <p>Contini E, Williams M, Grootswagers T</strong>, Goddard E, Carlson T (2016). Dichotomy Versus Continuum: Evidence for a More Complex Agency Model of Visual Object Categorisation. <i>Journal of Vision</i>, 16(12), 252- 252.</p>
-    <p><strong>Grootswagers T</strong>, Carlson T (2015). Decoding the emerging representation of degraded visual objects in the human brain. <i>Journal of Vision</i>, 15(12), 1087-1087.</p>
+    <p>%i. Teichmann L, <strong>Grootswagers T</strong>, Carlson T, Rich A (2018). Tomatoes are red, cucumbers are green: Decoding the temporal dynamics of object-colour knowledge using Magnetoencephalography. <i>Journal of Vision</i>, 18(10), 861-861.</p>
+    <p>%i. <strong>Grootswagers T</strong>, Cichy R, Carlson T (2016). Predicting behavior from decoded searchlight representations shows where decodable information relates to behavior. <i>Perception</i>, 45, 360-360.</p>
+    <p>%i. Contini E, Williams M, Grootswagers T</strong>, Goddard E, Carlson T (2016). Dichotomy Versus Continuum: Evidence for a More Complex Agency Model of Visual Object Categorisation. <i>Journal of Vision</i>, 16(12), 252- 252.</p>
+    <p>%i. <strong>Grootswagers T</strong>, Carlson T (2015). Decoding the emerging representation of degraded visual objects in the human brain. <i>Journal of Vision</i>, 15(12), 1087-1087.</p>
 
     <p style="margin-bottom: 50px;"><br /></p>
     </div>
     </body>
     </html>
-"""
+"""%tuple([totalpub+x for x in range(6)])
 
 with open('cv.html','w') as f:
     f.write(out)
