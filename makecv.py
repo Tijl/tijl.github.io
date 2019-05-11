@@ -75,8 +75,8 @@ out="""
     <h2 class="heading">
         Activities
     </h2>
-    <p>2018-2019: Australian Cognitive Neuroscience Society executive committee member</p>
-    <p>2016-current: Contributor to the CoSMoMVPA multi-variate pattern analysis toolbox in Matlab <a target="_blank" href="www.cosmomvpa.org">www.cosmomvpa.org</a></p>
+    <p>2018-2019: Member of the Australian Cognitive Neuroscience Society executive committee <a target="_blank" href="https://www.acns.org.au">www.acns.org.au</a></p>
+    <p>2016-current: Contributor to the CoSMoMVPA multi-variate pattern analysis toolbox in Matlab <a target="_blank" href="http://www.cosmomvpa.org">www.cosmomvpa.org</a></p>
     
     <br />
 
@@ -116,7 +116,7 @@ out="""
 totalpub=1
 
 with open('publicationlist.csv') as f:
-    data = f.readlines()
+    data = [x for x in f.readlines() if 'The Cognitive Neurosciences' not in x]
 entries=[]
 for (i,line) in enumerate(data):
     e=line.strip().split('\t');
