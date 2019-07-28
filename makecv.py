@@ -70,7 +70,7 @@ out="""
     <h2 class="heading">
         Ad-hoc reviewing
     </h2> 
-    <p>NeuroImage, Cerebral Cortex, Scientific Reports, PLOS One, Psychophysiology, Cognitive Science <a target="_blank" href="https://publons.com/a/1341382/">https://publons.com/a/1341382/</a></p>
+    <p>Nature Communications, NeuroImage, Cerebral Cortex, Scientific Reports, PLOS One, Psychophysiology, Cognitive Science <a target="_blank" href="https://publons.com/a/1341382/">https://publons.com/a/1341382/</a></p>
 
     <h2 class="heading">
         Activities
