@@ -88,8 +88,8 @@ def formatpub(e):
         title,
         journal,
         ', '+pages if pages else '',
-        '<a target="_blank" href="%s">[doi]</a>'%link,
-        '<a target="_blank" href="%s"> [pdf]</a>'%url if url else '',)
+        '<a target="_blank" class="doilink" name="%s" href="%s">[doi]</a>'%(link,link),
+        '<a target="_blank" class="pdflink" name="%s" href="%s"> [pdf]</a>'%(url,url) if url else ('',''),)
     
     return fs
     
@@ -132,6 +132,33 @@ for i in range(2100,2000,-1):
 out+="""
     <p style="margin-bottom: 50px;"><br /></p>
     </div>
+
+    <script>
+        var x = document.getElementsByClassName("pdflink");
+        for (var i = 0; i < x.length; i++) {
+            x[i].onclick = function() {pdfClick(this)};
+        }
+        
+        var x = document.getElementsByClassName("doilink");
+        for (var i = 0; i < x.length; i++) {
+            x[i].onclick = function() {doiClick(this)};
+        }
+        
+        function pdfClick(e){
+            name = e.getAttribute('name');
+            ga('send', 'event', 'Links', 'PDF', name);
+            console.log(name);
+            return true;
+        }
+        
+        function doiClick(e){
+            name = e.getAttribute('name');
+            ga('send', 'event', 'Links', 'DOI', name);
+            console.log(name);
+            return true;
+        }
+    </script>
+
     </body>
     </html>
 """
