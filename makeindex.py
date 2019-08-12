@@ -88,8 +88,8 @@ def formatpub(e):
         title,
         journal,
         ', '+pages if pages else '',
-        '<a target="_blank" class="doilink" name="%s" href="%s">[doi]</a>'%(link,link),
-        '<a target="_blank" class="pdflink" name="%s" href="%s"> [pdf]</a>'%(url,url) if url else ('',''),)
+        '<a target="_blank" class="doilink" href="%s">[doi]</a>'%(link),
+        '<a target="_blank" class="pdflink" href="%s"> [pdf]</a>'%(url if url else ''))
     
     return fs
     
@@ -136,30 +136,18 @@ out+="""
     <script>
         var x = document.getElementsByClassName("pdflink");
         for (var i = 0; i < x.length; i++) {
-            x[i].onclick = function() {pdfClick(this)};
+            x[i].onclick = function() {clickevent(this,'PDF')};
         }
         
         var x = document.getElementsByClassName("doilink");
         for (var i = 0; i < x.length; i++) {
-            x[i].onclick = function() {doiClick(this)};
+            x[i].onclick = function() {clickevent(this,'DOI')};
         }
         
-        function pdfClick(e){
-            name = e.getAttribute('name');
+        function clickevent(e,t){
             gtag('event', 'click', {
-                'event_category':'PDF', 
-                'event_label':name, 
-                'event_callback':function(){console.log(name);}
-                });
-            return true;
-        }
-        
-        function doiClick(e){
-            name = e.getAttribute('name');
-            gtag('event', 'click', {
-                'event_category':'DOI', 
-                'event_label':name, 
-                'event_callback':function(){console.log(name);}
+                'event_category':t, 
+                'event_label':e.getAttribute('href')
                 });
             return true;
         }
