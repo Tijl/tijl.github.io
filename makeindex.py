@@ -146,14 +146,14 @@ out+="""
         
         function pdfClick(e){
             name = e.getAttribute('name');
-            ga('send', 'event', 'Links', 'PDF', name);
+            gtag('send', 'event', 'Links', 'PDF', name);
             console.log(name);
             return true;
         }
         
         function doiClick(e){
             name = e.getAttribute('name');
-            ga('send', 'event', 'Links', 'DOI', name);
+            gtag('send', 'event', 'Links', 'DOI', name);
             console.log(name);
             return true;
         }
