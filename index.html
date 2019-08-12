@@ -122,15 +122,21 @@
         
         function pdfClick(e){
             name = e.getAttribute('name');
-            gtag('send', 'event', 'Links', 'PDF', name);
-            console.log(name);
+            gtag('event', 'click', {
+                'event_category':'PDF', 
+                'event_label':name, 
+                'event_callback':function(){console.log(name);}
+                });
             return true;
         }
         
         function doiClick(e){
             name = e.getAttribute('name');
-            gtag('send', 'event', 'Links', 'DOI', name);
-            console.log(name);
+            gtag('event', 'click', {
+                'event_category':'DOI', 
+                'event_label':name, 
+                'event_callback':function(){console.log(name);}
+                });
             return true;
         }
     </script>
