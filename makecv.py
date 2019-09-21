@@ -71,7 +71,7 @@ out="""
     <h2 class="heading">
         Ad-hoc reviewing
     </h2> 
-    <p>Journal of Neuroscience, Nature Communications, NeuroImage, Cerebral Cortex, Scientific Reports, PLOS One, Psychophysiology, Cognitive Science <a target="_blank" href="https://publons.com/a/1341382/">https://publons.com/a/1341382/</a></p>
+    <p>Journal of Neuroscience, Nature Communications, NeuroImage, Cerebral Cortex, Human Brain Mapping, Scientific Reports, PLOS One, Psychophysiology, Cognitive Science <a target="_blank" href="https://publons.com/a/1341382/">https://publons.com/a/1341382/</a></p>
 
     <h2 class="heading">
         Activities
@@ -87,13 +87,13 @@ out="""
     <p>2019: Australian Cognitive Neuroscience Society Emerging Researcher Award</p>
     <p>2019: Carlson T, Robinson A, & Grootswagers T. Lie to me: what can one's face (and brain) tell us about a person's emotional state? University of Sydney Booster Grant 2019 ($40,000)</p>
     <p>2018: Australian Cognitive Neuroscience Society Best Poster Presentation by an Early Career Post-Doc</p>
-    <p>2018: Carlson T, Robinson A, Grootswagers T. A novel method for studying representations and transformations in the human brain. University of Sydney, School of Psychology Compact Grant 2018 ($20,000)</p>
-    <p>2018: Carlson T, Robinson A, Grootswagers T. Linking brain and decision-making using a new informational ”seed and network” approach. University of Sydney, School of Psychology Seed Grant 2018 ($19,664)</p>
-    <p>2018: CCD Excellence in Research Student Award: Outstanding 2017 Publication ($1,000)</p>
+    <p>2018: Carlson T, Robinson A, Grootswagers T. A novel method for studying representations and transformations in the human brain. University of Sydney Compact Grant 2018 ($20,000)</p>
+    <p>2018: Carlson T, Robinson A, Grootswagers T. Linking brain and decision-making using a new informational ”seed and network” approach. University of Sydney Seed Grant 2018 ($19,664)</p>
+    <p>2018: ARC Centre for Excellence in Cognition and its Disorders  Excellence in Research Student Award: Outstanding 2017 Publication ($1,000)</p>
     <p>2017: Macquarie University Faculty of Human Sciences Higher Degree Research Excellence Award ($250)</p>
     <p>2017: Australian Cognitive Neuroscience Society Best Poster Presentation by an Early Career Post-Doc</p>
     <p>2016: Australian Cognitive Neuroscience Society Student Travel Award ($250)</p>
-    <p>2016: CCD Annual Workshop Highly Commended Poster Award ($100)</p>
+    <p>2016: ARC Centre for Excellence in Cognition and its Disorders Annual Workshop Highly Commended Poster Award ($100)</p>
     <p>2015: Macquarie University Postgraduate Research Fund ($5,000)</p>
     <p>2014: International Macquarie University Research Excellence Scholarship</p>
     <p>2013: Interspeech best student paper nomination</p>
@@ -187,6 +187,7 @@ out+="""
     <div class="year">
         Refereed conference abstracts
     </div>
+    <p>%i. Tovar D, <strong>Grootswagers T</strong>, Robinson A, Wallace M, Carlson T (2019). Optimizing the Number of Visual Presentations for Time-Resolved Decoding Studies. <i>Perception</i>, 48, 134-134.</p>
     <p>%i. Teichmann L, <strong>Grootswagers T</strong>, Carlson T, Rich A (2018). Tomatoes are red, cucumbers are green: Decoding the temporal dynamics of object-colour knowledge using Magnetoencephalography. <i>Journal of Vision</i>, 18(10), 861-861.</p>
     <p>%i. <strong>Grootswagers T</strong>, Cichy R, Carlson T (2016). Predicting behavior from decoded searchlight representations shows where decodable information relates to behavior. <i>Perception</i>, 45, 360-360.</p>
     <p>%i. Contini E, Williams M, Grootswagers T</strong>, Goddard E, Carlson T (2016). Dichotomy Versus Continuum: Evidence for a More Complex Agency Model of Visual Object Categorisation. <i>Journal of Vision</i>, 16(12), 252- 252.</p>
@@ -196,7 +197,7 @@ out+="""
     </div>
     </body>
     </html>
-"""%tuple([totalpub+x for x in range(6)])
+"""%tuple([totalpub+x for x in range(7)])
 
 with open('cv.html','w') as f:
     f.write(out)
