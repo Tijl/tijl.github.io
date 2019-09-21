@@ -49,7 +49,7 @@ out="""
     </h2>
     <p>2017-current: Postdoctoral Research Associate. School of Psychology, The University of Sydney, Australia</p>
     <p>2017-current: Associate Member. Perception in Action Research Centre, Macquarie University, Sydney, Australia</p> 
-    <p>2017-2019: Associate Investigator. ARC Centre for Excellence in Cognition and its Disorders, Australia</p>
+    <p>2017-current: Associate Investigator. ARC Centre for Excellence in Cognition and its Disorders, Australia</p>
 
     <h2 class="heading">
         Education
@@ -61,7 +61,7 @@ out="""
     <h2 class="heading">
         Teaching and supervision
     </h2>
-    <p>2017-2019: Co-supervision of six honours students at the University of Sydney</p>
+    <p>2017-2019: Assisted in supervision of six honours students at the University of Sydney</p>
     <p>2019: Led two classes of an honours level seminar series at the University of Sydney</p>
     <p>2018: Guest lecture on deep convolutional neural networks for PSYCH3012: Cognition, Language & Thought at the University of Sydney</p>
     <p>2018: Led two classes of an honours level seminar series at the University of Sydney</p>
@@ -71,7 +71,7 @@ out="""
     <h2 class="heading">
         Ad-hoc reviewing
     </h2> 
-    <p>Journal of Neuroscience, Nature Communications, NeuroImage, Cerebral Cortex, Human Brain Mapping, Scientific Reports, PLOS One, Psychophysiology, Cognitive Science <a target="_blank" href="https://publons.com/a/1341382/">https://publons.com/a/1341382/</a></p>
+    <p>Nature Communications, NeuroImage, Cerebral Cortex, Human Brain Mapping, Scientific Reports, PLOS One, Psychophysiology, Cognitive Science <a target="_blank" href="https://publons.com/a/1341382/">https://publons.com/a/1341382/</a></p>
 
     <h2 class="heading">
         Activities
@@ -84,8 +84,7 @@ out="""
     <h2 class="heading">
         Grants, Awards, and nominations
     </h2>
-    <p>2019: Australian Cognitive Neuroscience Society Emerging Researcher Award</p>
-    <p>2019: Carlson T, Robinson A, & Grootswagers T. Lie to me: what can one's face (and brain) tell us about a person's emotional state? University of Sydney Booster Grant 2019 ($40,000)</p>
+    <p>2019: Carlson, T, Robinson, A, & Grootswagers, T. A novel method for studying representations and transformations in the human brain. University of Sydney Booster Grant 2018 ($40,000)</p>
     <p>2018: Australian Cognitive Neuroscience Society Best Poster Presentation by an Early Career Post-Doc</p>
     <p>2018: Carlson T, Robinson A, Grootswagers T. A novel method for studying representations and transformations in the human brain. University of Sydney Compact Grant 2018 ($20,000)</p>
     <p>2018: Carlson T, Robinson A, Grootswagers T. Linking brain and decision-making using a new informational ”seed and network” approach. University of Sydney Seed Grant 2018 ($19,664)</p>
