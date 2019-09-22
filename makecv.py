@@ -29,7 +29,7 @@ out="""
                 Tijl Grootswagers
             </h1>
             <div class="photo">
-                <img src="tijl-grootswagers.png" alt="Tijl Grootswagers" width="100px;">
+                <img src="tijl-grootswagers.jpg" alt="Tijl Grootswagers" width="100px;">
             </div>
             <p style="float:left;">
                 Postdoctoral Research Associate  <br />
