@@ -214,7 +214,7 @@ out+="""
 
 out+="""
     <div class="year">
-        Invited talks, Symposia, and workshops
+        Invited talks, symposia, and workshops
     </div>
     <p>2019: The representational dynamics of visual objects in rapid serial visual processing streams. Talk presented at Macquarie University</p>
     <p>2019: The representational dynamics of visual objects in rapid serial visual processing streams. Talk presented at the MRC Cognition and Brain sciences unit, Cambridge, UK</p>
