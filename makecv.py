@@ -179,25 +179,64 @@ if 'preprint' in ''.join(years):
 totalpub+=1
 out+="""
     <div class="year">
-        Fully refereed conference proceedings
+        Published conference proceedings
     </div>
     <p>%i. <strong>Grootswagers T</strong>, Dijkstra K, ten Bosch L, Brandmeyer A, Sadakata M (2013). Word identification using phonetic features: towards a method to support multivariate fMRI speech decoding. In: <i>INTERSPEECH</i>. 3201-3205.</p>
     <p>%i. Gerke P, Langevoort J, Lagarde S, Bax L, <strong>Grootswagers T</strong>, Drenth R, Slieker V, Vuurpijl L, Haselager W, Sprinkhuizen-Kuyper I (2011). BioMAV: bio-inspired intelligence for autonomous flight. In: <i>Proceedings International Micro Air Vehicle Conference and Flight Competition</i>.</p>
 
     <div class="year">
-        Refereed conference abstracts
+        Published conference abstracts
     </div>
     <p>%i. Tovar D, <strong>Grootswagers T</strong>, Robinson A, Wallace M, Carlson T (2019). Optimizing the Number of Visual Presentations for Time-Resolved Decoding Studies. <i>Perception</i>, 48, 134-134.</p>
     <p>%i. Teichmann L, <strong>Grootswagers T</strong>, Carlson T, Rich A (2018). Tomatoes are red, cucumbers are green: Decoding the temporal dynamics of object-colour knowledge using Magnetoencephalography. <i>Journal of Vision</i>, 18(10), 861-861.</p>
     <p>%i. <strong>Grootswagers T</strong>, Cichy R, Carlson T (2016). Predicting behavior from decoded searchlight representations shows where decodable information relates to behavior. <i>Perception</i>, 45, 360-360.</p>
     <p>%i. Contini E, Williams M, Grootswagers T</strong>, Goddard E, Carlson T (2016). Dichotomy Versus Continuum: Evidence for a More Complex Agency Model of Visual Object Categorisation. <i>Journal of Vision</i>, 16(12), 252- 252.</p>
     <p>%i. <strong>Grootswagers T</strong>, Carlson T (2015). Decoding the emerging representation of degraded visual objects in the human brain. <i>Journal of Vision</i>, 15(12), 1087-1087.</p>
+"""%tuple([totalpub+x for x in range(7)])
 
+out+="""
+    <div class="year">
+        Conference presentations (presenting author)
+    </div>
+<p><strong>Grootswagers T</strong>, Robinson A, Carlson T (2018). Assessing the temporal dynamics of object processing using rapid-MVPA. Poster presented at the Australian Cognitive Neuroscience Society Conference (ACNS), Melbourne, VIC, Australia</p>
+<p><strong>Grootswagers T</strong>, Staines A, Teichmann L, Heathcote A, Carlson T (2018). Linking brain decoding methods to evidence accumulation models of decision behaviour. Poster presented at the Annual Meeting of the Organisation for Human Brain Mapping (OHBM), Singapore</p>
+<p><strong>Grootswagers T</strong>, Kennedy B, Most S, Carlson T (2017). Neural signatures of dynamic emotion constructs in the human brain. Poster presented at the Australian Cognitive Neuroscience Society Conference (ACNS), Adelaide, SA, Australia</p>
+<p><strong>Grootswagers T</strong>, Contini E, Carlson T (2017). Hyperalignment of dynamic responses using MEG. Poster presented at the Annual Meeting of the Organisation for Human Brain Mapping (OHBM), Vancouver, BC, Canada</p>
+<p><strong>Grootswagers T</strong>, Cichy R, Carlson T (2016). Beyond brain decoding: Searching for information in the brain that also predicts behaviour. Talk presented at the Australian Cognitive Neuroscience Society Conference (ACNS), Shoal Bay, NSW, Australia</p>
+<p><strong>Grootswagers T</strong>, Cichy R, Carlson T (2016). Predicting behaviour from decoded searchlight representations shows where decodable information relates to behaviour. Talk presented at the Annual Meeting of the Society for Neuroscience (SFN), San Diego, CA, USA</p>
+<p><strong>Grootswagers T</strong>, Cichy R, Carlson T (2016). Predicting behaviour from decoded searchlight representations shows where decodable information relates to behaviour. Talk presented at the European Conference on Visual Perception (ECVP), Barcelona, Spain</p>
+<p><strong>Grootswagers T</strong>, McMahon D, Leopold D, Carlson T (2015). Not all that glitters is gold: predicting behavior from brain representations suggests that only a subset of decodable information is used by the brain. Talk presented at the Annual Meeting of the Society for Neuroscience (SFN), Chicago, IL, USA</p>
+<p><strong>Grootswagers T</strong>, Ritchie B, Heathcote A, Carlson T (2015). Decoding the emerging representation of degraded visual objects in the human brain. Poster presented at the Annual Meeting of the Vision Sciences Society (VSS), St. Pete Beach, FL, USA</p>
+<p><strong>Grootswagers T</strong>, Carlson T (2015). Decoding human minds from monkey brains. Poster presented at the Annual Australasian Experimental Psychology Conference (EPC), Sydney, NSW, Australia</p>
+
+
+"""
+
+out+="""
+    <div class="year">
+        Invited talks, Symposia, and workshops
+    </div>
+    <p>2019: The representational dynamics of visual objects in rapid serial visual processing streams. Talk presented at Macquarie University</p>
+    <p>2019: The representational dynamics of visual objects in rapid serial visual processing streams. Talk presented at the MRC Cognition and Brain sciences unit, Cambridge, UK</p>
+    <p>2018: The representational dynamics of visual objects in rapid serial visual processing streams. Symposium presented at the Australian Cognitive Neuroscience Society Conference, Melbournce, VIC, Australia</p>
+    <p>2018: Decoding and Representational Dynamics in MEG & EEG. Talk presented at the Kavli Summer Institute in Cognitive Neuroscience, Tahoe, CA, USA</p>
+    <p>2018: MVPA applied to time-series neuroimaging data. Workshop presented at the University of Sydney</p>
+    <p>2017: Beyond Brain Decoding: Methodological and empirical contributions to brain decoding methods and their link to behaviour. Talk presented at the Perception in Action Research Centre, Macquarie University, Sydney, NSW, Australia</p>
+    <p>2017: Decoding Dynamic Brain Patterns: MVPA applied to time-series neuroimaging data. Workshop presented at the Australian Cognitive Neuroscience Society Conference, Adelaide, SA, Australia</p>
+    <p>2016: Linking neural decoding methods to behavior. Talk presented at the Center for Cognitive Neuroscience, Freie Universität Berlin, Germany</p>
+    <p>2016: Linking neural decoding methods to behavior. Talk presented at the department of Experimental Psychology, Utrecht University, the Netherlands</p>
+    <p>2015: Modeling the relationship between behavior and decodable information in the brain. Talk presented at the UMD Neurotheory Lab, University of Maryland, MD, USA</p>
+    <p>2015: Modeling the relationship between behavior and decodable information in the brain. Talk presented at the Laboratory of Neuropsychology, National Institute of Mental Health, Bethesda, MD, USA</p>
+    <p>2015: Decoding human minds from monkey brains. Talk presented at the department of Experimental Psychology, Utrecht University, the Netherlands</p>
+    <p>2015: Predicting Reaction Times from the Emerging Representation of Degraded Visual Objects. Talk presented at the Cognitive Research Group, University of Newcastle, NSW, Australia</p>
+"""
+
+out+="""
     <p style="margin-bottom: 50px;"><br /></p>
     </div>
     </body>
     </html>
-"""%tuple([totalpub+x for x in range(7)])
+"""
 
 with open('cv.html','w') as f:
     f.write(out)
