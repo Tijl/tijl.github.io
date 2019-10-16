@@ -71,7 +71,7 @@ out="""
     <h2 class="heading">
         Ad-hoc reviewing
     </h2> 
-    <p>Journal of Neuroscience, Nature Communications, NeuroImage, Cerebral Cortex, Human Brain Mapping, Scientific Reports, PLOS One, Psychophysiology, Cognitive Science <a target="_blank" href="https://publons.com/a/1341382/">https://publons.com/a/1341382/</a></p>
+    <p>Journal of Neuroscience, Nature Communications, NeuroImage, Cerebral Cortex, Human Brain Mapping, Neuroinformatics, Scientific Reports, PLOS One, Psychophysiology, Cognitive Science <a target="_blank" href="https://publons.com/a/1341382/">https://publons.com/a/1341382/</a></p>
 
     <h2 class="heading">
         Activities
