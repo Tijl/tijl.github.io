@@ -78,7 +78,7 @@ out="""
     </h2>
     <p>2018-2019: Member of the Australian Cognitive Neuroscience Society executive committee <a target="_blank" href="https://www.acns.org.au">www.acns.org.au</a></p>
     <p>2016-current: Contributor to the CoSMoMVPA multi-variate pattern analysis toolbox in Matlab <a target="_blank" href="http://www.cosmomvpa.org">www.cosmomvpa.org</a></p>
-    
+    <p>Lab visits: MRC-CBU Cambridge UK (2019), NIH, Bethesda, USA (2017), University of Maryland, Maryland USA (2017), Freie Universität Berlin, Germany (2016), Utrecht University, the Netherlands (2016).</p>
     <br />
 
     <h2 class="heading">
@@ -198,6 +198,7 @@ out+="""
     <div class="year">
         Conference presentations (presenting author)
     </div>
+<p><strong>Grootswagers T</strong>, Robinson A, Shatek S, Carlson T (2019). The influence of task context on the neural dynamics of rapid stimulus processing. Poster presented at the Australian OHBM Chapter, Newcastle, NSW, Australia</p>
 <p><strong>Grootswagers T</strong>, Robinson A, Carlson T (2018). Assessing the temporal dynamics of object processing using rapid-MVPA. Poster presented at the Australian Cognitive Neuroscience Society Conference (ACNS), Melbourne, VIC, Australia</p>
 <p><strong>Grootswagers T</strong>, Staines A, Teichmann L, Heathcote A, Carlson T (2018). Linking brain decoding methods to evidence accumulation models of decision behaviour. Poster presented at the Annual Meeting of the Organisation for Human Brain Mapping (OHBM), Singapore</p>
 <p><strong>Grootswagers T</strong>, Kennedy B, Most S, Carlson T (2017). Neural signatures of dynamic emotion constructs in the human brain. Poster presented at the Australian Cognitive Neuroscience Society Conference (ACNS), Adelaide, SA, Australia</p>
