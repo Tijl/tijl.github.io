@@ -198,7 +198,6 @@ out+="""
     <div class="year">
         Conference presentations (presenting author)
     </div>
-<p><strong>Grootswagers T</strong> (2019). Using rapid stimulus presentation and multivariate decoding to study information processing in the human brain. Award talk presented at the Australian Cognitive Neuroscience Society Conference (ACNS), Launceston, TAS, Australia</p>    
 <p><strong>Grootswagers T</strong>, Robinson A, Shatek S, Carlson T (2019). The influence of task context on the neural dynamics of rapid stimulus processing. Poster presented at the Australian OHBM Chapter, Newcastle, NSW, Australia</p>
 <p><strong>Grootswagers T</strong>, Robinson A, Carlson T (2018). Assessing the temporal dynamics of object processing using rapid-MVPA. Poster presented at the Australian Cognitive Neuroscience Society Conference (ACNS), Melbourne, VIC, Australia</p>
 <p><strong>Grootswagers T</strong>, Staines A, Teichmann L, Heathcote A, Carlson T (2018). Linking brain decoding methods to evidence accumulation models of decision behaviour. Poster presented at the Annual Meeting of the Organisation for Human Brain Mapping (OHBM), Singapore</p>
@@ -218,6 +217,7 @@ out+="""
     <div class="year">
         Invited talks, symposia, and workshops
     </div>
+    <p>2019: Using rapid stimulus presentation and multivariate decoding to study information processing in the human brain. Award talk presented at the Australian Cognitive Neuroscience Society Conference (ACNS), Launceston, Australia</p>    
     <p>2019: Talk presented in early researcher career workshop at the Australian Cognitive Neuroscience Society Conference, Launceston, Australia</p>
     <p>2019: The representational dynamics of visual objects in rapid serial visual processing streams. Talk presented at Macquarie University, Australia</p>
     <p>2019: The representational dynamics of visual objects in rapid serial visual processing streams. Talk presented at the MRC Cognition and Brain sciences unit, Cambridge, UK</p>
