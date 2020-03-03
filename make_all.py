@@ -1,7 +1,7 @@
 import glob,os
 
 ##################
-### MAKE index ###
+### make index ###
 ##################
 
 out="""
@@ -164,7 +164,7 @@ with open('index.html','w') as f:
 
 
 ###############
-### MAKE CV ###
+### make cv ###
 ###############
 
 out="""
