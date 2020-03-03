@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 import glob,os
 
 out="""

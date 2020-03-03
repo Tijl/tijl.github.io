@@ -1,4 +1,169 @@
+import glob,os
 
+out="""
+    <!DOCTYPE html>
+    <html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130925994-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-130925994-1');
+    </script>
+
+    <title>Tijl Grootswagers</title>
+    <meta http-equiv="content-type" content="text/xml; charset=utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Publications by Tijl Grootswagers" />
+    <link rel="stylesheet" type="text/css" href="tgrootswagers.css">
+    </head>    
+    
+    <body>
+        <div id="all">
+            <h1 class="heading">
+                Tijl Grootswagers
+            </h1>
+            <div class="photo">
+                <img src="tijl-grootswagers.jpg" alt="Tijl Grootswagers" width="130px;">
+            </div>
+            <p style="float:left;">
+                Postdoctoral Research Associate  <br />
+                School of Psychology   <br />
+                The University of Sydney
+            </p>
+            <p style="float:left;">
+                email:&nbsp;&nbsp;&nbsp;<a target="_blank" href="mailto:tijl.grootswagers@sydney.edu.au">tijl.grootswagers@sydney.edu.au</a><br />
+                twitter:&nbsp;<a target="_blank" href="https://twitter.com/TGrootswagers">@TGrootswagers</a><br />
+                github:&nbsp;&nbsp;<a target="_blank" href="https://github.com/Tijl">https://github.com/Tijl</a>
+            </p>
+            <div style="clear:both;"></div>
+
+    <h2 class="heading">
+        Publications
+    </h2>
+    <p>
+        * equal contribution
+    </p>
+    """
+with open('publicationlist.csv') as f:
+    data = f.readlines()
+entries=[]
+for (i,line) in enumerate(data):
+    e=line.strip().split('\t');
+    if len(e)==6:
+        entries.append(e)
+    elif line.strip():
+        print('could not parse line %i: %s'%(1+i,e))
+
+years = set([x[0] for x in entries])
+print(years)
+pdflist = glob.glob('tijl-grootswagers-pdf/*.pdf');
+for x in pdflist:
+    os.rename(x,x.replace(' ','_').replace('.pdf','').replace('.','')+'.pdf')
+pdflist = glob.glob('tijl-grootswagers-pdf/*.pdf');
+
+
+def formatpub(e):
+    [year,authors,title,journal,pages,link]=e   
+    
+    f = lambda x: ''.join(filter(str.isalpha, x.lower()))
+    
+    c = [x for x in pdflist if f(title).find(f(x.strip('.pdf').split('_-_')[-1]))>-1]
+    #print(title)
+    #print([x.strip('.pdf').split(' - ')[-1] for x in pdflist])
+    if len(c)==1:
+        url = '%s'%c[0]
+    else:
+        print('\npdf not found for:\n%s'%'\n'.join(e))
+        url=''
+    
+    fs = '<p>%s%s. %s. <i>%s</i>%s %s%s</p>'%(
+        authors.replace('Grootswagers T','<strong>Grootswagers T</strong>'),
+        ' (%s)'%year.replace('inpress','in press').replace('preprint',''),
+        title,
+        journal,
+        ', '+pages if pages else '',
+        '<a target="_blank" class="doilink" href="%s">[doi]</a>'%(link),
+        '<a target="_blank" class="pdflink" href="%s"> [pdf]</a>'%(url if url else ''))
+    
+    return fs
+    
+    
+
+if 'preprint' in ''.join(years):
+    out+="""
+    <div class="year">
+        preprints
+    </div>
+    """
+    for e in [x for x in entries if 'preprint' in x[0]]:
+        out+="""
+        %s
+        """%formatpub(e)
+
+if 'inpress' in years:
+    out+="""
+    <div class="year">
+        in press
+    </div>
+    """
+    for e in [x for x in entries if x[0]=='inpress']:
+        out+="""
+        %s
+        """%formatpub(e)
+
+for i in range(2100,2000,-1):
+    if str(i) in years:
+        out+="""
+    <div class="year">
+        %i
+    </div>
+    """%i
+    for e in [x for x in entries if x[0]==str(i)]:
+        out+="""
+        %s
+        """%formatpub(e)
+    
+out+="""
+    <p style="margin-bottom: 50px;"><br /></p>
+    </div>
+
+    <script>
+        var x = document.getElementsByClassName("pdflink");
+        for (var i = 0; i < x.length; i++) {
+            x[i].onclick = function() {clickevent(this,'PDF')};
+        }
+        
+        var x = document.getElementsByClassName("doilink");
+        for (var i = 0; i < x.length; i++) {
+            x[i].onclick = function() {clickevent(this,'DOI')};
+        }
+        
+        function clickevent(e,t){
+            gtag('event', 'click', {
+                'event_category':t, 
+                'event_label':e.getAttribute('href')
+                });
+            return true;
+        }
+    </script>
+
+    </body>
+    </html>
+"""
+
+with open('index.html','w') as f:
+    f.write(out)
+
+
+###############
+### MAKE CV ###
+###############
+
+out="""
     <!DOCTYPE html>
     <html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -110,66 +275,87 @@
     <div class="year">
         Refereed journal publications
     </div>
+    """
+
+totalpub=1
+
+with open('publicationlist.csv') as f:
+    data = [x for x in f.readlines() if 'The Cognitive Neurosciences' not in x]
+entries=[]
+for (i,line) in enumerate(data):
+    e=line.strip().split('\t');
+    if len(e)==6:
+        entries.append(e)
+    elif line.strip():
+        print('could not parse line %i: %s'%(1+i,e))
+
+years = set([x[0] for x in entries])
+print(years)
+
+def formatpub(e):
+    [year,authors,title,journal,pages,link]=e   
     
-        <p>2. <strong>Grootswagers T</strong>., Robinson A.K., Shatek S.M., Carlson T.A. (2019). Untangling featural and conceptual object representations. <i>NeuroImage</i>, 202, 116083 <a target="_blank" href="https://doi.org/10.1016/j.neuroimage.2019.116083">https://doi.org/10.1016/j.neuroimage.2019.116083</a></p>
-        
-        <p>3. Teichmann L., <strong>Grootswagers T</strong>., Carlson T.A., Rich A.N. (2019). Seeing versus Knowing: The Temporal Dynamics of Real and Implied Colour Processing in the Human Brain. <i>NeuroImage</i>, 200, 373-381 <a target="_blank" href="https://doi.org/10.1016/j.neuroimage.2019.06.062">https://doi.org/10.1016/j.neuroimage.2019.06.062</a></p>
-        
-        <p>4. Robinson A.K.*, <strong>Grootswagers T</strong>.*, Carlson T.A. (2019). The influence of image masking on object representations during rapid serial visual presentation. <i>NeuroImage</i>, 197, 224-231 <a target="_blank" href="https://doi.org/10.1016/j.neuroimage.2019.04.050">https://doi.org/10.1016/j.neuroimage.2019.04.050</a></p>
-        
-        <p>5. Mai A., <strong>Grootswagers T</strong>., Carlson T.A. (2019). In Search of Consciousness: Examining the Temporal Dynamics of Conscious Visual Perception using MEG time-series data. <i>Neuropsychologia</i>, 129, 310-317 <a target="_blank" href="https://doi.org/10.1016/j.neuropsychologia.2019.04.015">https://doi.org/10.1016/j.neuropsychologia.2019.04.015</a></p>
-        
-        <p>6. <strong>Grootswagers T</strong>.*, Robinson A.K.*, Carlson T.A. (2019). The representational dynamics of visual objects in rapid serial visual processing streams. <i>NeuroImage</i>, 188, 668-679 <a target="_blank" href="https://doi.org/10.1016/j.neuroimage.2018.12.046">https://doi.org/10.1016/j.neuroimage.2018.12.046</a></p>
-        
-        <p>7. <strong>Grootswagers T</strong>., Cichy R.M., Carlson T.A. (2018). Finding decodable information that can be read out in behaviour. <i>NeuroImage</i>, 179, 252-262 <a target="_blank" href="https://doi.org/10.1016/j.neuroimage.2018.06.022">https://doi.org/10.1016/j.neuroimage.2018.06.022</a></p>
-        
-        <p>8. Teichmann L., <strong>Grootswagers T</strong>., Carlson T.A., Rich A.N. (2018). Decoding digits and dice with Magnetoencephalography: Evidence for a shared representation of magnitude. <i>Journal of Cognitive Neuroscience</i>, 30 (7), 999-1010 <a target="_blank" href="https://doi.org/10.1162/jocn_a_01257">https://doi.org/10.1162/jocn_a_01257</a></p>
-        
-        <p>9. <strong>Grootswagers T</strong>.*, Kennedy B.L.*, Most S.L., Carlson T.A. (2017). Neural signatures of dynamic emotion constructs in the human brain. <i>Neuropsychologia</i> <a target="_blank" href="https://doi.org/10.1016/j.neuropsychologia.2017.10.016">https://doi.org/10.1016/j.neuropsychologia.2017.10.016</a></p>
-        
-        <p>10. <strong>Grootswagers T</strong>., Wardle S.G., Carlson T.A. (2017). Decoding dynamic brain patterns from evoked responses: A tutorial on multivariate pattern analysis applied to time-series neuroimaging data. <i>Journal of Cognitive Neuroscience</i>, 29(4), 677-697 <a target="_blank" href="https://doi.org/10.1162/jocn_a_01068">https://doi.org/10.1162/jocn_a_01068</a></p>
-        
-        <p>11. <strong>Grootswagers T</strong>., Ritchie J.B., Wardle S.G., Heathcote A., Carlson T.A. (2017). Asymmetric compression of representational space for object animacy categorization under degraded viewing conditions. <i>Journal of Cognitive Neuroscience</i>, 29(12), 1995-2010 <a target="_blank" href="https://doi.org/10.1162/jocn_a_01177">https://doi.org/10.1162/jocn_a_01177</a></p>
-        
-        <p>12. de Wit B., Badcock N.A., <strong>Grootswagers T</strong>., Hardwick K., Teichmann L., Wehrman J., Williams M., Kaplan D.M. (2017). Neurogaming technology meets neuroscience education: A cost-effective, scalable, and highly portable undergraduate teaching laboratory for neuroscience. <i>Journal of Undergraduate Neuroscience Education</i>, 15(2), A104-A109 <a target="_blank" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5480837/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5480837/</a></p>
-        
-        <p>13. Wardle S.G., Kriegeskorte N., <strong>Grootswagers T</strong>., Khaligh-Razavi S., Carlson T.A. (2016). Perceptual similarity of visual patterns predicts dynamic neural activation patterns measured with MEG. <i>NeuroImage</i>, 132, 59-70 <a target="_blank" href="https://doi.org/10.1016/j.neuroimage.2016.02.019">https://doi.org/10.1016/j.neuroimage.2016.02.019</a></p>
-        
+    f = lambda x: ''.join(filter(str.isalpha, x.lower()))
+    global totalpub
+    totalpub+=1
+
+    fs = '<p>%i. %s%s. %s. <i>%s</i>%s %s</p>'%(totalpub,
+        authors.replace('Grootswagers T','<strong>Grootswagers T</strong>'),
+        ' (%s)'%year.replace('inpress','in press').replace('preprint',''),
+        title,
+        journal,
+        ', '+pages if pages else '',
+        '<a target="_blank" href="%s">%s</a>'%(link,link))
+    
+    return fs
+
+if 'inpress' in years:
+    for e in [x for x in entries if x[0]=='inpress']:
+        out+="""
+        %s
+        """%formatpub(e)
+
+for i in range(2100,2000,-1):
+    for e in [x for x in entries if x[0]==str(i)]:
+        out+="""
+        %s
+        """%formatpub(e)
+out+="""
 <div class="year">
     Other research outputs
 </div>
+"""
 
+if 'preprint' in ''.join(years):
+    out+="""
     <div class="year">
         Preprints
     </div>
-    
-        <p>14. Robinson A.K., <strong>Grootswagers T</strong>., Shatek S.M., Gerboni J., Holcombe, A.O., Carlson T.A. (2020). Now you see it, now you don't: Overlapping neural representations for the position of visible and invisible objects. <i>biorxiv</i>, 648998 <a target="_blank" href="https://doi.org/10.1101/648998">https://doi.org/10.1101/648998</a></p>
-        
-        <p>15. Contini E.W., Goddard E., <strong>Grootswagers T</strong>., Williams M., Carlson T.A. (2019). A humanness dimension to visual object coding in the brain. <i>biorxiv</i>, 648998 <a target="_blank" href="https://doi.org/10.1101/648998">https://doi.org/10.1101/648998</a></p>
-        
-        <p>16. Shatek S.M., <strong>Grootswagers T</strong>., Robinson A.K., Carlson T.A. (2019). Decoding images in the mind's eye: The temporal dynamics of visual imagery. <i>biorxiv</i>, 637603 <a target="_blank" href="https://doi.org/10.1101/637603">https://doi.org/10.1101/637603</a></p>
-        
-        <p>17. Carlson T, <strong>Grootswagers T</strong>., Robinson A.K.  (2019). An introduction to time-resolved decoding analysis for M/EEG. <i>arxiv</i>, 1905.04820 <a target="_blank" href="https://arxiv.org/abs/1905.04820">https://arxiv.org/abs/1905.04820</a></p>
-        
-        <p>18. Petit S., Badcock N.A., <strong>Grootswagers T</strong>., Rich A.N., Brock J., Nickels L., Moerel D., Dermody N., Yau S., Schmidt E., Woolgar A. (2019). Towards an individualised neural assessment of receptive language in children. <i>biorxiv</i>, 566752 <a target="_blank" href="https://doi.org/10.1101/566752">https://doi.org/10.1101/566752</a></p>
-        
-        <p>19. Teichmann L., Quek G.L., Robinson A.K., <strong>Grootswagers T</strong>., Carlson T.A., Rich A.N. (2019). Yellow strawberries and red bananas: The influence of object-colour knowledge on emerging object representations in the brain. <i>biorxiv</i>, 533513 <a target="_blank" href="https://doi.org/10.1101/533513">https://doi.org/10.1101/533513</a></p>
-        
+    """
+    for e in [x for x in entries if 'preprint' in x[0]]:
+        out+="""
+        %s
+        """%formatpub(e)
+
+totalpub+=1
+out+="""
     <div class="year">
         Published conference proceedings
     </div>
-    <p>20. <strong>Grootswagers T</strong>, Dijkstra K, ten Bosch L, Brandmeyer A, Sadakata M (2013). Word identification using phonetic features: towards a method to support multivariate fMRI speech decoding. In: <i>INTERSPEECH</i>. 3201-3205.</p>
-    <p>21. Gerke P, Langevoort J, Lagarde S, Bax L, <strong>Grootswagers T</strong>, Drenth R, Slieker V, Vuurpijl L, Haselager W, Sprinkhuizen-Kuyper I (2011). BioMAV: bio-inspired intelligence for autonomous flight. In: <i>Proceedings International Micro Air Vehicle Conference and Flight Competition</i>.</p>
+    <p>%i. <strong>Grootswagers T</strong>, Dijkstra K, ten Bosch L, Brandmeyer A, Sadakata M (2013). Word identification using phonetic features: towards a method to support multivariate fMRI speech decoding. In: <i>INTERSPEECH</i>. 3201-3205.</p>
+    <p>%i. Gerke P, Langevoort J, Lagarde S, Bax L, <strong>Grootswagers T</strong>, Drenth R, Slieker V, Vuurpijl L, Haselager W, Sprinkhuizen-Kuyper I (2011). BioMAV: bio-inspired intelligence for autonomous flight. In: <i>Proceedings International Micro Air Vehicle Conference and Flight Competition</i>.</p>
 
     <div class="year">
         Published conference abstracts
     </div>
-    <p>22. Tovar D, <strong>Grootswagers T</strong>, Robinson A, Wallace M, Carlson T (2019). Optimizing the Number of Visual Presentations for Time-Resolved Decoding Studies. <i>Perception</i>, 48, 134-134.</p>
-    <p>23. Teichmann L, <strong>Grootswagers T</strong>, Carlson T, Rich A (2018). Tomatoes are red, cucumbers are green: Decoding the temporal dynamics of object-colour knowledge using Magnetoencephalography. <i>Journal of Vision</i>, 18(10), 861-861.</p>
-    <p>24. <strong>Grootswagers T</strong>, Cichy R, Carlson T (2016). Predicting behavior from decoded searchlight representations shows where decodable information relates to behavior. <i>Perception</i>, 45, 360-360.</p>
-    <p>25. Contini E, Williams M, Grootswagers T</strong>, Goddard E, Carlson T (2016). Dichotomy Versus Continuum: Evidence for a More Complex Agency Model of Visual Object Categorisation. <i>Journal of Vision</i>, 16(12), 252- 252.</p>
-    <p>26. <strong>Grootswagers T</strong>, Carlson T (2015). Decoding the emerging representation of degraded visual objects in the human brain. <i>Journal of Vision</i>, 15(12), 1087-1087.</p>
+    <p>%i. Tovar D, <strong>Grootswagers T</strong>, Robinson A, Wallace M, Carlson T (2019). Optimizing the Number of Visual Presentations for Time-Resolved Decoding Studies. <i>Perception</i>, 48, 134-134.</p>
+    <p>%i. Teichmann L, <strong>Grootswagers T</strong>, Carlson T, Rich A (2018). Tomatoes are red, cucumbers are green: Decoding the temporal dynamics of object-colour knowledge using Magnetoencephalography. <i>Journal of Vision</i>, 18(10), 861-861.</p>
+    <p>%i. <strong>Grootswagers T</strong>, Cichy R, Carlson T (2016). Predicting behavior from decoded searchlight representations shows where decodable information relates to behavior. <i>Perception</i>, 45, 360-360.</p>
+    <p>%i. Contini E, Williams M, Grootswagers T</strong>, Goddard E, Carlson T (2016). Dichotomy Versus Continuum: Evidence for a More Complex Agency Model of Visual Object Categorisation. <i>Journal of Vision</i>, 16(12), 252- 252.</p>
+    <p>%i. <strong>Grootswagers T</strong>, Carlson T (2015). Decoding the emerging representation of degraded visual objects in the human brain. <i>Journal of Vision</i>, 15(12), 1087-1087.</p>
+"""%tuple([totalpub+x for x in range(7)])
 
+out+="""
     <div class="year">
         Conference presentations (presenting author)
     </div>
@@ -185,7 +371,9 @@
 <p><strong>Grootswagers T</strong>, Carlson T (2015). Decoding human minds from monkey brains. Poster presented at the Annual Australasian Experimental Psychology Conference (EPC), Sydney, NSW, Australia</p>
 
 
+"""
 
+out+="""
     <div class="year">
         Invited talks, symposia, and workshops
     </div>
@@ -202,8 +390,14 @@
     <p>2015: Modeling the relationship between behavior and decodable information in the brain. Talk presented at the Laboratory of Neuropsychology, National Institute of Mental Health, Bethesda, MD, USA</p>
     <p>2015: Decoding human minds from monkey brains. Talk presented at the department of Experimental Psychology, Utrecht University, the Netherlands</p>
     <p>2015: Predicting Reaction Times from the Emerging Representation of Degraded Visual Objects. Talk presented at the Cognitive Research Group, University of Newcastle, NSW, Australia</p>
+"""
 
+out+="""
     <p style="margin-bottom: 50px;"><br /></p>
     </div>
     </body>
     </html>
+"""
+
+with open('cv.html','w') as f:
+    f.write(out)
