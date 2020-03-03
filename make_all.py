@@ -1,5 +1,9 @@
 import glob,os
 
+##################
+### MAKE index ###
+##################
+
 out="""
     <!DOCTYPE html>
     <html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
@@ -370,15 +374,14 @@ out+="""
 <p><strong>Grootswagers T</strong>, McMahon D, Leopold D, Carlson T (2015). Not all that glitters is gold: predicting behavior from brain representations suggests that only a subset of decodable information is used by the brain. Talk presented at the Annual Meeting of the Society for Neuroscience (SFN), Chicago, IL, USA</p>
 <p><strong>Grootswagers T</strong>, Ritchie B, Heathcote A, Carlson T (2015). Decoding the emerging representation of degraded visual objects in the human brain. Poster presented at the Annual Meeting of the Vision Sciences Society (VSS), St. Pete Beach, FL, USA</p>
 <p><strong>Grootswagers T</strong>, Carlson T (2015). Decoding human minds from monkey brains. Poster presented at the Annual Australasian Experimental Psychology Conference (EPC), Sydney, NSW, Australia</p>
-
-
 """
 
 out+="""
     <div class="year">
         Invited talks, symposia, and workshops
     </div>
-    <p>2019: Using rapid stimulus presentation and multivariate decoding to study information processing in the human brain. Award talk presented at the Australian Cognitive Neuroscience Society Conference (ACNS), Launceston, Australia</p>    
+    <p>2020: Decoding and Representational Dynamics in MEG & EEG. Talk presented at the IDEALAB Winter School, Macquarie University</p>    
+    <p>2019: Using rapid stimulus presentation and multivariate decoding to study information processing in the human brain. Award talk presented at the Australian Cognitive Neuroscience Society Conference (ACNS), Launceston, Australia</p>
     <p>2019: Talk presented in early researcher career workshop at the Australian Cognitive Neuroscience Society Conference, Launceston, Australia</p>
     <p>2019: The representational dynamics of visual objects in rapid serial visual processing streams. Talk presented at Macquarie University, Australia</p>
     <p>2019: The representational dynamics of visual objects in rapid serial visual processing streams. Talk presented at the MRC Cognition and Brain sciences unit, Cambridge, UK</p>
