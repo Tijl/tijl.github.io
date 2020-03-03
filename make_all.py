@@ -380,14 +380,14 @@ out+="""
     <div class="year">
         Invited talks, symposia, and workshops
     </div>
-    <p>2020: Decoding and Representational Dynamics in MEG & EEG. Talk presented at the IDEALAB Winter School, Macquarie University</p>    
+    <p>2020: Decoding and Representational Dynamics in MEG & EEG. Talk presented at the IDEALAB Winter School, Macquarie University, Australia</p>    
     <p>2019: Using rapid stimulus presentation and multivariate decoding to study information processing in the human brain. Award talk presented at the Australian Cognitive Neuroscience Society Conference (ACNS), Launceston, Australia</p>
     <p>2019: Talk presented in early researcher career workshop at the Australian Cognitive Neuroscience Society Conference, Launceston, Australia</p>
     <p>2019: The representational dynamics of visual objects in rapid serial visual processing streams. Talk presented at Macquarie University, Australia</p>
     <p>2019: The representational dynamics of visual objects in rapid serial visual processing streams. Talk presented at the MRC Cognition and Brain sciences unit, Cambridge, UK</p>
     <p>2018: The representational dynamics of visual objects in rapid serial visual processing streams. Symposium presented at the Australian Cognitive Neuroscience Society Conference, Melbournce, VIC, Australia</p>
     <p>2018: Decoding and Representational Dynamics in MEG & EEG. Talk presented at the Kavli Summer Institute in Cognitive Neuroscience, Tahoe, CA, USA</p>
-    <p>2018: MVPA applied to time-series neuroimaging data. Workshop presented at the University of Sydney</p>
+    <p>2018: MVPA applied to time-series neuroimaging data. Workshop presented at the University of Sydney, Australia</p>
     <p>2017: Beyond Brain Decoding: Methodological and empirical contributions to brain decoding methods and their link to behaviour. Talk presented at the Perception in Action Research Centre, Macquarie University, Sydney, NSW, Australia</p>
     <p>2017: Decoding Dynamic Brain Patterns: MVPA applied to time-series neuroimaging data. Workshop presented at the Australian Cognitive Neuroscience Society Conference, Adelaide, SA, Australia</p>
     <p>2016: Linking neural decoding methods to behavior. Talk presented at the Center for Cognitive Neuroscience, Freie Universität Berlin, Germany</p>
