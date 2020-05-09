@@ -34,12 +34,12 @@ out="""
                 <img src="tijl-grootswagers.jpg" alt="Tijl Grootswagers" width="130px;">
             </div>
             <p style="float:left;">
-                Postdoctoral Research Associate  <br />
-                School of Psychology   <br />
-                The University of Sydney
+                Vice Chancellor's Research Fellow in Cognitive Neuroscience  <br /> 
+                The MARCS Institute for Brain, Behaviour and Development   <br />
+                Western Sydney University
             </p>
             <p style="float:left;">
-                email:&nbsp;&nbsp;&nbsp;<a target="_blank" href="mailto:tijl.grootswagers@sydney.edu.au">tijl.grootswagers@sydney.edu.au</a><br />
+                email:&nbsp;&nbsp;&nbsp;<a target="_blank" href="mailto:tijl.grootswagers@westernsydney.edu.au">tijl.grootswagers@westernsydney.edu.au</a><br />
                 twitter:&nbsp;<a target="_blank" href="https://twitter.com/TGrootswagers">@TGrootswagers</a><br />
                 github:&nbsp;&nbsp;<a target="_blank" href="https://github.com/Tijl">https://github.com/Tijl</a>
             </p>
