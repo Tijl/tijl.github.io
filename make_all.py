@@ -30,16 +30,16 @@ out="""
             <h1 class="heading">
                 Tijl Grootswagers
             </h1>
-            <div class="photo">
-                <img src="tijl-grootswagers.jpg" alt="Tijl Grootswagers" width="130px;">
-            </div>
             <p style="float:left;">
-                Vice Chancellor's Research Fellow in Cognitive Neuroscience  <br /> 
-                The MARCS Institute for Brain, Behaviour and Development   <br />
+                Vice Chancellor's Research Fellow in Cognitive Neuroscience<br /> 
+                The MARCS Institute for Brain, Behaviour and Development<br />
                 Western Sydney University
             </p>
+            <div class="photo">
+                <img src="tijl-grootswagers.jpg" alt="Tijl Grootswagers" width="100px;">
+            </div>
             <p style="float:left;">
-                email:&nbsp;&nbsp;&nbsp;<a target="_blank" href="mailto:tijl.grootswagers@westernsydney.edu.au">tijl.grootswagers@westernsydney.edu.au</a><br />
+                email:&nbsp;&nbsp;&nbsp;<a target="_blank" href="mailto:t.grootswagers@westernsydney.edu.au">t.grootswagers@westernsydney.edu.au</a><br />
                 twitter:&nbsp;<a target="_blank" href="https://twitter.com/TGrootswagers">@TGrootswagers</a><br />
                 github:&nbsp;&nbsp;<a target="_blank" href="https://github.com/Tijl">https://github.com/Tijl</a>
             </p>
@@ -193,14 +193,14 @@ out="""
             <h1 class="heading">
                 Tijl Grootswagers
             </h1>
-            <div class="photo">
-                <img src="tijl-grootswagers.jpg" alt="Tijl Grootswagers" width="130px;">
-            </div>
             <p style="float:left;">
-                Vice Chancellor's Research Fellow in Cognitive Neuroscience  <br /> 
-                The MARCS Institute for Brain, Behaviour and Development   <br />
+                Vice Chancellor's Research Fellow in Cognitive Neuroscience<br /> 
+                The MARCS Institute for Brain, Behaviour and Development<br />
                 Western Sydney University
             </p>
+            <div class="photo">
+                <img src="tijl-grootswagers.jpg" alt="Tijl Grootswagers" width="100px;">
+            </div>
             <p style="float:left;">
                 email:&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="mailto:t.grootswagers@westernsydney.edu.au">t.grootswagers@westernsydney.edu.au</a><br />
                 homepage:&nbsp;<a target="_blank" href="https://tijl.github.io/">https://tijl.github.io/</a><br />
