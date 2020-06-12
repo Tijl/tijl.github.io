@@ -41,7 +41,8 @@ out="""
             <p style="float:left;">
                 email:&nbsp;&nbsp;&nbsp;<a target="_blank" href="mailto:t.grootswagers@westernsydney.edu.au">t.grootswagers@westernsydney.edu.au</a><br />
                 twitter:&nbsp;<a target="_blank" href="https://twitter.com/TGrootswagers">@TGrootswagers</a><br />
-                github:&nbsp;&nbsp;<a target="_blank" href="https://github.com/Tijl">https://github.com/Tijl</a>
+                github:&nbsp;&nbsp;<a target="_blank" href="https://github.com/Tijl">https://github.com/Tijl</a><br />
+                orcid:&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://orcid.org/0000-0002-7961-5002">0000-0002-7961-5002</a><br />
             </p>
             <div style="clear:both;"></div>
 
@@ -205,7 +206,8 @@ out="""
                 email:&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="mailto:t.grootswagers@westernsydney.edu.au">t.grootswagers@westernsydney.edu.au</a><br />
                 homepage:&nbsp;<a target="_blank" href="https://tijl.github.io/">https://tijl.github.io/</a><br />
                 twitter:&nbsp;&nbsp;<a target="_blank" href="https://twitter.com/TGrootswagers">@TGrootswagers</a><br />
-                github:&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://github.com/Tijl">https://github.com/Tijl</a>
+                github:&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://github.com/Tijl">https://github.com/Tijl</a><br />
+                orcid:&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://orcid.org/0000-0002-7961-5002">0000-0002-7961-5002</a><br />
             </p>
             <div style="clear:both;"></div>
 
