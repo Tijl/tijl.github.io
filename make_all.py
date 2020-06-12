@@ -278,7 +278,7 @@ out="""
         Book chapter
     </div>
 
-    <p>1. Carlson T, <strong>Grootswagers T</strong>, Robinson A (in press). An introduction to time-resolved decoding analysis for M/EEG. in: (Gazzaniga, Mangun, & Poeppel, eds.) <i>The Cognitive Neurosciences, 6th edition.</i></p>
+    <p>1. Carlson T, <strong>Grootswagers T</strong>, Robinson A (2020). An introduction to time-resolved decoding analysis for M/EEG. in: (Gazzaniga, Mangun, & Poeppel, eds.) <i>The Cognitive Neurosciences, 6th edition.</i></p>
 
     <div class="year">
         Refereed journal publications
