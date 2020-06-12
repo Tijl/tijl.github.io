@@ -33,7 +33,7 @@ out="""
             <p style="float:left;">
                 Vice Chancellor's Research Fellow in Cognitive Neuroscience<br /> 
                 The MARCS Institute for Brain, Behaviour and Development<br />
-                Western Sydney University
+                Western Sydney University, Sydney, Australia
             </p>
             <div class="photo">
                 <img src="tijl-grootswagers.jpg" alt="Tijl Grootswagers" width="100px;">
@@ -197,7 +197,7 @@ out="""
             <p style="float:left;">
                 Vice Chancellor's Research Fellow in Cognitive Neuroscience<br /> 
                 The MARCS Institute for Brain, Behaviour and Development<br />
-                Western Sydney University
+                Western Sydney University, Sydney, Australia
             </p>
             <div class="photo">
                 <img src="tijl-grootswagers.jpg" alt="Tijl Grootswagers" width="100px;">
