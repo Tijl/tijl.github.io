@@ -57,7 +57,7 @@ with open('publicationlist.csv') as f:
     data = f.readlines()
 entries=[]
 for (i,line) in enumerate(data):
-    e=line.strip().split('\t');
+    e=line.strip().split('\t')
     if len(e)==6:
         entries.append(e)
     elif line.strip():
@@ -65,13 +65,12 @@ for (i,line) in enumerate(data):
 
 years = set([x[0] for x in entries])
 print(years)
-pdflist = glob.glob('tijl-grootswagers-pdf/*.pdf');
+pdflist = glob.glob('tijl-grootswagers-pdf/*.pdf')
 for x in pdflist:
     os.rename(x,x.replace(' ','_').replace('.pdf','').replace('.','')+'.pdf')
-pdflist = glob.glob('tijl-grootswagers-pdf/*.pdf');
+pdflist = glob.glob('tijl-grootswagers-pdf/*.pdf')
 
-
-def formatpub(e):
+def formatpub(e,cv=False):
     [year,authors,title,journal,pages,link]=e   
     
     f = lambda x: ''.join(filter(str.isalpha, x.lower()))
@@ -84,15 +83,23 @@ def formatpub(e):
     else:
         print('\npdf not found for:\n%s'%'\n'.join(e))
         url=''
-    
-    fs = '<p>%s%s. %s. <i>%s</i>%s %s%s</p>'%(
-        authors.replace('Grootswagers T','<strong>Grootswagers T</strong>'),
-        ' (%s)'%year.replace('inpress','in press').replace('preprint',''),
-        title,
-        journal,
-        ', '+pages if pages else '',
-        '<a target="_blank" class="doilink" href="%s">[doi]</a>'%(link),
-        '<a target="_blank" class="pdflink" href="%s"> [pdf]</a>'%(url if url else ''))
+    if cv:
+        fs = '<p>%i. %s%s. %s. <i>%s</i>%s %s</p>'%(totalpub,
+            authors.replace('Grootswagers T','<strong>Grootswagers T</strong>'),
+            ' (%s)'%year.replace('inpress','in press').replace('preprint',''),
+            title,
+            journal,
+            ', '+pages if pages else '',
+            '<a target="_blank" href="%s">%s</a>'%(link,link))
+    else:
+        fs = '<p>%s%s. %s. <i>%s</i>%s %s%s</p>'%(
+            authors.replace('Grootswagers T','<strong>Grootswagers T</strong>'),
+            ' (%s)'%year.replace('inpress','in press').replace('preprint',''),
+            title,
+            journal,
+            ', '+pages if pages else '',
+            '<a target="_blank" class="doilink" href="%s">[doi]</a>'%(link),
+            '<a target="_blank" class="pdflink" href="%s"> [pdf]</a>'%(url if url else ''))
     
     return fs
     
@@ -291,7 +298,7 @@ with open('publicationlist.csv') as f:
     data = [x for x in f.readlines() if 'The Cognitive Neurosciences' not in x]
 entries=[]
 for (i,line) in enumerate(data):
-    e=line.strip().split('\t');
+    e=line.strip().split('\t')
     if len(e)==6:
         entries.append(e)
     elif line.strip():
@@ -300,34 +307,19 @@ for (i,line) in enumerate(data):
 years = set([x[0] for x in entries])
 print(years)
 
-def formatpub(e):
-    [year,authors,title,journal,pages,link]=e   
-    
-    f = lambda x: ''.join(filter(str.isalpha, x.lower()))
-    global totalpub
-    totalpub+=1
-
-    fs = '<p>%i. %s%s. %s. <i>%s</i>%s %s</p>'%(totalpub,
-        authors.replace('Grootswagers T','<strong>Grootswagers T</strong>'),
-        ' (%s)'%year.replace('inpress','in press').replace('preprint',''),
-        title,
-        journal,
-        ', '+pages if pages else '',
-        '<a target="_blank" href="%s">%s</a>'%(link,link))
-    
-    return fs
-
 if 'inpress' in years:
     for e in [x for x in entries if x[0]=='inpress']:
+        totalpub+=1
         out+="""
         %s
-        """%formatpub(e)
+        """%formatpub(e,cv=True)
 
 for i in range(2100,2000,-1):
     for e in [x for x in entries if x[0]==str(i)]:
+        totalpub+=1
         out+="""
         %s
-        """%formatpub(e)
+        """%formatpub(e,cv=True)
 out+="""
 <div class="year">
     Other research outputs
@@ -341,9 +333,10 @@ if 'preprint' in ''.join(years):
     </div>
     """
     for e in [x for x in entries if 'preprint' in x[0]]:
+        totalpub+=1
         out+="""
         %s
-        """%formatpub(e)
+        """%formatpub(e,cv=True)
 
 totalpub+=1
 out+="""
