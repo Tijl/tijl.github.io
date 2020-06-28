@@ -33,7 +33,7 @@ out="""
             <p style="float:left;">
                 Vice Chancellor's Research Fellow in Cognitive Neuroscience<br /> 
                 The MARCS Institute for Brain, Behaviour and Development<br />
-                Western Sydney University
+                Western Sydney University, Sydney, Australia
             </p>
             <div class="photo">
                 <img src="tijl-grootswagers.jpg" alt="Tijl Grootswagers" width="100px;">
@@ -41,7 +41,8 @@ out="""
             <p style="float:left;">
                 email:&nbsp;&nbsp;&nbsp;<a target="_blank" href="mailto:t.grootswagers@westernsydney.edu.au">t.grootswagers@westernsydney.edu.au</a><br />
                 twitter:&nbsp;<a target="_blank" href="https://twitter.com/TGrootswagers">@TGrootswagers</a><br />
-                github:&nbsp;&nbsp;<a target="_blank" href="https://github.com/Tijl">https://github.com/Tijl</a>
+                github:&nbsp;&nbsp;<a target="_blank" href="https://github.com/Tijl">https://github.com/Tijl</a><br />
+                orcid:&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://orcid.org/0000-0002-7961-5002">0000-0002-7961-5002</a><br />
             </p>
             <div style="clear:both;"></div>
 
@@ -196,7 +197,7 @@ out="""
             <p style="float:left;">
                 Vice Chancellor's Research Fellow in Cognitive Neuroscience<br /> 
                 The MARCS Institute for Brain, Behaviour and Development<br />
-                Western Sydney University
+                Western Sydney University, Sydney, Australia
             </p>
             <div class="photo">
                 <img src="tijl-grootswagers.jpg" alt="Tijl Grootswagers" width="100px;">
@@ -205,7 +206,8 @@ out="""
                 email:&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="mailto:t.grootswagers@westernsydney.edu.au">t.grootswagers@westernsydney.edu.au</a><br />
                 homepage:&nbsp;<a target="_blank" href="https://tijl.github.io/">https://tijl.github.io/</a><br />
                 twitter:&nbsp;&nbsp;<a target="_blank" href="https://twitter.com/TGrootswagers">@TGrootswagers</a><br />
-                github:&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://github.com/Tijl">https://github.com/Tijl</a>
+                github:&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://github.com/Tijl">https://github.com/Tijl</a><br />
+                orcid:&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://orcid.org/0000-0002-7961-5002">0000-0002-7961-5002</a><br />
             </p>
             <div style="clear:both;"></div>
 
@@ -276,7 +278,7 @@ out="""
         Book chapter
     </div>
 
-    <p>1. Carlson T, <strong>Grootswagers T</strong>, Robinson A (in press). An introduction to time-resolved decoding analysis for M/EEG. in: (Gazzaniga, Mangun, & Poeppel, eds.) <i>The Cognitive Neurosciences, 6th edition.</i></p>
+    <p>1. Carlson T, <strong>Grootswagers T</strong>, Robinson A (2020). An introduction to time-resolved decoding analysis for M/EEG. in: (Gazzaniga, Mangun, & Poeppel, eds.) <i>The Cognitive Neurosciences, 6th edition.</i></p>
 
     <div class="year">
         Refereed journal publications
