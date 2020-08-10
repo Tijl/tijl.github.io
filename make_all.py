@@ -222,6 +222,7 @@ out="""
         Academic Track
     </h2>
     <p>2020-current: Vice Chancellor's Research Fellow in Cognitive Neuroscience. The MARCS Institute for Brain, Behaviour and Development, Western Sydney University, Australia</p>
+    <p>2020-current: Honorary Research fellow. School of Psychology, The University of Sydney, Australia</p> 
     <p>2017-2020: Postdoctoral Research Associate. School of Psychology, The University of Sydney, Australia</p>
     <p>2017-current: Associate Member. Perception in Action Research Centre, Macquarie University, Sydney, Australia</p> 
     <p>2017-2019: Associate Investigator. ARC Centre for Excellence in Cognition and its Disorders, Australia</p>
