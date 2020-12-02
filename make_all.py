@@ -1,4 +1,4 @@
-import glob,os
+import glob,os,re
 
 ##################
 ### make index ###
@@ -58,7 +58,7 @@ with open('publicationlist.csv') as f:
 entries=[]
 for (i,line) in enumerate(data):
     e=line.strip().split('\t')
-    if len(e)==6:
+    if len(e)>3:
         entries.append(e)
     elif line.strip():
         print('could not parse line %i: %s'%(1+i,e))
@@ -71,7 +71,15 @@ for x in pdflist:
 pdflist = glob.glob('tijl-grootswagers-pdf/*.pdf')
 
 def formatpub(e,cv=False):
-    [year,authors,title,journal,pages,link]=e   
+    while len(e)<7:
+        e.append('')
+    [year,authors,title,journal,pages,doilink,otherlinks]=e   
+
+    otherinfo = ''
+    if otherlinks:
+        parts = re.findall('(\[.*?\])\[(.*?)\]',otherlinks)
+        for group in parts:
+            otherinfo+=' <a target="_blank" href="%s">%s</a>'%(group[1],group[0])
     
     f = lambda x: ''.join(filter(str.isalpha, x.lower()))
     
@@ -90,17 +98,17 @@ def formatpub(e,cv=False):
             title,
             journal,
             ', '+pages if pages else '',
-            '<a target="_blank" href="%s">%s</a>'%(link,link))
+            '<a target="_blank" href="%s">%s</a>'%(doilink,doilink))
     else:
-        fs = '<p>%s%s. %s. <i>%s</i>%s %s%s</p>'%(
+        fs = '<p>%s%s. %s. <i>%s</i>%s %s%s%s</p>'%(
             authors.replace('Grootswagers T','<strong>Grootswagers T</strong>'),
             ' (%s)'%year.replace('inpress','in press').replace('preprint',''),
             title,
             journal,
             ', '+pages if pages else '',
-            '<a target="_blank" class="doilink" href="%s">[doi]</a>'%(link),
-            '<a target="_blank" class="pdflink" href="%s"> [pdf]</a>'%(url if url else ''))
-    
+            '<a target="_blank" class="doilink" href="%s">[doi]</a>'%(doilink),
+            '<a target="_blank" class="pdflink" href="%s"> [pdf]</a>'%(url if url else ''),
+            otherinfo)
     return fs
     
     
@@ -238,8 +246,13 @@ out="""
         Teaching and supervision
     </h2>
     <p>2020: Co-supervision of three honours students (2HD, 1D+) at Western Sydney University</p>
-    <p>2017-2019: Co-supervision of six honours students at the University of Sydney</p>
+    <p>2020: Tutor: Research Methods at Western Sydney University</p>
+    <p>2020: Co-supervision of two honours students at the University of Sydney</p>
+    <p>2019: Co-supervision of two masters students at the University of Sydney</p>
+    <p>2019: Co-supervision of two honours students at the University of Sydney</p>
     <p>2019: Led two classes of an honours level seminar series at the University of Sydney</p>
+    <p>2018: Co-supervision of two honours students at the University of Sydney</p>
+    <p>2017: Co-supervision of two honours students at the University of Sydney</p>
     <p>2018: Guest lecture on deep convolutional neural networks for PSYCH3012: Cognition, Language & Thought at the University of Sydney</p>
     <p>2018: Led two classes of an honours level seminar series at the University of Sydney</p>
     <p>2016: Tutor: Cognitive and Brain Sciences at Macquarie University</p>
@@ -253,7 +266,10 @@ out="""
     <h2 class="heading">
         Activities and Service
     </h2>
-    <p>2018-2020: Member of the Australian Cognitive Neuroscience Society executive committee <a target="_blank" href="https://www.acns.org.au">www.acns.org.au</a></p>
+    <p>2020: Session Chair at the international NeuroMatch3 virtual conference</p>
+    <p>2019: Session Chair at the Australian Cognitive Neuroscience Society conference</p>
+    <p>2019-current: Member of the Australian Cognitive Neuroscience Society executive committee (environment working group chair) <a target="_blank" href="https://www.acns.org.au/acns-committee/">https://www.acns.org.au/acns-committee/</a></p>
+    <p>2018-2019: Member of the Australian Cognitive Neuroscience Society executive committee <a target="_blank" href="https://www.acns.org.au/acns-committee/">https://www.acns.org.au/acns-committee/</a></p>
     <p>2016-current: Contributor to the CoSMoMVPA multi-variate pattern analysis toolbox in Matlab <a target="_blank" href="http://www.cosmomvpa.org">www.cosmomvpa.org</a></p>
     <p>Lab visits: 
         University of Melbourne (2020).
@@ -308,7 +324,7 @@ with open('publicationlist.csv') as f:
 entries=[]
 for (i,line) in enumerate(data):
     e=line.strip().split('\t')
-    if len(e)==6:
+    if len(e)>3:
         entries.append(e)
     elif line.strip():
         print('could not parse line %i: %s'%(1+i,e))
