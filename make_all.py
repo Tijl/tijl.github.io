@@ -245,6 +245,7 @@ out="""
     <h2 class="heading">
         Teaching and supervision
     </h2>
+    <p>2020-2021: Supervision of summer scholarhip student at Western Sydney University</p>
     <p>2020: Co-supervision of three honours students (2HD, 1D+) at Western Sydney University</p>
     <p>2020: Tutor: Research Methods at Western Sydney University</p>
     <p>2020: Co-supervision of two honours students at the University of Sydney</p>
