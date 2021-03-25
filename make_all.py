@@ -28,7 +28,7 @@ out="""
     <body>
         <div id="all">
             <h1 class="heading">
-                Tijl Grootswagers
+                Dr. Tijl Grootswagers
             </h1>
             <p style="float:left;">
                 Vice Chancellor's Research Fellow in Cognitive Neuroscience<br /> 
@@ -101,7 +101,7 @@ def formatpub(e,cv=False):
             '<a target="_blank" href="%s">%s</a>'%(doilink,doilink))
     else:
         fs = '<p>%s%s. %s. <i>%s</i>%s %s%s%s</p>'%(
-            authors.replace('Grootswagers T','<strong>Grootswagers T</strong>'),
+            authors,
             ' (%s)'%year.replace('inpress','in press').replace('preprint',''),
             title,
             journal,
@@ -197,7 +197,7 @@ out="""
       gtag('config', 'UA-130925994-1');
     </script>
 
-    <title>Tijl Grootswagers</title>
+    <title>CV Dr. Tijl Grootswagers</title>
     <meta http-equiv="content-type" content="text/xml; charset=utf-8">
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content="Publications by Tijl Grootswagers" />
@@ -205,9 +205,9 @@ out="""
     </head>    
     
     <body>
-        <div id="all">
+        <div id="all" style="width: 850px;">
             <h1 class="heading">
-                Tijl Grootswagers
+                Dr. Tijl Grootswagers
             </h1>
             <p style="float:left;">
                 Vice Chancellor's Research Fellow in Cognitive Neuroscience<br /> 
