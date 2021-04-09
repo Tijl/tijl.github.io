@@ -387,6 +387,7 @@ out+="""
     <div class="year">
         Conference presentations (presenting author)
     </div>
+<p><strong>Grootswagers T</strong>, Robinson A, Shatek S, Carlson T (2021). What makes perceptual information memorable? Talk presented at the Annual Australasian Experimental Psychology Conference (EPC), Brisbane, Qld, Australia</p>
 <p><strong>Grootswagers T</strong>, Robinson A, Shatek S, Carlson T (2020). The neural dynamics underlying prioritisation of task-relevant information. Talk presented at the international NeuroMatch3 virtual conference</p>
 <p><strong>Grootswagers T</strong>, Robinson A, Shatek S, Carlson T (2019). The influence of task context on the neural dynamics of rapid stimulus processing. Poster presented at the Australian OHBM Chapter, Newcastle, NSW, Australia</p>
 <p><strong>Grootswagers T</strong>, Robinson A, Carlson T (2018). Assessing the temporal dynamics of object processing using rapid-MVPA. Poster presented at the Australian Cognitive Neuroscience Society Conference (ACNS), Melbourne, VIC, Australia</p>
