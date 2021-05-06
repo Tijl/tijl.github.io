@@ -77,7 +77,7 @@ def formatpub(e,cv=False):
 
     otherinfo = ''
     if otherlinks:
-        parts = re.findall('(\[.*?\])\[(.*?)\]',otherlinks)
+        parts = re.findall(r'(\[.*?\])\[(.*?)\]',otherlinks)
         for group in parts:
             otherinfo+=' <a target="_blank" href="%s">%s</a>'%(group[1],group[0])
     
