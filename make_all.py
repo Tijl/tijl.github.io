@@ -44,6 +44,11 @@ out="""
                 github:&nbsp;&nbsp;<a target="_blank" href="https://github.com/Tijl">https://github.com/Tijl</a><br />
                 orcid:&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://orcid.org/0000-0002-7961-5002">0000-0002-7961-5002</a><br />
             </p>
+            <p style="float:left;">
+            I am a computational cognitive neuroscientist combining machine learning, neuroimaging, and behavioural data to understand how the brain represents and processes information.
+            The focus of my research is to investigate how the brain perceives and represents visual objects, and how it uses these representations for decision making.
+            Feel free to email me with inquiries about research opportunities in the lab.
+            </p>
             <div style="clear:both;"></div>
 
     <h2 class="heading">
