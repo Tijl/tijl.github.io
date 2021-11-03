@@ -39,10 +39,12 @@ out="""
                 <img src="tijl-grootswagers.jpg" alt="Tijl Grootswagers" width="100px;">
             </div>
             <p style="float:left;">
-                email:&nbsp;&nbsp;&nbsp;<a target="_blank" href="mailto:t.grootswagers@westernsydney.edu.au">t.grootswagers@westernsydney.edu.au</a><br />
-                twitter:&nbsp;<a target="_blank" href="https://twitter.com/TGrootswagers">@TGrootswagers</a><br />
-                github:&nbsp;&nbsp;<a target="_blank" href="https://github.com/Tijl">https://github.com/Tijl</a><br />
-                orcid:&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://orcid.org/0000-0002-7961-5002">0000-0002-7961-5002</a><br />
+                email:&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="mailto:t.grootswagers@westernsydney.edu.au">t.grootswagers@westernsydney.edu.au</a><br />
+                homepage:&nbsp;<a target="_blank" href="https://tijl.github.io/">https://tijl.github.io/</a><br />
+                scholar:&nbsp;&nbsp;<a target="_blank" href="https://scholar.google.com.au/citations?user=TNI8FOoAAAAJ&hl=en">TNI8FOoAAAAJ</a><br />
+                twitter:&nbsp;&nbsp;<a target="_blank" href="https://twitter.com/TGrootswagers">@TGrootswagers</a><br />
+                github:&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://github.com/Tijl">github.com/Tijl</a><br />
+                orcid:&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://orcid.org/0000-0002-7961-5002">0000-0002-7961-5002</a><br />
             </p>
             <p style="float:left;">
             I am a computational cognitive neuroscientist combining machine learning, neuroimaging, and behavioural data to understand how the brain represents and processes information.
@@ -225,9 +227,10 @@ out="""
             <p style="float:left;">
                 email:&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="mailto:t.grootswagers@westernsydney.edu.au">t.grootswagers@westernsydney.edu.au</a><br />
                 homepage:&nbsp;<a target="_blank" href="https://tijl.github.io/">https://tijl.github.io/</a><br />
-                twitter:&nbsp;&nbsp;<a target="_blank" href="https://twitter.com/TGrootswagers">@TGrootswagers</a><br />
+                scholar:&nbsp;&nbsp;<a target="_blank" href="https://scholar.google.com.au/citations?user=TNI8FOoAAAAJ&hl=en">https://scholar.google.com.au/citations?user=TNI8FOoAAAAJ</a><br />
+                twitter:&nbsp;&nbsp;<a target="_blank" href="https://twitter.com/TGrootswagers">https://twitter.com/TGrootswagers</a><br />
                 github:&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://github.com/Tijl">https://github.com/Tijl</a><br />
-                orcid:&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://orcid.org/0000-0002-7961-5002">0000-0002-7961-5002</a><br />
+                orcid:&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://orcid.org/0000-0002-7961-5002">https://orcid.org/0000-0002-7961-5002</a><br />
             </p>
             <div style="clear:both;"></div>
 
@@ -248,19 +251,14 @@ out="""
     <p>2007-2011: BSc. Artificial Intelligence, Radboud University Nijmegen</p>
 
     <h2 class="heading">
-        Teaching and supervision
+        Teaching, supervision and mentoring
     </h2>
-    <p>2020-2021: Supervision of summer scholarhip student at Western Sydney University</p>
-    <p>2020: Co-supervision of three honours students (2HD, 1D+) at Western Sydney University</p>
+    <p>2021-2022 Mentor of two PhD students (OHBM International Online Mentoring Program)</p>
+    <p>2020-current: Co-supervision of nine honours, one PhD, one summer scholarship, three masters students at Western Sydney University</p>
     <p>2020: Tutor: Research Methods at Western Sydney University</p>
-    <p>2020: Co-supervision of two honours students at the University of Sydney</p>
-    <p>2019: Co-supervision of two masters students at the University of Sydney</p>
-    <p>2019: Co-supervision of two honours students at the University of Sydney</p>
-    <p>2019: Led two classes of an honours level seminar series at the University of Sydney</p>
-    <p>2018: Co-supervision of two honours students at the University of Sydney</p>
-    <p>2017: Co-supervision of two honours students at the University of Sydney</p>
-    <p>2018: Guest lecture on deep convolutional neural networks for PSYCH3012: Cognition, Language & Thought at the University of Sydney</p>
-    <p>2018: Led two classes of an honours level seminar series at the University of Sydney</p>
+    <p>2017-2020: Co-supervision of eight honour and two masters students at the University of Sydney</p>
+    <p>2018: Guest lecture for PSYCH3012: Cognition, Language & Thought at the University of Sydney</p>
+    <p>2018-2019: Led four classes of an honours level seminar series at the University of Sydney</p>
     <p>2016: Tutor: Cognitive and Brain Sciences at Macquarie University</p>
     <p>2012-2013: Teacher of two python (programming) courses at the Max Planck Institute, Nijmegen, the Netherlands</p>
 
@@ -272,6 +270,7 @@ out="""
     <h2 class="heading">
         Activities and Service
     </h2>
+    <p>2021: Member of the organising committee for the Australian Cognitive Neuroscience Society conference</p>
     <p>2020: Session Chair at the international NeuroMatch3 virtual conference</p>
     <p>2019: Session Chair at the Australian Cognitive Neuroscience Society conference</p>
     <p>2019-current: Member of the Australian Cognitive Neuroscience Society executive committee (environment working group chair) <a target="_blank" href="https://www.acns.org.au/acns-committee/">https://www.acns.org.au/acns-committee/</a></p>
@@ -288,21 +287,24 @@ out="""
     <br />
 
     <h2 class="heading">
-        Grants, Awards, and nominations
+        Research funding
     </h2>
-    <p>2020: Vice-Chancellor's Research Fellow - Cognitive Neuroscience, Research and Innovation at Western Sydney University</p>
+    <p>2021: Innovations Connections grant ($25,000)</p>
+    <p>2019: University of Sydney Booster Grant 2019 ($40,000)</p>
+    <p>2018: University of Sydney Compact Grant 2018 ($20,000)</p>
+    <p>2018: University of Sydney Seed Grant 2018 ($20,000)</p>
+    <p>2015: Macquarie University Postgraduate Research Fund ($5,000)</p>
+
+    <h2 class="heading">
+        Awards and nominations
+    </h2>
     <p>2019: Australian Cognitive Neuroscience Society Emerging Researcher Award</p>
-    <p>2019: Carlson T, Robinson A, & Grootswagers T. Lie to me: what can one's face (and brain) tell us about a person's emotional state? University of Sydney Booster Grant 2019 ($40,000)</p>
     <p>2018: Australian Cognitive Neuroscience Society Best Poster Presentation by an Early Career Post-Doc</p>
-    <p>2018: Carlson T, Robinson A, Grootswagers T. A novel method for studying representations and transformations in the human brain. University of Sydney Compact Grant 2018 ($20,000)</p>
-    <p>2018: Carlson T, Robinson A, Grootswagers T. Linking brain and decision-making using a new informational ”seed and network” approach. University of Sydney Seed Grant 2018 ($19,664)</p>
     <p>2018: ARC Centre for Excellence in Cognition and its Disorders  Excellence in Research Student Award: Outstanding 2017 Publication ($1,000)</p>
     <p>2017: Macquarie University Faculty of Human Sciences Higher Degree Research Excellence Award ($250)</p>
     <p>2017: Australian Cognitive Neuroscience Society Best Poster Presentation by an Early Career Post-Doc</p>
     <p>2016: Australian Cognitive Neuroscience Society Student Travel Award ($250)</p>
     <p>2016: ARC Centre for Excellence in Cognition and its Disorders Annual Workshop Highly Commended Poster Award ($100)</p>
-    <p>2015: Macquarie University Postgraduate Research Fund ($5,000)</p>
-    <p>2014: International Macquarie University Research Excellence Scholarship</p>
     <p>2013: Interspeech best student paper nomination</p>
 
     <h2 class="heading">
