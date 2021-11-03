@@ -251,8 +251,18 @@ out="""
     <p>2007-2011: BSc. Artificial Intelligence, Radboud University Nijmegen</p>
 
     <h2 class="heading">
+        Research funding
+    </h2>
+    <p>2021: Innovations Connections grant ($25,000)</p>
+    <p>2019: University of Sydney Booster Grant 2019 ($40,000)</p>
+    <p>2018: University of Sydney Compact Grant 2018 ($20,000)</p>
+    <p>2018: University of Sydney Seed Grant 2018 ($20,000)</p>
+    <p>2015: Macquarie University Postgraduate Research Fund ($5,000)</p>
+
+    <h2 class="heading">
         Teaching, supervision and mentoring
     </h2>
+    <p>2021: Leading the development of an EEG course at Western Sydney University
     <p>2021-2022 Mentor of two PhD students (OHBM International Online Mentoring Program)</p>
     <p>2020-current: Co-supervision of nine honours, one PhD, one summer scholarship, three masters students at Western Sydney University</p>
     <p>2020: Tutor: Research Methods at Western Sydney University</p>
@@ -263,37 +273,31 @@ out="""
     <p>2012-2013: Teacher of two python (programming) courses at the Max Planck Institute, Nijmegen, the Netherlands</p>
 
     <h2 class="heading">
-        Ad-hoc reviewing
-    </h2> 
-    <p>Journal of Neuroscience, Nature Communications, NeuroImage, Cerebral Cortex, Human Brain Mapping, Neuroinformatics, Journal of Neuroscience Methods, Scientific Reports, PLOS One, Psychophysiology, Cognitive Science <a target="_blank" href="https://publons.com/a/1341382/">https://publons.com/a/1341382/</a></p>
-
-    <h2 class="heading">
-        Activities and Service
+        Leadership and service
     </h2>
+    <p>2020-current: At Western Sydney University: Leading institute-wide Cognitive Neuroscience group; leading University-wide Neuroscience network; acting EEG-lab leader
     <p>2021: Member of the organising committee for the Australian Cognitive Neuroscience Society conference</p>
     <p>2020: Session Chair at the international NeuroMatch3 virtual conference</p>
     <p>2019: Session Chair at the Australian Cognitive Neuroscience Society conference</p>
     <p>2019-current: Member of the Australian Cognitive Neuroscience Society executive committee (environment working group chair) <a target="_blank" href="https://www.acns.org.au/acns-committee/">https://www.acns.org.au/acns-committee/</a></p>
     <p>2018-2019: Member of the Australian Cognitive Neuroscience Society executive committee <a target="_blank" href="https://www.acns.org.au/acns-committee/">https://www.acns.org.au/acns-committee/</a></p>
     <p>2016-current: Contributor to the CoSMoMVPA multi-variate pattern analysis toolbox in Matlab <a target="_blank" href="http://www.cosmomvpa.org">www.cosmomvpa.org</a></p>
-    <p>Lab visits: 
-        University of Melbourne (2020).
-        MRC-CBU Cambridge UK (2019).
-        NIH, Bethesda, USA (2017).
-        University of Maryland, Maryland USA (2017).
-        Freie Universität Berlin, Germany (2016).
-        Utrecht University, the Netherlands (2016).
+    
+    <h2 class="heading">
+        Lab visits
+    </h2>
+    <p>2020: University of Melbourne</p>
+    <p>2019: MRC-CBU Cambridge UK</p>
+    <p>2017: NIH, Bethesda, USA</p>
+    <p>2017: University of Maryland, Maryland USA.</p>
+    <p>2016: Freie Universität Berlin, Germany</p>
+    <p>2016: Utrecht University, the Netherlands</p>
     </p>
-    <br />
 
     <h2 class="heading">
-        Research funding
-    </h2>
-    <p>2021: Innovations Connections grant ($25,000)</p>
-    <p>2019: University of Sydney Booster Grant 2019 ($40,000)</p>
-    <p>2018: University of Sydney Compact Grant 2018 ($20,000)</p>
-    <p>2018: University of Sydney Seed Grant 2018 ($20,000)</p>
-    <p>2015: Macquarie University Postgraduate Research Fund ($5,000)</p>
+        Ad-hoc reviewing
+    </h2> 
+    <p>Journal of Neuroscience, Nature Communications, NeuroImage, Cerebral Cortex, Human Brain Mapping, Neuroinformatics, Journal of Neuroscience Methods, Scientific Reports, PLOS One, Psychophysiology, Cognitive Science <a target="_blank" href="https://publons.com/a/1341382/">https://publons.com/a/1341382/</a></p>
 
     <h2 class="heading">
         Awards and nominations
@@ -391,9 +395,9 @@ out+="""
 """%tuple([totalpub+x for x in range(8)])
 
 out+="""
-    <div class="year">
+    <h2 class="heading">
         Conference presentations (presenting author)
-    </div>
+    </h2>
 <p><strong>Grootswagers T</strong>, Robinson A, Shatek S, Carlson T (2021). What makes perceptual information memorable? Talk presented at the Annual Australasian Experimental Psychology Conference (EPC), Brisbane, Qld, Australia</p>
 <p><strong>Grootswagers T</strong>, Robinson A, Shatek S, Carlson T (2020). The neural dynamics underlying prioritisation of task-relevant information. Talk presented at the international NeuroMatch3 virtual conference</p>
 <p><strong>Grootswagers T</strong>, Robinson A, Shatek S, Carlson T (2019). The influence of task context on the neural dynamics of rapid stimulus processing. Poster presented at the Australian OHBM Chapter, Newcastle, NSW, Australia</p>
@@ -410,9 +414,9 @@ out+="""
 """
 
 out+="""
-    <div class="year">
-        Invited talks, symposia, and workshops
-    </div>
+    <h2 class="heading">
+        Talks, symposia, and workshops (selection)
+    </h2>
     <p>2021: An empirically-driven guide on using Bayes Factors for M/EEG decoding. Talk presented in the Woolgar lab at the MRC Cognition and Brain sciences unit, Cambridge, UK</p>
     <p>2021: An overview of open-science practices, and how to adopt (some of) them in your work. Talk presented at the MARCS Institute, Western Sydney University, Australia</p>
     <p>2020: Decoding and Representational Dynamics in MEG & EEG. Talk presented at the virtual 7th Iranian Human Brain Mapping Congress</p>
