@@ -275,7 +275,7 @@ out="""
     <h2 class="heading">
         Leadership and service
     </h2>
-    <p>2020-current: At Western Sydney University: Leading institute-wide Cognitive Neuroscience group; leading University-wide Neuroscience network; acting EEG-lab leader
+    <p>2020-current: At Western Sydney University: Leading institute-wide Cognitive Neuroscience group; leading University-wide Neuroscience network; acting EEG-lab leader; member of PhD candidature confirmation panels
     <p>2021: Member of the organising committee for the Australian Cognitive Neuroscience Society conference</p>
     <p>2020: Session Chair at the international NeuroMatch3 virtual conference</p>
     <p>2019: Session Chair at the Australian Cognitive Neuroscience Society conference</p>
