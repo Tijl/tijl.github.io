@@ -1,4 +1,6 @@
-import glob,os,re
+import glob,os,re,sys
+
+os.chdir(os.path.dirname(sys.argv[0]))
 
 ##################
 ### make index ###
