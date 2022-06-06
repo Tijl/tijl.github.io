@@ -264,7 +264,7 @@ out="""
     <h2 class="heading">
         Teaching, supervision and mentoring
     </h2>
-    <p>2021: Leading the development of an EEG course at Western Sydney University
+    <p>2021-2022: Leading the development of an EEG course at Western Sydney University
     <p>2021-2022 Mentor of two PhD students (OHBM International Online Mentoring Program)</p>
     <p>2020-current: Co-supervision of nine honours, one PhD, one summer scholarship, three masters students at Western Sydney University</p>
     <p>2020: Tutor: Research Methods at Western Sydney University</p>
