@@ -388,13 +388,14 @@ out+="""
     <div class="year">
         Published conference abstracts
     </div>
+    <p>%i. Johnson P, <strong>Grootswagers T</strong>, Moran C, Hogendoorn H (2021) Temporal dynamics of visual population receptive fields. <i>Perception</i>, 50, 48-48</p>
     <p>%i. Robinson A, <strong>Grootswagers T</strong>, Shatek S, Behrmann M, Carlson, T (2020). The temporal dynamics of information integration within and across the hemispheres. <i>Journal of Vision</i>, 20(11), 1016-1016.</p>
     <p>%i. Tovar D, <strong>Grootswagers T</strong>, Robinson A, Wallace M, Carlson T (2019). Optimizing the Number of Visual Presentations for Time-Resolved Decoding Studies. <i>Perception</i>, 48, 134-134.</p>
     <p>%i. Teichmann L, <strong>Grootswagers T</strong>, Carlson T, Rich A (2018). Tomatoes are red, cucumbers are green: Decoding the temporal dynamics of object-colour knowledge using Magnetoencephalography. <i>Journal of Vision</i>, 18(10), 861-861.</p>
     <p>%i. <strong>Grootswagers T</strong>, Cichy R, Carlson T (2016). Predicting behavior from decoded searchlight representations shows where decodable information relates to behavior. <i>Perception</i>, 45, 360-360.</p>
     <p>%i. Contini E, Williams M, Grootswagers T</strong>, Goddard E, Carlson T (2016). Dichotomy Versus Continuum: Evidence for a More Complex Agency Model of Visual Object Categorisation. <i>Journal of Vision</i>, 16(12), 252- 252.</p>
     <p>%i. <strong>Grootswagers T</strong>, Carlson T (2015). Decoding the emerging representation of degraded visual objects in the human brain. <i>Journal of Vision</i>, 15(12), 1087-1087.</p>
-"""%tuple([totalpub+x for x in range(8)])
+"""%tuple([totalpub+x for x in range(9)])
 
 out+="""
     <h2 class="heading">
