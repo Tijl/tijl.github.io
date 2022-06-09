@@ -400,7 +400,8 @@ out+="""
     <h2 class="heading">
         Conference presentations (presenting author)
     </h2>
-<p><strong>Grootswagers T</strong>, McKay H, Varlet M (2021). Unique contributions of perceptual and conceptual humanness to object representations in the human brain. Talk presented at the virtual Australian Cognitive Neuroscience Society Conference (ACNS)</p>
+<p><strong>Grootswagers T</strong>, Chin J, Sharabas D, Nguyen A, Jerebicanin E, Mamic P, Varlet M (2022). Human behavioural and neural responses to hyperrealistic AI-generated faces. Talk presented at the Australasian Society for Social and Affective Neuroscience (AS4SAN)</p>
+<p><strong>Grootswagers T</strong>, McKay H, Varlet M (2021). Unique contributions of perceptual and conceptual humanness to object representations in the human brain. Talk presented at the virtual Australasian Cognitive Neuroscience Society Conference (ACNS)</p>
 <p><strong>Grootswagers T</strong>, Robinson A, Shatek S, Carlson T (2021). What makes perceptual information memorable? Talk presented at the Annual Australasian Experimental Psychology Conference (EPC), Brisbane, Qld, Australia</p>
 <p><strong>Grootswagers T</strong>, Robinson A, Shatek S, Carlson T (2020). The neural dynamics underlying prioritisation of task-relevant information. Talk presented at the international NeuroMatch3 virtual conference</p>
 <p><strong>Grootswagers T</strong>, Robinson A, Shatek S, Carlson T (2019). The influence of task context on the neural dynamics of rapid stimulus processing. Poster presented at the Australian OHBM Chapter, Newcastle, NSW, Australia</p>
