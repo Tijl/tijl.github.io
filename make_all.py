@@ -99,6 +99,7 @@ def formatpub(e,cv=False):
         url = '%s'%c[0]
     else:
         print('\npdf not found for:\n%s'%'\n'.join(e))
+        print(f(title))
         url=''
     if cv:
         fs = '<p>%i. %s%s. %s. <i>%s</i>%s %s</p>'%(totalpub,
