@@ -423,6 +423,7 @@ out+="""
     <h2 class="heading">
         Talks, symposia, and workshops (selection)
     </h2>
+    <p>2022: Using rapid stimulus presentation and multivariate classification to study information processing in the human brain. Talk presented at the School of Computer, Data & Mathematical Sciences, Western Sydney University, Australia</p>
     <p>2021: An empirically-driven guide on using Bayes Factors for M/EEG decoding. Talk presented in the Woolgar lab at the MRC Cognition and Brain sciences unit, Cambridge, UK</p>
     <p>2021: An overview of open-science practices, and how to adopt (some of) them in your work. Talk presented at the MARCS Institute, Western Sydney University, Australia</p>
     <p>2020: Decoding and Representational Dynamics in MEG & EEG. Talk presented at the virtual 7th Iranian Human Brain Mapping Congress</p>
