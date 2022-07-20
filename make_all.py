@@ -404,6 +404,7 @@ out+="""
     <h2 class="heading">
         Conference presentations (presenting author)
     </h2>
+<p><strong>Grootswagers T</strong>, Quek G, Chin J, Sharabas D, Varlet M (2022). That’s not a knife: using synthetic images to drive object responses in the human brain. Talk presented at the Australasian Brain and Psychological Sciences Conference (ABPS)</p>
 <p><strong>Grootswagers T</strong>, Chin J, Sharabas D, Nguyen A, Jerebicanin E, Mamic P, Varlet M (2022). Human behavioural and neural responses to hyperrealistic AI-generated faces. Talk presented at the Australasian Society for Social and Affective Neuroscience (AS4SAN)</p>
 <p><strong>Grootswagers T</strong>, McKay H, Varlet M (2021). Unique contributions of perceptual and conceptual humanness to object representations in the human brain. Talk presented at the virtual Australasian Cognitive Neuroscience Society Conference (ACNS)</p>
 <p><strong>Grootswagers T</strong>, Robinson A, Shatek S, Carlson T (2021). What makes perceptual information memorable? Talk presented at the Annual Australasian Experimental Psychology Conference (EPC), Brisbane, Qld, Australia</p>
