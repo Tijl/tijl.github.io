@@ -265,6 +265,7 @@ out="""
     <h2 class="heading">
         Teaching, supervision and mentoring
     </h2>
+    <p>2022: Guest lecturer (3 weeks) for INFS7003 Advanced Topics in ICT at the Western Sydney University</p>
     <p>2021-2022: Leading the development of an EEG course at Western Sydney University
     <p>2021-2022 Mentor of two PhD students (OHBM International Online Mentoring Program)</p>
     <p>2020-current: Co-supervision of twelve honours, one PhD, one summer scholarship, three masters students at Western Sydney University</p>
@@ -278,6 +279,7 @@ out="""
     <h2 class="heading">
         Leadership and service
     </h2>
+    <p>2022: Session Chair at the Australasian Brain and Psychological Sciences conference</p>
     <p>2020-current: At Western Sydney University: Leading institute-wide Cognitive Neuroscience group; leading University-wide Neuroscience network; equity and diversity working group member; work-plan committee member; EEG-lab leader; member of PhD candidature confirmation panels
     <p>2021: Member of the organising committee for the Australian Cognitive Neuroscience Society conference</p>
     <p>2020: Session Chair at the international NeuroMatch3 virtual conference</p>
@@ -289,7 +291,7 @@ out="""
     <h2 class="heading">
         Lab visits
     </h2>
-    <p>2022: University of Queensland and Queensland Brain Institute</p>
+    <p>2022: Queensland Brain Institute</p>
     <p>2020: University of Melbourne</p>
     <p>2019: MRC-CBU Cambridge UK</p>
     <p>2017: NIH, Bethesda, USA</p>
@@ -404,7 +406,7 @@ out+="""
     <h2 class="heading">
         Conference presentations (presenting author)
     </h2>
-<p><strong>Grootswagers T</strong>, Quek G, Chin J, Sharabas D, Varlet M (2022). That’s not a knife: using synthetic images to drive object responses in the human brain. Talk presented at the Australasian Brain and Psychological Sciences Conference (ABPS)</p>
+<p><strong>Grootswagers T</strong>, Quek G, Chin J, Sharabas D, Varlet M (2022). That's not a knife: using synthetic images to drive object responses in the human brain. Talk presented at the Australasian Brain and Psychological Sciences Conference (ABPS)</p>
 <p><strong>Grootswagers T</strong>, Chin J, Sharabas D, Nguyen A, Jerebicanin E, Mamic P, Varlet M (2022). Human behavioural and neural responses to hyperrealistic AI-generated faces. Talk presented at the Australasian Society for Social and Affective Neuroscience (AS4SAN)</p>
 <p><strong>Grootswagers T</strong>, McKay H, Varlet M (2021). Unique contributions of perceptual and conceptual humanness to object representations in the human brain. Talk presented at the virtual Australasian Cognitive Neuroscience Society Conference (ACNS)</p>
 <p><strong>Grootswagers T</strong>, Robinson A, Shatek S, Carlson T (2021). What makes perceptual information memorable? Talk presented at the Annual Australasian Experimental Psychology Conference (EPC), Brisbane, Qld, Australia</p>
