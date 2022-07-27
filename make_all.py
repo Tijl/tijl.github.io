@@ -162,26 +162,6 @@ out+="""
     <p style="margin-bottom: 50px;"><br /></p>
     </div>
 
-    <script>
-        var x = document.getElementsByClassName("pdflink");
-        for (var i = 0; i < x.length; i++) {
-            x[i].onclick = function() {clickevent(this,'PDF')};
-        }
-        
-        var x = document.getElementsByClassName("doilink");
-        for (var i = 0; i < x.length; i++) {
-            x[i].onclick = function() {clickevent(this,'DOI')};
-        }
-        
-        function clickevent(e,t){
-            gtag('event', 'click', {
-                'event_category':t, 
-                'event_label':e.getAttribute('href')
-                });
-            return true;
-        }
-    </script>
-
     </body>
     </html>
 """
@@ -198,14 +178,15 @@ out="""
     <!DOCTYPE html>
     <html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
     <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130925994-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
     
-      gtag('config', 'UA-130925994-1');
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7NMRW3VS5"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Y7NMRW3VS5');
     </script>
 
     <title>CV Dr. Tijl Grootswagers</title>
