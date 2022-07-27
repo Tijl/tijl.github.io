@@ -10,14 +10,15 @@ out="""
     <!DOCTYPE html>
     <html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
     <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130925994-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
     
-      gtag('config', 'UA-130925994-1');
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7NMRW3VS5"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Y7NMRW3VS5');
     </script>
 
     <title>Tijl Grootswagers</title>
