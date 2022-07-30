@@ -156,25 +156,5 @@
     <p style="margin-bottom: 50px;"><br /></p>
     </div>
 
-    <script>
-        var x = document.getElementsByClassName("pdflink");
-        for (var i = 0; i < x.length; i++) {
-            x[i].onclick = function() {clickevent(this,'PDF')};
-        }
-        
-        var x = document.getElementsByClassName("doilink");
-        for (var i = 0; i < x.length; i++) {
-            x[i].onclick = function() {clickevent(this,'DOI')};
-        }
-        
-        function clickevent(e,t){
-            gtag('event', 'click', {
-                'event_category':t, 
-                'event_label':e.getAttribute('href')
-                });
-            return true;
-        }
-    </script>
-
     </body>
     </html>
