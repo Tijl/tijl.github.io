@@ -87,6 +87,7 @@ var instr = {
         "<p>It will take just a few minutes</p>"+
         "<p>Press the button to start</p>",
     choices: ["START"],
+    prompt: "<p>DISCLAIMER: This page does not store your responses after you close this window.<br />Your responses are not saved nor used for any purpose other than displaying your accuracy.</p>",
     post_trial_gap: 200,
     response_ends_trial: true,
 }
