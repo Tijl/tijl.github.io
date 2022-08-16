@@ -1,9 +1,6 @@
-
 var researcher_name = "Dr. Tijl Grootswagers"
 var researcher_email = "T.Grootswagers@westernsydney.edu.au" //(X@student.westernsydney.edu.au)
 var time_required = "2"
-
-var debrief = '<p>Thank you for taking the time to complete this experiment.</p>'
 
 /* initialize jsPsych */
 var jsPsych = initJsPsych({
@@ -11,10 +8,19 @@ var jsPsych = initJsPsych({
     auto_update_progress_bar: false,
     message_progress_bar: 'Experiment progress',
     show_preload_progress_bar: true,
-    on_finish: function() { 
-        endExperiment(jsPsych.data.get().csv(), function() {     
-            document.write(HTMLExperimentEnd)
-        })
+    on_finish: function(data) {
+        var mean_correct = Math.round(100*data.filter({test_part: 'stim'}).select('correct').mean())
+        var HTMLExperimentEnd = '<p style="text-align: center;">&nbsp;</p>'+
+        '<p style="text-align: center;">&nbsp;</p>'+
+        '<p style="text-align: center;">&nbsp;</p>'+
+        '<p style="text-align: center;">&nbsp;</p>'+
+        '<p style="text-align: center;">You were on average <strong>'+mean_correct+'</strong>% correct!</p>'+
+        '<p style="text-align: center;"><a class="twitter-share-button" href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-size="large" data-text="I spotted '+mean_correct+'% of #deepfakes! Beat my score here: " data-url="https://tijl.github.io/demos/demo_faces" data-related="tgrootswagers" data-show-count="true" target="_blank">Share your result on twitter</a></p>'+
+        '<p style="text-align: center;">&nbsp;</p>'+
+        '<p style="text-align: left;">&nbsp;</p>'+
+        '<p style="text-align: left;">This demo was developed by&nbsp;<a title="Website" href="https://tijl.github.io/" target="_blank"><strong>Tijl Grootswagers </strong></a>using <a href="https://www.jspsych.org/7.2/" target="_blank">jspsych7.2</a></p>'+
+        '<p><a class="twitter-follow-button" href="https://twitter.com/tgrootswagers?ref_src=twsrc%5Etfw" data-show-count="true" target="_blank">Follow @tgrootswagers</a></p>'
+        document.write(HTMLExperimentEnd)
     }
 });
 
@@ -26,8 +32,6 @@ if (!surveyCode) {
     surveyCode = 'test'
     console.log(surveyCode)
 }
-var HTMLExperimentEnd = '<div id="endscreen" class="endscreen" style="width:1000px"><div class="endscreen" style="text-align:center; border:0px solid; padding:10px; font-size:120%; width:800px; float:right">'+
-    '<p><br><br><br>Experiment Finished!</p><p>'+debrief+'</div></div>';   
 
 var categories = ['synthetic','real']
 var taskdescription = "synthetic versus real"
@@ -61,9 +65,9 @@ for (var i=start;i<stimlist.length;i+=20) {
     stimuli.push(stimlist[i])
 }
 shuffle(stimuli);
-//stimuli = stimuli.slice(0,2) //for debugging
+stimuli = stimuli.slice(0,2) //for debugging
 
-console.log(stimuli)
+//console.log(stimuli)
 var nstimuli = stimuli.length
 var ntrials = stimuli.length
 var taskinstr = "[z] "+categories[0]+" ----- "+categories[1]+" [m]"
@@ -151,18 +155,28 @@ for (var trialnr=0; trialnr<ntrials; trialnr++) {
     timeline.push(feedback)
 }
 
-var feedback = {
-    type: jsPsychHtmlButtonResponse,
-    stimulus: function() {
-        var mean_correct = Math.round(100*jsPsych.data.get().filter({test_part: 'stim'}).select('correct').mean())
-        return '<p>You were on average '+mean_correct+'% correct!</p>'
-    },
-    data: {trialnr:trialnr,test_part:'feedback'},
-    choices: [],
-    choices: ['FINISHED'],
-    prompt: "<p>Click this button to exit the experiment</p>",
-}
-timeline.push(feedback)
+// var feedback = {
+//     type: jsPsychHtmlButtonResponse,
+//     stimulus: function() {
+//         var mean_correct = Math.round(100*jsPsych.data.get().filter({test_part: 'stim'}).select('correct').mean())
+//         return '<p>You were on average '+mean_correct+'% correct!</p>'
+//     },
+//     data: {trialnr:trialnr,test_part:'feedback'},
+//     choices: [],
+//     choices: ['FINISHED'],
+//     prompt: "<p>Click this button to exit the experiment</p>",
+// }
+
+// /* define debrief */
+// var debrief_block = {
+//     type: jsPsychHtmlKeyboardResponse,
+//     stimulus: function() {
+//         var mean_correct = Math.round(100*jsPsych.data.get().filter({test_part: 'stim'}).select('correct').mean())
+//         return '<p>You were on average '+mean_correct+'% correct!</p>'
+//     }
+// };
+// timeline.push(debrief_block);
+// timeline.push(feedback)
 
 /* start the experiment */
 jsPsych.run(timeline)
