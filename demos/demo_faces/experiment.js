@@ -65,7 +65,9 @@ for (var i=start;i<stimlist.length;i+=20) {
     stimuli.push(stimlist[i])
 }
 shuffle(stimuli);
-stimuli = stimuli.slice(0,2) //for debugging
+if (debug) {
+    stimuli = stimuli.slice(0,2) //for debugging
+}
 
 //console.log(stimuli)
 var nstimuli = stimuli.length
