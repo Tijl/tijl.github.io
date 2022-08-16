@@ -21,6 +21,7 @@ var jsPsych = initJsPsych({
         '<p style="text-align: left;">This demo was developed by&nbsp;<a title="Website" href="https://tijl.github.io/" target="_blank"><strong>Tijl Grootswagers </strong></a>using <a href="https://www.jspsych.org/7.2/" target="_blank">jspsych7.2</a></p>'+
         '<p><a class="twitter-follow-button" href="https://twitter.com/tgrootswagers?ref_src=twsrc%5Etfw" data-show-count="true" target="_blank">Follow @tgrootswagers</a></p>'
         document.write(HTMLExperimentEnd)
+        twttr.widgets.load()
     }
 });
 
