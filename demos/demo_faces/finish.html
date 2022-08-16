@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <title>Finish</title>
+</head>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<p id="correct" style="text-align: center;">x</p>
+<div id="tweetbutton"></div>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">This demo was developed by&nbsp;<a title="Website" href="https://tijl.github.io/"
+        target="_blank"><strong>Tijl Grootswagers </strong></a>using <a href="https://www.jspsych.org/7.2/"
+        target="_blank">jspsych7.2</a></p>
+<p style="text-align: center;"><a class="twitter-follow-button" href="https://twitter.com/tgrootswagers?ref_src=twsrc%5Etfw"
+        data-show-count="false">Follow @tgrootswagers</a></p>
+
+<script>
+    window.twttr = (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+
+        t._e = [];
+        t.ready = function (f) {
+            t._e.push(f);
+        };
+
+        return t;
+    }(document, "script", "twitter-wjs"));
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const mean_correct = atob(atob(urlParams.get('id')))
+    console.log(mean_correct);
+    document.getElementById("correct").innerHTML = "You were on average <strong>" + mean_correct + "%</strong> correct!"
+    document.getElementById("tweetbutton").innerHTML = '<p id="tweetcorrect" style="text-align: center;"><a class="twitter-share-button" href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-size="large" data-text="I spotted ' + mean_correct + '% of #deepfakes! Beat my score here: " data-url="https://tijl.github.io/demos/demo_faces" data-related="tgrootswagers" data-show-count="true">Share your result on twitter</a></p>'
+    twttr.widgets.load()
+</script>
+
+</html>

@@ -10,18 +10,7 @@ var jsPsych = initJsPsych({
     show_preload_progress_bar: true,
     on_finish: function(data) {
         var mean_correct = Math.round(100*data.filter({test_part: 'stim'}).select('correct').mean())
-        var HTMLExperimentEnd = '<p style="text-align: center;">&nbsp;</p>'+
-        '<p style="text-align: center;">&nbsp;</p>'+
-        '<p style="text-align: center;">&nbsp;</p>'+
-        '<p style="text-align: center;">&nbsp;</p>'+
-        '<p style="text-align: center;">You were on average <strong>'+mean_correct+'</strong>% correct!</p>'+
-        '<p style="text-align: center;"><a class="twitter-share-button" href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-size="large" data-text="I spotted '+mean_correct+'% of #deepfakes! Beat my score here: " data-url="https://tijl.github.io/demos/demo_faces" data-related="tgrootswagers" data-show-count="true" target="_blank">Share your result on twitter</a></p>'+
-        '<p style="text-align: center;">&nbsp;</p>'+
-        '<p style="text-align: left;">&nbsp;</p>'+
-        '<p style="text-align: left;">This demo was developed by&nbsp;<a title="Website" href="https://tijl.github.io/" target="_blank"><strong>Tijl Grootswagers </strong></a>using <a href="https://www.jspsych.org/7.2/" target="_blank">jspsych7.2</a></p>'+
-        '<p><a class="twitter-follow-button" href="https://twitter.com/tgrootswagers?ref_src=twsrc%5Etfw" data-show-count="true" target="_blank">Follow @tgrootswagers</a></p>'
-        document.write(HTMLExperimentEnd)
-        twttr.widgets.load()
+        window.location.href = "finish.html?id="+btoa(btoa(mean_correct))
     }
 });
 
@@ -34,8 +23,8 @@ if (!surveyCode) {
     console.log(surveyCode)
 }
 
-var categories = ['synthetic','real']
-var taskdescription = "synthetic versus real"
+var categories = ['deepfake','real']
+var taskdescription = "deepfake versus real"
 
 var online = document.currentScript.getAttribute('data-online')=="1"
 if (online) {
@@ -65,6 +54,7 @@ stimuli = []
 for (var i=start;i<stimlist.length;i+=20) {
     stimuli.push(stimlist[i])
 }
+shuffle(stimlist);
 shuffle(stimuli);
 if (debug) {
     stimuli = stimuli.slice(0,2) //for debugging
@@ -90,24 +80,14 @@ var preload = {
 timeline.push(preload)
 
 var instr = {
-    type: jsPsychHtmlKeyboardResponse,
-    stimulus: "<img src='"+stimuli[20]+"''></img>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src='"+stimuli[30]+"''></img>",
-    prompt: "In this experiment, you will see images of real and computer-generated people like the ones above.<br />"+
-        "Your task is to categorise "+taskdescription+" people using these keys:<br />"+
-        taskinstr+"<br /><br />Press [m] to continue",
-    choices: ["m"],
+    type: jsPsychHtmlButtonResponse,
+    stimulus: "<p>Welcome!</p><p><img src='"+stimlist[0]+"''></img>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src='"+stimlist[1]+"''></img></p>"+
+    "<p>In this demo, you will see real and deepfake (computer-generated) images like the ones above.</p>"+
+        "<p>Categorise images as deepfake or real as best as you can</p>"+
+        "<p>It will take just a few minutes</p>"+
+        "<p>Press the button to start</p>",
+    choices: ["START"],
     post_trial_gap: 200,
-    response_ends_trial: true,
-}
-timeline.push(instr)
-
-var instr = {
-    type: jsPsychHtmlKeyboardResponse,
-    stimulus: "",
-    prompt: "The experiment starts now<br /><br />"+
-        taskinstr+"<br /><br />Press [z] to continue",
-    choices: ["z"],
-    post_trial_gap: 1000,
     response_ends_trial: true,
 }
 timeline.push(instr)
@@ -116,16 +96,15 @@ for (var trialnr=0; trialnr<ntrials; trialnr++) {
 
     var stim = stimuli[trialnr]
     var trial = {
-        type: jsPsychHtmlKeyboardResponse,
+        type: jsPsychHtmlButtonResponse,
         stimulus: "<img width=256px; src='"+stim+"''></img>",
         data: {trialnr:trialnr,test_part:'stim',stim:stim,task:taskinstr},
-        choices: ['z','m'],
-        prompt: taskinstr,
+        choices: ['DEEPFAKE','REAL'],
         response_ends_trial: true,
         on_finish: function(data){
             // Score the response as correct or incorrect.
             var isreal = data.stim.includes('Real')
-            var correct = jsPsych.pluginAPI.compareKeys(data.response, "m") == isreal
+            var correct = (data.response==1) == isreal
             if(correct){
               data.correct = true;
             } else {
@@ -157,29 +136,6 @@ for (var trialnr=0; trialnr<ntrials; trialnr++) {
     }
     timeline.push(feedback)
 }
-
-// var feedback = {
-//     type: jsPsychHtmlButtonResponse,
-//     stimulus: function() {
-//         var mean_correct = Math.round(100*jsPsych.data.get().filter({test_part: 'stim'}).select('correct').mean())
-//         return '<p>You were on average '+mean_correct+'% correct!</p>'
-//     },
-//     data: {trialnr:trialnr,test_part:'feedback'},
-//     choices: [],
-//     choices: ['FINISHED'],
-//     prompt: "<p>Click this button to exit the experiment</p>",
-// }
-
-// /* define debrief */
-// var debrief_block = {
-//     type: jsPsychHtmlKeyboardResponse,
-//     stimulus: function() {
-//         var mean_correct = Math.round(100*jsPsych.data.get().filter({test_part: 'stim'}).select('correct').mean())
-//         return '<p>You were on average '+mean_correct+'% correct!</p>'
-//     }
-// };
-// timeline.push(debrief_block);
-// timeline.push(feedback)
 
 /* start the experiment */
 jsPsych.run(timeline)
