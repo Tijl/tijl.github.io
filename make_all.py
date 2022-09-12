@@ -285,8 +285,8 @@ out="""
     <h2 class="heading">
         Ad-hoc reviewing
     </h2> 
-    <p>Nature Human Behaviour, Journal of Neuroscience, Nature Communications, NeuroImage, Cerebral Cortex, Human Brain Mapping, Neuroinformatics, Journal of Neuroscience Methods, Scientific Reports, PLOS One, Psychophysiology, Cognitive Science <a target="_blank" href="https://publons.com/a/1341382/">https://publons.com/a/1341382/</a></p>
-
+    <p>Reviewer for Nature Human Behaviour, Journal of Neuroscience, Nature Communications, NeuroImage, Cerebral Cortex, Human Brain Mapping, Neuroinformatics, Journal of Neuroscience Methods, Scientific Reports, PLOS One, Psychophysiology, Cognitive Science</p>
+    <p>Reviewer for National Science Foundation (NSF) grants</p>
     <h2 class="heading">
         Awards and nominations
     </h2>
