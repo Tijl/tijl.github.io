@@ -238,6 +238,7 @@ out="""
     <h2 class="heading">
         Research funding
     </h2>
+    <p>2022: Australian Research Council Discovery Early Career Researcher Award ($450,000)</p>
     <p>2021: Innovations Connections grant ($25,000)</p>
     <p>2019: University of Sydney Booster Grant 2019 ($40,000)</p>
     <p>2018: University of Sydney Compact Grant 2018 ($20,000)</p>
