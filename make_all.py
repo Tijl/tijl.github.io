@@ -238,6 +238,7 @@ out="""
     <h2 class="heading">
         Research funding
     </h2>
+    <p>2022: Australian Research Council Linkage Infrastructure, Equipment and Facilities ($930,000)</p>
     <p>2022: Australian Research Council Discovery Early Career Researcher Award ($450,000)</p>
     <p>2021: Innovations Connections grant ($25,000)</p>
     <p>2019: University of Sydney Booster Grant 2019 ($40,000)</p>
@@ -274,6 +275,7 @@ out="""
     <h2 class="heading">
         Lab visits
     </h2>
+    <p>2022: University of Melbourne</p>
     <p>2022: Queensland Brain Institute</p>
     <p>2020: University of Melbourne</p>
     <p>2019: MRC-CBU Cambridge UK</p>
@@ -411,6 +413,7 @@ out+="""
     <h2 class="heading">
         Talks, symposia, and workshops (selection)
     </h2>
+    <p>2022: Representational Geometry in the brain. Invited Talk at the Maths in the brain workshop, Monash University, Melbourne, Australia</p>
     <p>2022: Using rapid stimulus presentation and multivariate classification to study information processing in the human brain. Talk presented at the School of Computer, Data & Mathematical Sciences, Western Sydney University, Australia</p>
     <p>2021: An empirically-driven guide on using Bayes Factors for M/EEG decoding. Talk presented in the Woolgar lab at the MRC Cognition and Brain sciences unit, Cambridge, UK</p>
     <p>2021: An overview of open-science practices, and how to adopt (some of) them in your work. Talk presented at the MARCS Institute, Western Sydney University, Australia</p>
