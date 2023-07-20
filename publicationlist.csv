@@ -1,4 +1,5 @@
 year	authors	title	journal	volume+pages	doi links
+2023	Hoang, Q.T., Yong, K.-T., Liu, X., Mahony, D., Chaitarvornkit, A., Cohen, A., Grootswagers, T.	Detecting mild traumatic brain injury for athletes using SSVEP classification: A case study	Biomedical Signal Processing and Control	86, 105274.	https://doi.org/10.1016/j.bspc.2023.105274	
 preprint2023	Grootswagers T.	Minimal condition repetitions required in rapid serial visual presentation decoding paradigms	biorxiv	2023.05.30.542960	https://doi.org/10.1101/2023.05.30.542960	[data+code][https://github.com/Tijl/RSVP-repetitions-test]
 preprint2023	Grootswagers T., Robinson A.K., Shatek S.M., Carlson T.A.	Mapping the Dynamics of Visual Feature Coding: Insights into Perception and Integration	biorxiv	2023.04.26.538486	https://doi.org/10.1101/2023.04.26.538486	[data+code][https://github.com/Tijl/features-eeg]
 preprint2023	Koenig-Robert R., Quek G., Grootswagers T., Varlet M.	Movement trajectories as a window into the dynamics of emerging neural representations	biorxiv	2023.03.15.532848	https://doi.org/10.1101/2023.03.15.532848	[data+code][https://osf.io/q3hbp/]
