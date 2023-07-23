@@ -44,6 +44,7 @@ out="""
             <p style="float:left;">
                 email:&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="mailto:t.grootswagers@westernsydney.edu.au">t.grootswagers@westernsydney.edu.au</a><br />
                 homepage:&nbsp;<a target="_blank" href="https://tijl.github.io/">https://tijl.github.io/</a><br />
+                linktree:&nbsp;<a target="_blank" href="https://linktr.ee/tgro">https://linktr.ee/tgro</a><br />
                 scholar:&nbsp;&nbsp;<a target="_blank" href="https://scholar.google.com.au/citations?user=TNI8FOoAAAAJ&hl=en">TNI8FOoAAAAJ</a><br />
                 twitter:&nbsp;&nbsp;<a target="_blank" href="https://twitter.com/TGrootswagers">@TGrootswagers</a><br />
                 github:&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://github.com/Tijl">github.com/Tijl</a><br />
@@ -212,6 +213,7 @@ out="""
             <p style="float:left;">
                 email:&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="mailto:t.grootswagers@westernsydney.edu.au">t.grootswagers@westernsydney.edu.au</a><br />
                 homepage:&nbsp;<a target="_blank" href="https://tijl.github.io/">https://tijl.github.io/</a><br />
+                linktree:&nbsp;<a target="_blank" href="https://linktr.ee/tgro">https://linktr.ee/tgro</a><br />
                 scholar:&nbsp;&nbsp;<a target="_blank" href="https://scholar.google.com.au/citations?user=TNI8FOoAAAAJ&hl=en">https://scholar.google.com.au/citations?user=TNI8FOoAAAAJ</a><br />
                 twitter:&nbsp;&nbsp;<a target="_blank" href="https://twitter.com/TGrootswagers">https://twitter.com/TGrootswagers</a><br />
                 github:&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://github.com/Tijl">https://github.com/Tijl</a><br />
