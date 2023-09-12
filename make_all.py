@@ -435,6 +435,8 @@ out+="""
     <h2 class="heading">
         Talks, symposia, and workshops (selection)
     </h2>
+    <p>2023: Using synthetic images to drive object responses in the human brain. Talk presented at the MRC Cognition and Brain sciences unit, Cambridge, UK</p>
+    <p>2023: Using synthetic images to drive object responses in the human brain. Talk presented at the Justus Liebig University Giessen, Germany</p>
     <p>2023: Human behavioural and neural responses to hyperrealistic AI-generated content. AI Frontiers Symposium, Sydney, Australia</p>
     <p>2023: On brain decoding and representational geometry: how computational techniques are shaping our understanding of the human brain. School of Computer, Data & Mathematical Sciences Research Seminar, Western Sydney University, Australia</p>
     <p>2022: Representational Geometry in the brain. Invited Talk at the Maths in the brain workshop, Monash University, Melbourne, Australia</p>
