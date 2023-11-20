@@ -206,6 +206,7 @@ out="""
             <p style="float:left;">
                 ARC DECRA Senior Research Fellow in Computational Neuroscience<br /> 
                 The MARCS Institute for Brain, Behaviour and Development<br />
+                School of Computer, Data and Mathematical Sciences<br />
                 Western Sydney University, Sydney, Australia
             </p>
             <div class="photo">
