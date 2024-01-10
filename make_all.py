@@ -65,7 +65,7 @@ out="""
         * equal contribution
     </p>
     """
-with open('publicationlist.csv') as f:
+with open('publicationlist.tsv') as f:
     data = f.readlines()
 entries=[]
 for (i,line) in enumerate(data):
@@ -347,7 +347,7 @@ out="""
 
 totalpub=1
 
-with open('publicationlist.csv') as f:
+with open('publicationlist.tsv') as f:
     data = [x for x in f.readlines() if 'The Cognitive Neurosciences' not in x]
 entries=[]
 for (i,line) in enumerate(data):
