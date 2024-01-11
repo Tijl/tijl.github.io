@@ -86,6 +86,12 @@ def formatpub(e,cv=False):
     while len(e)<7:
         e.append('')
     [year,authors,title,journal,pages,doilink,otherlinks]=e   
+    
+    articletype = ''
+    if 'preprint' in year:
+        articletype='[PREPRINT] '
+    if 'inpress' in year:
+        articletype='[IN PRESS] '
 
     otherinfo = ''
     if otherlinks:
@@ -113,7 +119,8 @@ def formatpub(e,cv=False):
             ', '+pages if pages else '',
             '<a target="_blank" href="%s">%s</a>'%(doilink,doilink))
     else:
-        fs = '<p>%s%s. %s. <i>%s</i>%s %s%s%s</p>'%(
+        fs = '<p>%s%s%s. %s. <i>%s</i>%s %s%s%s</p>'%(
+            articletype,
             authors,
             ' (%s)'%year.replace('inpress','in press').replace('preprint',''),
             title,
@@ -124,29 +131,27 @@ def formatpub(e,cv=False):
             otherinfo)
     return fs
     
-    
+# if 'preprint' in ''.join(years):
+#     out+="""
+#     <div class="year">
+#         Preprints
+#     </div>
+#     """
+#     for e in [x for x in entries if 'preprint' in x[0]]:
+#         out+="""
+#         %s
+#         """%formatpub(e)
 
-if 'preprint' in ''.join(years):
-    out+="""
-    <div class="year">
-        preprints
-    </div>
-    """
-    for e in [x for x in entries if 'preprint' in x[0]]:
-        out+="""
-        %s
-        """%formatpub(e)
-
-if 'inpress' in years:
-    out+="""
-    <div class="year">
-        in press
-    </div>
-    """
-    for e in [x for x in entries if x[0]=='inpress']:
-        out+="""
-        %s
-        """%formatpub(e)
+# if 'inpress' in years:
+#     out+="""
+#     <div class="year">
+#         in press
+#     </div>
+#     """
+#     for e in [x for x in entries if x[0]=='inpress']:
+#         out+="""
+#         %s
+#         """%formatpub(e)
 
 for i in range(2100,2000,-1):
     if str(i) in years:
@@ -155,7 +160,7 @@ for i in range(2100,2000,-1):
         %i
     </div>
     """%i
-    for e in [x for x in entries if x[0]==str(i)]:
+    for e in [x for x in entries if str(i) in x[0]]:
         out+="""
         %s
         """%formatpub(e)
@@ -170,7 +175,6 @@ out+="""
 
 with open('index.html','w') as f:
     f.write(out)
-
 
 ###############
 ### make cv ###
