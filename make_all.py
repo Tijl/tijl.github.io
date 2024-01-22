@@ -153,18 +153,20 @@ def formatpub(e,cv=False):
 #         %s
 #         """%formatpub(e)
 
+publisthtml = ''
 for i in range(2100,2000,-1):
     if str(i) in years:
-        out+="""
+        publisthtml+="""
     <div class="year">
         %i
     </div>
     """%i
     for e in [x for x in entries if str(i) in x[0]]:
-        out+="""
+        publisthtml+="""
         %s
         """%formatpub(e)
-    
+
+out+=publisthtml
 out+="""
     <p style="margin-bottom: 50px;"><br /></p>
     </div>
@@ -332,89 +334,27 @@ out="""
     <p>2013: Interspeech best student paper nomination</p>
 
     <h2 class="heading">
-        Publications
+        Research Output
     </h2>
     <p>
         * equal contribution
     </p>
-
-    <div class="year">
-        Book chapter
-    </div>
-
-    <p>1. Carlson T, <strong>Grootswagers T</strong>, Robinson A (2020). An introduction to time-resolved decoding analysis for M/EEG. in: (Gazzaniga, Mangun, & Poeppel, eds.) <i>The Cognitive Neurosciences, 6th edition.</i><a target="_blank" class="doilink" href="https://doi.org/10.7551/mitpress/11442.003.0075">https://doi.org/10.7551/mitpress/11442.003.0075</a></p>
-
-    <div class="year">
-        Refereed journal publications
-    </div>
     """
+out+=publisthtml
 
-totalpub=1
-
-with open('publicationlist.tsv') as f:
-    data = [x for x in f.readlines() if 'The Cognitive Neurosciences' not in x]
-entries=[]
-for (i,line) in enumerate(data):
-    e=line.strip().split('\t')
-    if len(e)>3:
-        entries.append(e)
-    elif line.strip():
-        print('could not parse line %i: %s'%(1+i,e))
-
-years = set([x[0] for x in entries])
-print(years)
-
-if 'inpress' in years:
-    for e in [x for x in entries if x[0]=='inpress']:
-        totalpub+=1
-        out+="""
-        %s
-        """%formatpub(e,cv=True)
-
-for i in range(2100,2000,-1):
-    for e in [x for x in entries if x[0]==str(i)]:
-        totalpub+=1
-        out+="""
-        %s
-        """%formatpub(e,cv=True)
 out+="""
-<div class="year">
-    Other research outputs
-</div>
-"""
-
-if 'preprint' in ''.join(years):
-    out+="""
-    <div class="year">
-        Preprints
-    </div>
-    """
-    for e in [x for x in entries if 'preprint' in x[0]]:
-        totalpub+=1
-        out+="""
-        %s
-        """%formatpub(e,cv=True)
-
-totalpub+=1
-out+="""
-    <div class="year">
-        Published conference proceedings
-    </div>
-    <p>%i. <strong>Grootswagers T</strong>, Dijkstra K, ten Bosch L, Brandmeyer A, Sadakata M (2013). Word identification using phonetic features: towards a method to support multivariate fMRI speech decoding. In: <i>INTERSPEECH</i>. 3201-3205.</p>
-    <p>%i. Gerke P, Langevoort J, Lagarde S, Bax L, <strong>Grootswagers T</strong>, Drenth R, Slieker V, Vuurpijl L, Haselager W, Sprinkhuizen-Kuyper I (2011). BioMAV: bio-inspired intelligence for autonomous flight. In: <i>Proceedings International Micro Air Vehicle Conference and Flight Competition</i>.</p>
-
     <div class="year">
         Published conference abstracts
     </div>
-    <p>%i. <strong>Grootswagers T</strong>, Robinson A, Shatek S, Carlson T (2022). The time course of visual feature coding in the human brain. <i>Perception</i>, 51, 360-360.</p>
-    <p>%i. Johnson P, <strong>Grootswagers T</strong>, Moran C, Hogendoorn H (2021) Temporal dynamics of visual population receptive fields. <i>Perception</i>, 50, 48-48</p>
-    <p>%i. Robinson A, <strong>Grootswagers T</strong>, Shatek S, Behrmann M, Carlson, T (2020). The temporal dynamics of information integration within and across the hemispheres. <i>Journal of Vision</i>, 20(11), 1016-1016.</p>
-    <p>%i. Tovar D, <strong>Grootswagers T</strong>, Robinson A, Wallace M, Carlson T (2019). Optimizing the Number of Visual Presentations for Time-Resolved Decoding Studies. <i>Perception</i>, 48, 134-134.</p>
-    <p>%i. Teichmann L, <strong>Grootswagers T</strong>, Carlson T, Rich A (2018). Tomatoes are red, cucumbers are green: Decoding the temporal dynamics of object-colour knowledge using Magnetoencephalography. <i>Journal of Vision</i>, 18(10), 861-861.</p>
-    <p>%i. <strong>Grootswagers T</strong>, Cichy R, Carlson T (2016). Predicting behavior from decoded searchlight representations shows where decodable information relates to behavior. <i>Perception</i>, 45, 360-360.</p>
-    <p>%i. Contini E, Williams M, Grootswagers T</strong>, Goddard E, Carlson T (2016). Dichotomy Versus Continuum: Evidence for a More Complex Agency Model of Visual Object Categorisation. <i>Journal of Vision</i>, 16(12), 252- 252.</p>
-    <p>%i. <strong>Grootswagers T</strong>, Carlson T (2015). Decoding the emerging representation of degraded visual objects in the human brain. <i>Journal of Vision</i>, 15(12), 1087-1087.</p>
-"""%tuple([totalpub+x for x in range(10)])
+    <p><strong>Grootswagers T</strong>, Robinson A, Shatek S, Carlson T (2022). The time course of visual feature coding in the human brain. <i>Perception</i>, 51, 360-360.</p>
+    <p>Johnson P, <strong>Grootswagers T</strong>, Moran C, Hogendoorn H (2021) Temporal dynamics of visual population receptive fields. <i>Perception</i>, 50, 48-48</p>
+    <p>Robinson A, <strong>Grootswagers T</strong>, Shatek S, Behrmann M, Carlson, T (2020). The temporal dynamics of information integration within and across the hemispheres. <i>Journal of Vision</i>, 20(11), 1016-1016.</p>
+    <p>Tovar D, <strong>Grootswagers T</strong>, Robinson A, Wallace M, Carlson T (2019). Optimizing the Number of Visual Presentations for Time-Resolved Decoding Studies. <i>Perception</i>, 48, 134-134.</p>
+    <p>Teichmann L, <strong>Grootswagers T</strong>, Carlson T, Rich A (2018). Tomatoes are red, cucumbers are green: Decoding the temporal dynamics of object-colour knowledge using Magnetoencephalography. <i>Journal of Vision</i>, 18(10), 861-861.</p>
+    <p><strong>Grootswagers T</strong>, Cichy R, Carlson T (2016). Predicting behavior from decoded searchlight representations shows where decodable information relates to behavior. <i>Perception</i>, 45, 360-360.</p>
+    <p>Contini E, Williams M, Grootswagers T</strong>, Goddard E, Carlson T (2016). Dichotomy Versus Continuum: Evidence for a More Complex Agency Model of Visual Object Categorisation. <i>Journal of Vision</i>, 16(12), 252- 252.</p>
+    <p><strong>Grootswagers T</strong>, Carlson T (2015). Decoding the emerging representation of degraded visual objects in the human brain. <i>Journal of Vision</i>, 15(12), 1087-1087.</p>
+"""
 
 out+="""
     <h2 class="heading">
