@@ -250,8 +250,10 @@ out="""
     <h2 class="heading">
         Research funding
     </h2>
+    <p>2024: Defence Innovation Network Scholarship ($110,000)</p>
     <p>2022: Australian Research Council Linkage Infrastructure, Equipment and Facilities ($930,000)</p>
     <p>2022: Australian Research Council Discovery Early Career Researcher Award ($450,000)</p>
+    <p>2022: MARCS Institute Scholarship ($100,000)</p>
     <p>2021: Innovations Connections grant ($25,000)</p>
     <p>2019: University of Sydney Booster Grant 2019 ($40,000)</p>
     <p>2018: University of Sydney Compact Grant 2018 ($20,000)</p>
@@ -294,6 +296,8 @@ out="""
     <h2 class="heading">
         Leadership and service
     </h2>
+    <p>2024: Member of the organising committee for the Australian Cognitive Neuroscience Society conference</p>
+    <p>2024: Member of the organising committee for the International Conference on Biomagnetism (BIOMAG)</p>
     <p>2023: Member of the organising committee for the Australian Cognitive Neuroscience Society conference</p>
     <p>2022: Session Chair at the Australasian Brain and Psychological Sciences conference</p>
     <p>2020-current: At Western Sydney University: Leading institute-wide Cognitive Neuroscience group; leading University-wide Neuroscience network; equity and diversity working group member; work-plan committee member; EEG-lab leader; member of PhD candidature confirmation panels
