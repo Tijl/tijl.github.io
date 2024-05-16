@@ -395,6 +395,7 @@ out+="""
     <h2 class="heading">
         Talks, symposia, and workshops (selection)
     </h2>
+    <p>2024: Seeing in a Flash: Neural Decoding of Rapid Object Recognition. Talk presented at Johns Hopkins University, Baltimore, MD, USA</p>
     <p>2023: Using synthetic images to drive object responses in the human brain. Talk presented at the MRC Cognition and Brain sciences unit, Cambridge, UK</p>
     <p>2023: Using synthetic images to drive object responses in the human brain. Talk presented at the Justus Liebig University Giessen, Germany</p>
     <p>2023: Human behavioural and neural responses to hyperrealistic AI-generated content. AI Frontiers Symposium, Sydney, Australia</p>
