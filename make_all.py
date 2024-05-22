@@ -111,7 +111,7 @@ def formatpub(e,cv=False):
         print(f(title))
         url=''
     if cv:
-        fs = '<p>%i. %s%s. %s. <i>%s</i>%s %s</p>'%(totalpub,
+        fs = '<p>%s%s. %s. <i>%s</i>%s %s</p>'%(
             authors.replace('Grootswagers T','<strong>Grootswagers T</strong>'),
             ' (%s)'%year.replace('inpress','in press').replace('preprint',''),
             title,
@@ -165,6 +165,18 @@ for i in range(2100,2000,-1):
         publisthtml+="""
         %s
         """%formatpub(e)
+publisthtmlcv = ''
+for i in range(2100,2000,-1):
+    if str(i) in years:
+        publisthtmlcv+="""
+    <div class="year">
+        %i
+    </div>
+    """%i
+    for e in [x for x in entries if str(i) in x[0]]:
+        publisthtmlcv+="""
+        %s
+        """%formatpub(e,cv=1)
 
 out+=publisthtml
 out+="""
@@ -311,6 +323,8 @@ out="""
     <h2 class="heading">
         Lab visits
     </h2>
+    <p>2024: NIH, Bethesda, USA</p>
+    <p>2024: John's Hopkins University, Baltimore, USA</p>
     <p>2023: MRC-CBU Cambridge UK</p>
     <p>2023: University of Giessen, Germany</p>
     <p>2022: University of Melbourne</p>
@@ -318,7 +332,7 @@ out="""
     <p>2020: University of Melbourne</p>
     <p>2019: MRC-CBU Cambridge UK</p>
     <p>2017: NIH, Bethesda, USA</p>
-    <p>2017: University of Maryland, Maryland USA.</p>
+    <p>2017: University of Maryland, USA.</p>
     <p>2016: Freie Universität Berlin, Germany</p>
     <p>2016: Utrecht University, the Netherlands</p>
     </p>
@@ -333,6 +347,7 @@ out="""
     <h2 class="heading">
         Awards and nominations
     </h2>
+    <p>2023 & 2024: Nominated for the Society For Neuroscience (SFN) Young Investigator Award</p>
     <p>2021: Nominated for Early Career Researcher Award at Western Sydney University</p>
     <p>2019: Australian Cognitive Neuroscience Society Emerging Researcher Award</p>
     <p>2018: Australian Cognitive Neuroscience Society Best Poster Presentation by an Early Career Post-Doc</p>
@@ -350,7 +365,7 @@ out="""
         * equal contribution
     </p>
     """
-out+=publisthtml
+out+=publisthtmlcv
 
 out+="""
     <div class="year">
@@ -370,6 +385,9 @@ out+="""
     <h2 class="heading">
         Conference presentations (presenting author)
     </h2>
+<p><strong>Grootswagers T</strong>, Robinson A (2024). Decoding Rapid Object Representations. Symposium presented at the Annual Meeting of the Vision Sciences Society (VSS), St. Pete Beach, FL, USA</p>
+<p><strong>Grootswagers T</strong> (2024). Decoding Rapid Object Representations. Talk presented at the Annual Australasian Experimental Psychology Conference (EPC), Sydney, NSW, Australia</p>
+<p><strong>Grootswagers T</strong> (2024). AI in cognitive neuroscience: pitfalls and potentials. Talk presented at the virtual Australasian Cognitive Neuroscience Society Conference (ACNS)</p>
 <p><strong>Grootswagers T</strong>, Quek G, Chin J, Varlet M (2023). Using synthetic images to drive object responses in the human brain. Talk presented at the European Conference on Visual Perception (ECVP), Paphos, Cyprus</p>
 <p><strong>Grootswagers T</strong>, Robinson A, Shatek S, Carlson T (2023). Dynamics of visual feature coding: Insights into perception and integration. Talk presented at the Annual Australasian Experimental Psychology Conference (EPC), Canberra, Act, Australia</p>
 <p><strong>Grootswagers T</strong>, Robinson A, Shatek S, Carlson T (2022). The time course of visual feature coding in the human brain. Poster presented at the European Conference on Visual Perception (ECVP), Nijmegen, the Netherlands</p>
@@ -396,6 +414,7 @@ out+="""
         Talks, symposia, and workshops (selection)
     </h2>
     <p>2024: Seeing in a Flash: Neural Decoding of Rapid Object Recognition. Talk presented at Johns Hopkins University, Baltimore, MD, USA</p>
+    <p>2024: Seeing in a Flash: Neural Decoding of Rapid Object Recognition. Talk presented at The University of New South Wales, Sydney, Australia</p>
     <p>2023: Using synthetic images to drive object responses in the human brain. Talk presented at the MRC Cognition and Brain sciences unit, Cambridge, UK</p>
     <p>2023: Using synthetic images to drive object responses in the human brain. Talk presented at the Justus Liebig University Giessen, Germany</p>
     <p>2023: Human behavioural and neural responses to hyperrealistic AI-generated content. AI Frontiers Symposium, Sydney, Australia</p>
