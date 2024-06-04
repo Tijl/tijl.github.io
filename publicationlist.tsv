@@ -1,4 +1,5 @@
 year	authors	title	journal	volume+pages	doi links
+preprint2024	Smit S., Quek G., Varlet M., Grootswagers T., 	Goal-free sensory encoding and learning	PsyArXiv	twr2m	https://doi.org/10.31234/osf.io/twr2m	
 2024	Koenig-Robert R.*, Quek G.*, Grootswagers T.*, Varlet M.	Movement trajectories as a window into the dynamics of emerging neural representations	Scientific Reports	14, 11499	https://doi.org/10.1038/s41598-024-62135-7	[data+code][https://osf.io/q3hbp/]
 preprint2024	Quek G., Zhen Z., Varlet M., Grootswagers T., 	Human Infant EEG Recordings for 200 Object Images Presented in Rapid Visual Streams	PsyArXiv	dzrkq	https://doi.org/10.31234/osf.io/dzrkq	[data+code][https://openneuro.org/datasets/ds005106]
 preprint2024	Robinson A.K., Grootswagers T., Shatek S., Behrmann M., Carlson T.A.	Dynamics of visual object coding within and across the hemispheres: Objects in the periphery	PsyArXiv	a3bpd	https://doi.org/10.31234/osf.io/a3bpd	[data][https://openneuro.org/datasets/ds005087] [code][https://github.com/amandakrobinson/hemifield-eeg]
