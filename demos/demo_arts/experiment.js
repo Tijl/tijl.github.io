@@ -49,9 +49,9 @@ function shuffle(a) {
     return a;
 }
 
-var start = Math.floor(20*Math.random()>0.5);
+var start = Math.floor(2*Math.random()>0.5);
 stimuli = []
-for (var i=start;i<stimlist.length;i+=20) {
+for (var i=start;i<stimlist.length;i+=2) {
     stimuli.push(stimlist[i])
 }
 shuffle(stimlist);
@@ -104,7 +104,7 @@ for (var trialnr=0; trialnr<ntrials; trialnr++) {
         response_ends_trial: true,
         on_finish: function(data){
             // Score the response as correct or incorrect.
-            var isreal = data.stim.includes('Real')
+            var isreal = data.stim.includes('real')
             var correct = (data.response==1) == isreal
             if(correct){
               data.correct = true;
