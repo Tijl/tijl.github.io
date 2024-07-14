@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>Finish</title>
+</head>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<p id="correct" style="text-align: center;font-size: 20;">[X]</p>
+<div id="tweetbutton"></div>
+<p style="text-align: center; font-size: 20;">This demo was developed by&nbsp;<a title="Website" href="https://tijl.github.io/"
+        target="_blank"><strong>Dr. Tijl Grootswagers </strong></a>using <a href="https://www.jspsych.org/7.2/"
+        target="_blank">jspsych7.2</a></p>
+<p style="text-align: center;font-size: 40;font-weight: bold;color: #990033;">Sign up to participate in our research!</p>
+<img style="width:256px;margin-left:auto;margin-right:auto;display:block;" src="eeg.png"></img>
+<p style="text-align: center;font-size: 20;">If you'd like to participate in our research, scan the QR Code to register to our database or chat to our friendly researchers for more information.
+    <a href="https://www.westernsydney.edu.au/marcs/engage_with_us/participate_in_a_study/paid_sona">https://www.westernsydney.edu.au/marcs/engage_with_us/participate_in_a_study/paid_sona</a></p>
+<img style="width:256px;margin-left:auto;margin-right:auto;display:block;" src="qr.png"></img>
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const mean_correct = atob(atob(urlParams.get('id')))
+    console.log(mean_correct);
+    document.getElementById("correct").innerHTML = "You were on average <strong>" + mean_correct + "%</strong> correct!"
+</script>
+
+</html>

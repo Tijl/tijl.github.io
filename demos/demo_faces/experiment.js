@@ -10,7 +10,7 @@ var jsPsych = initJsPsych({
     show_preload_progress_bar: true,
     on_finish: function(data) {
         var mean_correct = Math.round(100*data.filter({test_part: 'stim'}).select('correct').mean())
-        window.location.href = "finish.html?id="+btoa(btoa(mean_correct))
+        window.location.href = "../finish.html?id="+btoa(btoa(mean_correct))
     }
 });
 
