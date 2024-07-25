@@ -262,6 +262,7 @@ out="""
     <h2 class="heading">
         Research funding
     </h2>
+    <p>2022: National Intelligence & Security Discovery Research Grant ($770,000)</p>
     <p>2024: Defence Innovation Network Scholarship ($110,000)</p>
     <p>2022: Australian Research Council Linkage Infrastructure, Equipment and Facilities ($930,000)</p>
     <p>2022: Australian Research Council Discovery Early Career Researcher Award ($450,000)</p>
@@ -298,7 +299,7 @@ out="""
         Teaching
     </h2>
     <p>2022 & 2023: Guest lecturer (6 lectures) for INFS7003 Advanced Topics in ICT at Western Sydney University</p>
-    <p>2021-2022: Led the development of a 6-week EEG course at Western Sydney University</p>
+    <p>2021-2022: Developed a 6-week EEG course at Western Sydney University</p>
     <p>2020: Tutor: Research Methods at Western Sydney University</p>
     <p>2018: Guest lecture for PSYCH3012: Cognition, Language & Thought at the University of Sydney</p>
     <p>2018-2019: Led four classes of an honours level seminar series at the University of Sydney</p>
