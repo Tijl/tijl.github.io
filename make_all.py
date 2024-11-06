@@ -260,9 +260,10 @@ out="""
     <p>2007-2011: BSc. Artificial Intelligence, Radboud University Nijmegen</p>
 
     <h2 class="heading">
-        Research funding
+        Research funding (total > $3M)
     </h2>
-    <p>2022: National Intelligence & Security Discovery Research Grant ($770,000)</p>
+    <p>2024: Australian Research Council Linkage Project ($567,000)</p>
+    <p>2024: National Intelligence & Security Discovery Research Grant ($770,000)</p>
     <p>2024: Defence Innovation Network Scholarship ($110,000)</p>
     <p>2022: Australian Research Council Linkage Infrastructure, Equipment and Facilities ($930,000)</p>
     <p>2022: Australian Research Council Discovery Early Career Researcher Award ($450,000)</p>
