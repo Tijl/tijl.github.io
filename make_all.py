@@ -106,8 +106,12 @@ def formatpub(e,cv=False):
     #print([x.strip('.pdf').split(' - ')[-1] for x in pdflist])
     if len(c)==1:
         url = '%s'%c[0]
+    elif len(c) > 1:
+        print('\nError: multiple pdf found for:\n%s'%'\n'.join(e))
+        print(f(title))
+        url=''
     else:
-        print('\npdf not found for:\n%s'%'\n'.join(e))
+        print('\nError: pdf not found for:\n%s'%'\n'.join(e))
         print(f(title))
         url=''
     if cv:
