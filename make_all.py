@@ -286,8 +286,11 @@ out="""
     <h2 class="heading">
         PhD supervision
     </h2>
+    <p>Dalia Israel (primary supervisor)</p>
+    <p>Florian Burger (primary supervisor)</p>
     <p>Almudena Ramírez Haro (primary supervisor)</p>
     <p>Nazanin Sheykh Andalibi (primary supervisor)</p>
+    <p>Nusrat Samiya (co-supervisor)</p>
     <p>Mahdiyeh Khanbagi (co-supervisor)</p>
     <p>Martina Ventura (co-supervisor)</p>
     <p>Violet Chae (co-supervisor)</p>
@@ -303,7 +306,7 @@ out="""
     <h2 class="heading">
         Teaching
     </h2>
-    <p>2022 & 2023: Guest lecturer (6 lectures) for INFS7003 Advanced Topics in ICT at Western Sydney University</p>
+    <p>2022, 2023, 2025: Guest lecturer (9 lectures) for INFS7003 Advanced Topics in ICT at Western Sydney University</p>
     <p>2021-2022: Developed a 6-week EEG course at Western Sydney University</p>
     <p>2020: Tutor: Research Methods at Western Sydney University</p>
     <p>2018: Guest lecture for PSYCH3012: Cognition, Language & Thought at the University of Sydney</p>
@@ -346,9 +349,11 @@ out="""
     <h2 class="heading">
         Editing and reviewing services
     </h2> 
-    <p>Member of the advisory board for meta-psychology</p>
-    <p>Reviewer for Nature Human Behaviour, PLOS Computational Biology, Journal of Neuroscience, Nature Communications, NeuroImage, Cerebral Cortex, Human Brain Mapping, Neuroinformatics, Journal of Neuroscience Methods, Scientific Reports, PLOS One, Psychophysiology, Cognitive Science</p>
-    <p>Grant reviewer for Australian Research Council (ARC) and National Science Foundation (NSF)</p>
+    <p>2025-current: Member of the editorial board for Scientific Reports</p>
+    <p>2025: Guest editor: Journal of Vision special issue</p>
+    <p>2021-current: Member of the advisory board for meta-psychology</p>
+    <p>Ad-hoc Reviewer for Nature Neuroscience, Science Advances, Nature Human Behaviour, PLOS Computational Biology, Journal of Neuroscience, Nature Communications, NeuroImage, Cerebral Cortex, Human Brain Mapping, Neuroinformatics, Journal of Neuroscience Methods, Scientific Reports, PLOS One, Psychophysiology, Cognitive Science</p>
+    <p>Ad-hoc Grant reviewer for Australian Research Council (ARC) and National Science Foundation (NSF)</p>
 
     <h2 class="heading">
         Awards and nominations
