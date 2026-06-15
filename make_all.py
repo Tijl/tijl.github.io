@@ -69,6 +69,8 @@ with open('publicationlist.tsv') as f:
     data = f.readlines()
 entries=[]
 for (i,line) in enumerate(data):
+    if line.strip().startswith('#'):
+        continue
     e=line.strip().split('\t')
     if len(e)>3:
         entries.append(e)
