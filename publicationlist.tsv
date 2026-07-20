@@ -1,5 +1,6 @@
 year	authors	title	journal	volume+pages	doi links
 # published papers
+2026	Scrivener C.L., Grootswagers T., Woolgar A.	Optimising analysis choices for multivariate decoding: creating pseudotrials using trial averaging and resampling	European Journal of Neuroscience	64, no. 2: e70601	https://doi.org/10.1111/ejn.70601	[code][https://osf.io/hjf75/]
 2026	Mallus F.A., Yang Y., Dinga R., Kia S.M., Grootswagers T., Michela A., Ros T., Wolfers T.	 From early to contemporary normative modeling: Mapping individual differences in neurophysiological signals Open Access	Imaging Neuroscience	4: IMAG.a.1269	https://doi.org/10.1162/IMAG.a.1269	
 2026	Moerel D., Grootswagers T., Robinson A.K., Engeler P., Holcombe A.O., Carlson T.A.	Rotation-tolerant representations elucidate the time-course of high-level object processing	PLoS One	21(4): e0347992	https://doi.org/10.1371/journal.pone.0347992	[data][https://doi.org/10.18112/openneuro.ds004252.v1.1.0][code][https://doi.org/10.17605/OSF.IO/R93ES]
 2026	Smit S., Ramírez-Haro, A., Varlet M., Moerel D., Quek G., Grootswagers T.	A comprehensive EEG dataset for investigating visual touch perception	Scientific Data	13, 381	https://doi.org/10.1038/s41597-026-06714-5	[data+code][https://openneuro.org/datasets/ds005662]
@@ -65,7 +66,6 @@ preprint2025	Burger F., Quek G., Varlet M., Grootswagers T.	Hierarchical Emergen
 preprint2025	Moerel D., Grootswagers T.	Reconstruction of Partial Dissimilarity Matrices for Cognitive Neuroscience	arXiv	arXiv:2506.00484	https://doi.org/10.48550/arXiv.2506.00484	[data+code][https://github.com/Tijl/completeRDM]	
 preprint2025	Ramírez-Haro, A., Moerel D., Quek G., Varlet M., Grootswagers T.	The neural processes of illusory occlusion in object recognition	biorxiv	2025.05.28.656741	https://doi.org/10.1101/2025.05.28.656741	[data+code][https://osf.io/x6fv9/]	
 preprint2024	Smit S., Quek G., Varlet M., Grootswagers T., 	Goal-free sensory encoding and learning	PsyArXiv	twr2m	https://doi.org/10.31234/osf.io/twr2m	
-preprint2023	Scrivener C.L., Grootswagers T., Woolgar A.	Optimising analysis choices for multivariate decoding: creating pseudotrials using trial averaging and resampling	biorxiv	2023.10.04.560678	https://doi.org/10.1101/2023.10.04.560678	[code][https://osf.io/hjf75/]
 preprint2021	Tovar D.A., Grootswagers T., Jun J., Cha O., Blake R., Wallace M.T.	Getting the gist faster: Blurry images enhance the early temporal similarity between neural signals and convolutional neural networks	biorxiv	2021.08.22.451834	https://doi.org/10.1101/2021.08.22.451834		
 preprint2020	Whyte C.J., Robinson A.K., Grootswagers T., Hogendoorn H., Carlson T.A.	Decoding Predictions and Violations of Object Position and Category in Time-resolved EEG	biorxiv	032888	https://doi.org/10.1101/2020.04.08.032888
 preprint2019	Carlson T., Grootswagers T., Robinson A.K. 	An introduction to time-resolved decoding analysis for M/EEG	arxiv	1905.04820	https://arxiv.org/abs/1905.04820
