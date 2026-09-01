@@ -408,8 +408,11 @@ out+="""
     <h2 class="heading">
         Conference presentations (presenting author)
     </h2>
+<p><strong>Grootswagers T</strong> (2026). Tracking the Continuous Resolution of Visual Ambiguity Through Movement Trajectories. Symposium presented at the European Conference on Visual Perception (ECVP), Bournemouth, UK</p>
+<p><strong>Grootswagers T</strong> (2025). Hybrid images reveal time-dependent neural encoding of competing visual content. Talk presented at the Australasian Cognitive Neuroscience Society Conference (ACNS), Melbourne, Vic, Australia</p>
+<p><strong>Grootswagers T</strong> (2025). Time-resolved neural decoding: The basics. Symposium presented at the Annual Australasian Experimental Psychology Conference (EPC), Sydney, NSW, Australia</p>
 <p><strong>Grootswagers T</strong>, Robinson A (2024). Decoding Rapid Object Representations. Symposium presented at the Annual Meeting of the Vision Sciences Society (VSS), St. Pete Beach, FL, USA</p>
-<p><strong>Grootswagers T</strong> (2024). Decoding Rapid Object Representations. Talk presented at the Annual Australasian Experimental Psychology Conference (EPC), Sydney, NSW, Australia</p>
+<p><strong>Grootswagers T</strong> (2024). Decoding Rapid Object Representations. Talk presented at the Annual Australasian Experimental Psychology Conference (EPC), Adelaide, SA, Australia</p>
 <p><strong>Grootswagers T</strong> (2024). AI in cognitive neuroscience: pitfalls and potentials. Talk presented at the virtual Australasian Cognitive Neuroscience Society Conference (ACNS)</p>
 <p><strong>Grootswagers T</strong>, Quek G, Chin J, Varlet M (2023). Using synthetic images to drive object responses in the human brain. Talk presented at the European Conference on Visual Perception (ECVP), Paphos, Cyprus</p>
 <p><strong>Grootswagers T</strong>, Robinson A, Shatek S, Carlson T (2023). Dynamics of visual feature coding: Insights into perception and integration. Talk presented at the Annual Australasian Experimental Psychology Conference (EPC), Canberra, Act, Australia</p>
