@@ -34,7 +34,7 @@ out="""
                 Dr. Tijl Grootswagers
             </h1>
             <p style="float:left;">
-                ARC DECRA Senior Research Fellow in Computational Neuroscience<br /> 
+                ARC Future Fellow and Senior Research Fellow in Computational Neuroscience<br /> 
                 The MARCS Institute for Brain, Behaviour and Development<br />
                 School of Computer, Data and Mathematical Sciences<br />
                 Western Sydney University, Sydney, Australia
@@ -266,8 +266,9 @@ out="""
     <p>2007-2011: BSc. Artificial Intelligence, Radboud University Nijmegen</p>
 
     <h2 class="heading">
-        Research funding (total > $3M)
+        Research funding (total > $4M)
     </h2>
+    <p>2024: Australian Research Council Future Fellowship ($1,160,000)</p>
     <p>2024: Australian Research Council Linkage Project ($567,000)</p>
     <p>2024: National Intelligence & Security Discovery Research Grant ($770,000)</p>
     <p>2024: Defence Innovation Network Scholarship ($110,000)</p>
