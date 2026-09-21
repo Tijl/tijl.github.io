@@ -268,18 +268,18 @@ out="""
     <h2 class="heading">
         Research funding (total > $4M)
     </h2>
-    <p>2024: Australian Research Council Future Fellowship ($1,160,000)</p>
-    <p>2024: Australian Research Council Linkage Project ($567,000)</p>
-    <p>2024: National Intelligence & Security Discovery Research Grant ($770,000)</p>
-    <p>2024: Defence Innovation Network Scholarship ($110,000)</p>
-    <p>2022: Australian Research Council Linkage Infrastructure, Equipment and Facilities ($930,000)</p>
-    <p>2022: Australian Research Council Discovery Early Career Researcher Award ($450,000)</p>
-    <p>2022: MARCS Institute Scholarship ($100,000)</p>
-    <p>2021: Innovations Connections grant ($25,000)</p>
-    <p>2019: University of Sydney Booster Grant 2019 ($40,000)</p>
-    <p>2018: University of Sydney Compact Grant 2018 ($20,000)</p>
-    <p>2018: University of Sydney Seed Grant 2018 ($20,000)</p>
-    <p>2015: Macquarie University Postgraduate Research Fund ($5,000)</p>
+    <p>2024: Australian Research Council Future Fellowship ($1,160k)</p>
+    <p>2024: Australian Research Council Linkage Project ($567k)</p>
+    <p>2024: National Intelligence & Security Discovery Research Grant ($770k)</p>
+    <p>2024: Defence Innovation Network Scholarship ($110k)</p>
+    <p>2022: Australian Research Council Linkage Infrastructure, Equipment and Facilities ($930k)</p>
+    <p>2022: Australian Research Council Discovery Early Career Researcher Award ($450k)</p>
+    <p>2022: MARCS Institute Scholarship ($100k)</p>
+    <p>2021: Innovations Connections grant ($25k)</p>
+    <p>2019: University of Sydney Booster Grant 2019 ($40k)</p>
+    <p>2018: University of Sydney Compact Grant 2018 ($20k)</p>
+    <p>2018: University of Sydney Seed Grant 2018 ($20k)</p>
+    <p>2015: Macquarie University Postgraduate Research Fund ($5k)</p>
 
     <h2 class="heading">
         Postdoc supervision
