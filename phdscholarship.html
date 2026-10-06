@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PhD Scholarship: How the Brain Recognises and Remembers During Active Visual Exploration</title>
+<meta name="description" content="Fully funded PhD scholarship at the MARCS Institute, Western Sydney University, investigating active visual exploration, object recognition and memory encoding using EEG and computational modelling.">
+
+<style>
+  :root {
+    /* Palette adapted from tijl.github.io/tgrootswagers.css */
+    --bg: #002b36;
+    --surface: #073642;
+    --text: #839496;
+    --text-muted: #657b83;
+    --accent: #d33682;
+    --accent-soft: #0a4050;
+    --heading: #859900;
+    --strong: #93a1a1;
+    --border: #0f4a5c;
+    --shadow: 0 1px 2px rgba(0,0,0,.25), 0 8px 28px rgba(0,0,0,.35);
+    --radius: 10px;
+    --maxw: 60rem;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 3rem 1.25rem 5rem;
+  }
+
+  /* ---------- Header ---------- */
+
+  .eyebrow {
+    display: inline-block;
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--heading);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: .35rem .75rem;
+    border-radius: 999px;
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    font-size: clamp(1.7rem, 1.2rem + 2.2vw, 2.6rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin: 0 0 .75rem;
+    font-weight: 700;
+    color: var(--heading);
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: var(--text);
+    margin: 0 0 1.75rem;
+    max-width: 46rem;
+  }
+
+  /* ---------- Fact chips ---------- */
+
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: .75rem;
+    margin: 0 0 2.5rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .facts li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: .8rem .95rem;
+  }
+
+  .facts .label {
+    display: block;
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--heading);
+    margin-bottom: .2rem;
+  }
+
+  .facts .value {
+    display: block;
+    font-size: .95rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--strong);
+  }
+
+  /* ---------- Cards & sections ---------- */
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.75rem 1.75rem 1.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 520px) {
+    .card { padding: 1.35rem 1.15rem 1.15rem; }
+    .wrap { padding: 2rem 1rem 3.5rem; }
+  }
+
+  h2 {
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+    margin: 0 0 .9rem;
+    font-weight: 700;
+    color: var(--heading);
+  }
+
+  h2::after {
+    content: "";
+    display: block;
+    width: 2.25rem;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--accent);
+    margin-top: .55rem;
+    opacity: .9;
+  }
+
+  h3 {
+    font-size: .95rem;
+    margin: 1.4rem 0 .4rem;
+    font-weight: 700;
+    color: var(--heading);
+  }
+
+  h3:first-of-type { margin-top: .9rem; }
+
+  p { margin: 0 0 1rem; }
+  p:last-child { margin-bottom: 0; }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  strong { color: var(--strong); font-weight: 700; }
+
+  /* ---------- Check lists ---------- */
+
+  ul.checks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul.checks li {
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: .6rem;
+  }
+
+  ul.checks li:last-child { margin-bottom: 0; }
+
+  ul.checks li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .55em;
+    width: .5rem;
+    height: .5rem;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  /* ---------- Apply block ---------- */
+
+  .apply {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .apply .note {
+    font-size: .9rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    padding-top: .9rem;
+    margin-top: 1rem;
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fdf6e3;
+    font-weight: 600;
+    font-size: .95rem;
+    text-decoration: none;
+    padding: .7rem 1.3rem;
+    border-radius: 999px;
+    margin-top: .35rem;
+    transition: transform .12s ease, opacity .12s ease;
+  }
+
+  .btn:hover { opacity: .9; transform: translateY(-1px); text-decoration: none; }
+  .btn:active { transform: translateY(0); }
+
+  .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    margin-top: .75rem;
+  }
+
+  /* ---------- Footer ---------- */
+
+  footer {
+    margin-top: 2.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+    font-size: .85rem;
+    color: var(--text-muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem 1.25rem;
+    justify-content: space-between;
+  }
+
+  .ref {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: .8rem;
+  }
+
+  @media print {
+    body { background: #fff; color: #000; font-size: 11pt; }
+    .card, .apply { box-shadow: none; break-inside: avoid; }
+    .btn { display: none; }
+    h1, h2, h3 { color: #000; }
+  }
+</style>
+</head>
+<body>
+
+<main class="wrap">
+
+  <header>
+    <span class="eyebrow">PhD Scholarship · Fully Funded</span>
+    <h1>How the Brain Recognises and Remembers During Active Visual Exploration</h1>
+    <p class="subtitle">
+      A fully funded PhD opportunity at the MARCS Institute for Brain, Behaviour and Development,
+      Western Sydney University — combining neuroimaging and computational modelling to understand
+      observer-controlled visual cognition.
+    </p>
+
+    <ul class="facts">
+      <li>
+        <span class="label">Closing date</span>
+        <span class="value">31 October 2026</span>
+      </li>
+      <li>
+        <span class="label">Stipend</span>
+        <span class="value">$38,707 AUD p.a.<br>tax-free (3 years)</span>
+      </li>
+      <li>
+        <span class="label">Location</span>
+        <span class="value">MARCS Institute<br>Western Sydney University</span>
+      </li>
+      <li>
+        <span class="label">Eligibility</span>
+        <span class="value">Australian domestic<br>applicants only</span>
+      </li>
+    </ul>
+  </header>
+
+  <!-- ---------------- Project ---------------- -->
+  <section class="card" aria-labelledby="project-heading">
+    <h2 id="project-heading">About the project</h2>
+
+    <p>
+      In naturalistic settings such as browsing digital feeds, visual exploration is self-paced and
+      proactive. Observers decide <em>when</em> and <em>how</em> to sample visual information, creating a
+      closed loop where motor action directly triggers perceptual input. However, traditional visual
+      cognitive neuroscience relies primarily on passive paradigms where subjects have no control over
+      the timing or flow of information. Consequently, the neural mechanisms supporting active,
+      observer-controlled visual recognition and memory formation remain poorly understood.
+    </p>
+
+    <p>
+      This project investigates how volitional control affects core neural dynamics of object recognition
+      and memory encoding. Based at the MARCS Institute for Brain, Behaviour and Development, the project
+      combines empirical neuroimaging with computational modelling to resolve visual representations over
+      time.
+    </p>
+
+    <p>
+      The successful candidate will gain expertise in neuroimaging, multivariate decoding, scientific
+      programming, computational modelling, and visual perception research.
+    </p>
+
+    <p>
+      <strong>Lead supervisor:</strong> Dr Tijl Grootswagers
+      · <a href="https://tijl.github.io/" target="_blank" rel="noopener">Profile & publications → https://tijl.github.io/</a>
+    </p>
+  </section>
+
+  <!-- ---------------- Scholarship ---------------- -->
+  <section class="card" aria-labelledby="scholarship-heading">
+    <h2 id="scholarship-heading">What the scholarship provides</h2>
+
+    <ul class="checks">
+      <li>
+        <strong>Tax-free stipend of $38,707 (AUD) per annum</strong> for up to 3 years to support living
+        costs, supported by the Research Training Program (RTP) Fee Offset.
+      </li>
+      <li>Support for conference attendance, fieldwork and additional costs as approved by the School.</li>
+      <li>Fully funded PhD candidature embedded within an ARC Future Fellowship research program.</li>
+      <li>Tax-free doctoral living stipend supported by an RTP training scholarship.</li>
+      <li>Dedicated funding for project operational costs, participant reimbursement, and high-performance computing access.</li>
+      <li>Financial support for national and international conference travel, workshops, and collaborative research visits.</li>
+      <li>Access to state-of-the-art research infrastructure at the MARCS Institute.</li>
+      <li>Supervisory mentoring, training in cutting-edge methodologies, and integration into an international network of cognitive neuroscience research.</li>
+    </ul>
+  </section>
+
+  <!-- ---------------- Eligibility ---------------- -->
+  <section class="card" aria-labelledby="eligibility-heading">
+    <h2 id="eligibility-heading">Eligibility criteria</h2>
+
+    <p>
+      We welcome applicants from a range of backgrounds who are keen to apply their skills to key issues
+      in cognitive neuroscience. In particular, the project is suitable for candidates with strong
+      interests in Cognitive Neuroscience.
+    </p>
+
+    <h3>Academic qualifications</h3>
+    <p>
+      One of the following: an Australian First Class Honours Bachelor's degree, or a Research Masters,
+      or a Coursework Masters with a minimum 25% research component, or equivalent overseas
+      qualifications in Cognitive Neuroscience, Psychology, Computer Science, Data Science, Biomedical
+      Engineering, or Vision Science.
+    </p>
+
+    <h3>Quantitative &amp; programming skills</h3>
+    <p>
+      Expertise in quantitative data analysis, signal processing, and/or scientific programming
+      (Python / MATLAB / R).
+    </p>
+
+    <h3>Domain knowledge</h3>
+    <p>
+      Solid foundational understanding of human visual perception, cognitive neuroscience, and/or
+      electroencephalography (EEG) methodology.
+    </p>
+
+    <h3>Methodological capability</h3>
+    <p>
+      Strong motivation to master advanced analytical techniques, including multivariate neural decoding,
+      computational modelling, and deep neural networks.
+    </p>
+
+    <h3>Open science &amp; research integrity</h3>
+    <p>
+      Commitment to open science practices, including public sharing of research data and code.
+    </p>
+
+    <h3>English proficiency</h3>
+    <p>
+      All applications must meet Western Sydney University English language proficiency requirements.
+    </p>
+  </section>
+
+  <!-- ---------------- How to apply ---------------- -->
+  <section class="apply" aria-labelledby="apply-heading">
+    <h2 id="apply-heading">How to apply</h2>
+
+    <p>
+      This opportunity is for <strong>Australian domestic applicants only</strong>. Applications close
+      <strong>31 October 2026</strong>.
+    </p>
+
+    <p>
+      Full details on eligibility, the Expression of Interest (EOI) process, and how to submit your
+      application are available on the Graduate Research School project scholarship page for this project.
+    </p>
+
+    <div class="btn-row">
+      <a class="btn"
+         href="https://www.westernsydney.edu.au/schools/grs/scholarships/current#:~:text=How%20the%20Brain%20Recognises%20and%20Remembers%20During%20Active%20Visual%20Exploration"
+         target="_blank" rel="noopener">
+        Apply / view details on the GRS page
+      </a>
+    </div>
+
+    <p class="note">
+      For general guidance on project scholarships at Western Sydney University, see the
+      <a href="https://www.westernsydney.edu.au/schools/grs/scholarships/current" target="_blank" rel="noopener">
+        Graduate Research School project scholarships page.
+      </a>
+    </p>
+  </section>
+
+  <footer>
+    <span>MARCS Institute for Brain, Behaviour and Development · Western Sydney University</span>
+    <span class="ref">PS2026_089_CS0733686_MARCS</span>
+  </footer>
+
+</main>
+
+</body>
+</html>
