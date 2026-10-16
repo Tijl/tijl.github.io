@@ -228,7 +228,7 @@ out="""
                 Dr. Tijl Grootswagers
             </h1>
             <p style="float:left;">
-                ARC DECRA Senior Research Fellow in Computational Neuroscience<br /> 
+                Senior Research Fellow in Computational Neuroscience<br /> 
                 The MARCS Institute for Brain, Behaviour and Development<br />
                 School of Computer, Data and Mathematical Sciences<br />
                 Western Sydney University, Sydney, Australia
@@ -250,7 +250,7 @@ out="""
     <h2 class="heading">
         Academic track
     </h2>
-    <p>2023-current: ARC DECRA Senior Research Fellow in Computational Neuroscience. The MARCS Institute for Brain, Behaviour and Development, Western Sydney University, Australia</p>
+    <p>2023-current: Senior Research Fellow in Computational Neuroscience. The MARCS Institute for Brain, Behaviour and Development, Western Sydney University, Australia</p>
     <p>2023-current: Senior Research Fellow in Computational Neuroscience. School of Computer, Data and Mathematical Sciences, Western Sydney University, Australia</p>
     <p>2020-2022: Vice Chancellor's Research Fellow in Cognitive Neuroscience. The MARCS Institute for Brain, Behaviour and Development, Western Sydney University, Australia</p>
     <p>2020-current: Honorary Research fellow. School of Psychology, The University of Sydney, Australia</p> 
