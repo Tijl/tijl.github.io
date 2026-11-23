@@ -228,7 +228,7 @@ out="""
                 Dr. Tijl Grootswagers
             </h1>
             <p style="float:left;">
-                Senior Research Fellow in Computational Neuroscience<br /> 
+                ARC Future Fellow and Senior Research Fellow in Computational Neuroscience<br /> 
                 The MARCS Institute for Brain, Behaviour and Development<br />
                 School of Computer, Data and Mathematical Sciences<br />
                 Western Sydney University, Sydney, Australia
@@ -250,8 +250,8 @@ out="""
     <h2 class="heading">
         Academic track
     </h2>
-    <p>2023-current: Senior Research Fellow in Computational Neuroscience. The MARCS Institute for Brain, Behaviour and Development, Western Sydney University, Australia</p>
-    <p>2023-current: Senior Research Fellow in Computational Neuroscience. School of Computer, Data and Mathematical Sciences, Western Sydney University, Australia</p>
+    <p>2023-ongoing: ARC Future Fellow and Senior Research Fellow in Computational Neuroscience. The MARCS Institute for Brain, Behaviour and Development, Western Sydney University, Australia</p>
+    <p>2023-ongoing: Senior Research Fellow in Computational Neuroscience. School of Computer, Data and Mathematical Sciences, Western Sydney University, Australia</p>
     <p>2020-2022: Vice Chancellor's Research Fellow in Cognitive Neuroscience. The MARCS Institute for Brain, Behaviour and Development, Western Sydney University, Australia</p>
     <p>2020-current: Honorary Research fellow. School of Psychology, The University of Sydney, Australia</p> 
     <p>2017-2020: Postdoctoral Research Associate. School of Psychology, The University of Sydney, Australia</p>
@@ -291,14 +291,13 @@ out="""
     </h2>
     <p>Dalia Israel (primary supervisor)</p>
     <p>Florian Burger (primary supervisor)</p>
-    <p>Almudena Ramírez Haro (primary supervisor)</p>
     <p>Nazanin Sheykh Andalibi (primary supervisor)</p>
     <p>Ria Mishra (co-supervisor)</p>
     <p>Nusrat Samiya (co-supervisor)</p>
     <p>Mahdiyeh Khanbagi (co-supervisor)</p>
-    <p>Martina Ventura (co-supervisor)</p>
-    <p>Violet Chae (co-supervisor)</p>
-    <p>Wing Hong Fu (co-supervisor)</p>
+    <p>Almudena Ramírez Haro (primary supervisor) - completed 2026</p>
+    <p>Martina Ventura (co-supervisor) - completed 2026</p>
+    <p>Violet Chae (co-supervisor) - completed 2026</p>
 
     <h2 class="heading">
         Other supervision and mentoring
