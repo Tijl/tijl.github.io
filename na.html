@@ -22,8 +22,6 @@
       --amber-soft: #fef3c7;
       --purple: #6d28d9;
       --purple-soft: #ede9fe;
-      --rose: #be123c;
-      --rose-soft: #ffe4e6;
       --shadow-sm: 0 1px 3px rgba(15, 32, 56, 0.06);
       --shadow-md: 0 6px 18px rgba(15, 32, 56, 0.08);
       --radius: 10px;
@@ -57,15 +55,11 @@
       text-decoration: underline;
     }
 
-    .disclaimer-bar a:hover {
-      color: #451a03;
-    }
-
     /* Header */
     .site-header {
       background: linear-gradient(135deg, #0b2e52 0%, #114b7a 60%, #0d6e7a 100%);
       color: #ffffff;
-      padding: 28px 20px 24px;
+      padding: 24px 20px 20px;
       border-bottom: 1px solid rgba(255,255,255,0.12);
     }
 
@@ -79,12 +73,12 @@
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: flex-end;
-      gap: 16px;
+      gap: 14px;
     }
 
     .header-title h1 {
-      margin: 0 0 6px;
-      font-size: 1.75rem;
+      margin: 0 0 4px;
+      font-size: 1.7rem;
       font-weight: 700;
       letter-spacing: -0.02em;
     }
@@ -92,18 +86,19 @@
     .header-title p {
       margin: 0;
       color: rgba(255, 255, 255, 0.86);
-      font-size: 0.95rem;
+      font-size: 0.92rem;
     }
 
     .header-actions {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       flex-wrap: wrap;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 6px;
       padding: 8px 14px;
       border-radius: 8px;
@@ -121,14 +116,8 @@
       border-color: rgba(255, 255, 255, 0.25);
     }
 
-    .btn-header:hover {
-      background: rgba(255, 255, 255, 0.24);
-    }
-
-    .btn-header.active {
-      background: #ffffff;
-      color: var(--primary);
-    }
+    .btn-header:hover { background: rgba(255, 255, 255, 0.24); }
+    .btn-header.active { background: #ffffff; color: var(--primary); }
 
     .btn-outline {
       background: var(--surface);
@@ -136,41 +125,27 @@
       border-color: var(--border-strong);
     }
 
-    .btn-outline:hover {
-      background: var(--surface-alt);
-    }
+    .btn-outline:hover { background: var(--surface-alt); }
+    .btn-primary { background: var(--primary); color: #ffffff; }
+    .btn-primary:hover { background: var(--primary-hover); }
+    .btn-sm { padding: 5px 10px; font-size: 0.8rem; border-radius: 6px; }
 
-    .btn-primary {
-      background: var(--primary);
-      color: #ffffff;
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-hover);
-    }
-
-    .btn-sm {
-      padding: 5px 10px;
-      font-size: 0.8rem;
-      border-radius: 6px;
-    }
-
-    /* Sticky Search & Filter Bar */
+    /* Sticky Search & Filter Bar (Desktop) */
     .controls-wrapper {
       position: sticky;
       top: 0;
       z-index: 40;
-      background: rgba(246, 248, 251, 0.96);
+      background: rgba(246, 248, 251, 0.97);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
-      padding: 14px 20px;
+      padding: 12px 20px;
     }
 
     .search-row {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       align-items: center;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .search-box {
@@ -180,15 +155,14 @@
 
     .search-box input {
       width: 100%;
-      padding: 11px 40px 11px 38px;
-      font-size: 0.98rem;
+      padding: 10px 38px 10px 36px;
+      font-size: 16px; /* Prevents iOS auto-zoom on focus */
       border: 1.5px solid var(--border-strong);
       border-radius: 9px;
       background: var(--surface);
       color: var(--text);
       font-family: inherit;
       box-shadow: var(--shadow-sm);
-      transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
 
     .search-box input:focus {
@@ -199,17 +173,17 @@
 
     .search-icon {
       position: absolute;
-      left: 12px;
+      left: 11px;
       top: 50%;
       transform: translateY(-50%);
       color: var(--text-muted);
       pointer-events: none;
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
 
     .clear-search {
       position: absolute;
-      right: 10px;
+      right: 8px;
       top: 50%;
       transform: translateY(-50%);
       background: var(--surface-alt);
@@ -225,8 +199,10 @@
       font-size: 0.85rem;
     }
 
-    .clear-search.visible {
-      display: flex;
+    .clear-search.visible { display: flex; }
+
+    .mobile-filter-toggle {
+      display: none;
     }
 
     /* Day Tabs */
@@ -234,37 +210,30 @@
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .day-tab {
-      padding: 6px 13px;
+      padding: 6px 12px;
       border-radius: 999px;
       border: 1px solid var(--border-strong);
       background: var(--surface);
       color: var(--text);
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.15s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
-    .day-tab:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-
-    .day-tab.active {
-      background: var(--primary);
-      color: #ffffff;
-      border-color: var(--primary);
-    }
+    .day-tab:hover { border-color: var(--primary); color: var(--primary); }
+    .day-tab.active { background: var(--primary); color: #ffffff; border-color: var(--primary); }
 
     /* Filter Grid */
     .filter-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
-      gap: 10px;
+      gap: 8px;
       align-items: center;
     }
 
@@ -280,10 +249,7 @@
       cursor: pointer;
     }
 
-    .filter-select:focus {
-      outline: none;
-      border-color: var(--primary);
-    }
+    .filter-select:focus { outline: none; border-color: var(--primary); }
 
     /* Status & View Bar */
     .status-bar {
@@ -291,20 +257,13 @@
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       padding: 12px 20px 4px;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       color: var(--text-muted);
     }
 
-    .status-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .status-right {
+    .status-left, .status-right {
       display: flex;
       align-items: center;
       gap: 8px;
@@ -320,24 +279,21 @@
     }
 
     .view-btn {
-      padding: 5px 11px;
+      padding: 5px 10px;
       border: none;
       background: transparent;
       color: var(--text-muted);
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 600;
       cursor: pointer;
       font-family: inherit;
     }
 
-    .view-btn.active {
-      background: var(--primary);
-      color: #ffffff;
-    }
+    .view-btn.active { background: var(--primary); color: #ffffff; }
 
     /* Main Content */
     .main-content {
-      padding: 12px 20px 40px;
+      padding: 10px 20px 40px;
     }
 
     /* Session Group Card */
@@ -345,7 +301,7 @@
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       box-shadow: var(--shadow-sm);
       overflow: hidden;
     }
@@ -357,85 +313,74 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      gap: 14px;
+      gap: 12px;
       cursor: pointer;
       user-select: none;
     }
 
-    .session-header:hover {
-      background: #e7eef7;
-    }
+    .session-header:hover { background: #e7eef7; }
 
     .session-meta {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 8px;
+      gap: 6px 8px;
       font-size: 0.82rem;
       color: var(--text-muted);
-      margin-bottom: 5px;
+      margin-bottom: 4px;
     }
 
-    .session-time {
-      font-weight: 700;
-      color: var(--primary);
-    }
+    .session-time { font-weight: 700; color: var(--primary); }
 
     .session-room {
       background: #ffffff;
       border: 1px solid var(--border);
-      padding: 2px 8px;
+      padding: 2px 7px;
       border-radius: 6px;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--text);
     }
 
     .session-title {
       margin: 0;
-      font-size: 1.08rem;
+      font-size: 1.06rem;
       font-weight: 700;
       color: var(--text);
+      line-height: 1.32;
     }
 
     .session-chairs {
       margin: 4px 0 0;
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       color: var(--text-muted);
     }
 
     .session-toggle-icon {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       padding: 4px 8px;
       border-radius: 6px;
-      background: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.8);
       white-space: nowrap;
+      flex-shrink: 0;
     }
 
-    .session-body.collapsed {
-      display: none;
-    }
+    .session-body.collapsed { display: none; }
 
     /* Individual Talk / Item Card */
     .talk-item {
-      padding: 15px 18px;
+      padding: 14px 18px;
       border-bottom: 1px solid var(--border);
-      transition: background 0.12s ease;
     }
 
-    .talk-item:last-child {
-      border-bottom: none;
-    }
-
-    .talk-item:hover {
-      background: #fafcff;
-    }
+    .talk-item:last-child { border-bottom: none; }
+    .talk-item:hover { background: #fafcff; }
 
     .flat-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       box-shadow: var(--shadow-sm);
     }
 
@@ -443,7 +388,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      gap: 12px;
+      gap: 8px;
       margin-bottom: 6px;
     }
 
@@ -451,72 +396,55 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 6px;
-      font-size: 0.78rem;
+      gap: 5px;
+      font-size: 0.76rem;
     }
 
     .badge {
       display: inline-block;
-      padding: 2px 8px;
-      border-radius: 6px;
+      padding: 2px 7px;
+      border-radius: 5px;
       font-weight: 600;
-      letter-spacing: 0.01em;
     }
 
-    .badge-time {
-      background: var(--primary-soft);
-      color: var(--primary);
-    }
+    .badge-time { background: var(--primary-soft); color: var(--primary); font-weight: 700; }
+    .badge-type { background: var(--accent-soft); color: var(--accent); }
+    .badge-poster { background: var(--purple-soft); color: var(--purple); }
+    .badge-theme { background: var(--amber-soft); color: var(--amber); }
+    .badge-break { background: #e2e8f0; color: #334155; }
 
-    .badge-type {
-      background: var(--accent-soft);
-      color: var(--accent);
-    }
-
-    .badge-poster {
-      background: var(--purple-soft);
-      color: var(--purple);
-    }
-
-    .badge-theme {
-      background: var(--amber-soft);
-      color: var(--amber);
-    }
-
-    .badge-break {
-      background: #e2e8f0;
-      color: #334155;
-    }
-
+    /* Clear visual hierarchy: Title -> Presenter/Authors -> Details */
     .talk-title {
       margin: 0 0 6px;
-      font-size: 1.02rem;
-      font-weight: 650;
+      font-size: 1.03rem;
+      font-weight: 700;
       color: var(--text);
-      line-height: 1.38;
+      line-height: 1.35;
     }
 
     .talk-authors {
-      font-size: 0.9rem;
+      font-size: 0.89rem;
       color: var(--text);
-      margin-bottom: 3px;
+      margin-bottom: 4px;
+      line-height: 1.4;
     }
 
     .talk-authors strong {
       color: var(--primary);
-      font-weight: 650;
+      font-weight: 700;
     }
 
     .talk-affiliations {
-      font-size: 0.81rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
+      line-height: 1.4;
     }
 
     .talk-submeta {
       font-size: 0.81rem;
       color: var(--text-muted);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .talk-actions {
@@ -536,39 +464,31 @@
       font-size: 0.9rem;
       color: #1e293b;
       white-space: pre-line;
-      line-height: 1.58;
+      line-height: 1.56;
       display: none;
     }
 
-    .abstract-box.open {
-      display: block;
-    }
+    .abstract-box.open { display: block; }
 
     .bookmark-btn {
       background: var(--surface);
       border: 1px solid var(--border-strong);
       color: var(--text-muted);
-      padding: 4px 10px;
+      padding: 4px 9px;
       border-radius: 6px;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 600;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 4px;
       font-family: inherit;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
-    .bookmark-btn:hover {
-      border-color: var(--amber);
-      color: var(--amber);
-    }
-
-    .bookmark-btn.saved {
-      background: var(--amber-soft);
-      border-color: #f59e0b;
-      color: var(--amber);
-    }
+    .bookmark-btn:hover { border-color: var(--amber); color: var(--amber); }
+    .bookmark-btn.saved { background: var(--amber-soft); border-color: #f59e0b; color: var(--amber); }
 
     mark {
       background: #fef08a;
@@ -577,66 +497,46 @@
       border-radius: 3px;
     }
 
-    /* Pagination */
     .pagination {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 10px;
-      margin-top: 24px;
+      margin-top: 20px;
       flex-wrap: wrap;
     }
 
-    /* Empty State */
     .empty-state {
       text-align: center;
-      padding: 56px 20px;
+      padding: 44px 16px;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
     }
 
-    .empty-state h3 {
-      margin: 0 0 8px;
-      font-size: 1.15rem;
-    }
-
-    .empty-state p {
-      margin: 0 0 16px;
-      color: var(--text-muted);
-    }
-
-    /* Footer Disclaimer */
     .site-footer {
       background: var(--surface);
       border-top: 1px solid var(--border);
       color: var(--text-muted);
-      font-size: 0.84rem;
-      padding: 24px 20px 36px;
+      font-size: 0.82rem;
+      padding: 20px 20px 32px;
       margin-top: 24px;
-      line-height: 1.55;
+      line-height: 1.5;
     }
 
-    .site-footer strong {
-      color: var(--text);
-    }
+    .site-footer strong { color: var(--text); }
+    .site-footer a { color: var(--primary); text-decoration: underline; }
 
-    .site-footer a {
-      color: var(--primary);
-      text-decoration: underline;
-    }
-
-    /* Back to Top */
     .back-to-top {
       position: fixed;
-      bottom: 22px;
-      right: 22px;
+      bottom: 18px;
+      right: 18px;
       background: var(--primary);
       color: #ffffff;
       border: none;
       border-radius: 999px;
-      padding: 10px 15px;
-      font-size: 0.85rem;
+      padding: 10px 14px;
+      font-size: 0.84rem;
       font-weight: 600;
       box-shadow: var(--shadow-md);
       cursor: pointer;
@@ -644,20 +544,193 @@
       z-index: 50;
     }
 
-    .back-to-top.visible {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
+    .back-to-top.visible { display: inline-flex; align-items: center; gap: 5px; }
 
+    /* =========================================================
+       MOBILE OPTIMISATIONS (< 680px)
+       ========================================================= */
     @media (max-width: 680px) {
-      .header-title h1 { font-size: 1.4rem; }
-      .session-header { flex-direction: column; }
-      .talk-top { flex-direction: column; }
+      .disclaimer-bar {
+        padding: 7px 12px;
+        font-size: 0.76rem;
+      }
+
+      .site-header {
+        padding: 16px 12px 14px;
+      }
+
+      .header-title h1 {
+        font-size: 1.28rem;
+        line-height: 1.25;
+      }
+
+      .header-title p {
+        font-size: 0.82rem;
+      }
+
+      .header-actions {
+        width: 100%;
+      }
+
+      .header-actions .btn {
+        flex: 1;
+        padding: 7px 10px;
+        font-size: 0.82rem;
+      }
+
+      /* Unstick the huge filter panel on mobile so content owns the screen */
+      .controls-wrapper {
+        position: static;
+        padding: 10px 12px;
+      }
+
+      .search-row {
+        margin-bottom: 8px;
+      }
+
+      #resetAllBtn {
+        padding: 9px 10px;
+        font-size: 0.82rem;
+      }
+
+      /* Single horizontal swipeable row for Day tabs */
+      .day-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 2px;
+        margin-bottom: 8px;
+      }
+
+      .day-tabs::-webkit-scrollbar {
+        display: none;
+      }
+
+      .day-tab {
+        padding: 6px 11px;
+        font-size: 0.8rem;
+      }
+
+      /* Collapsible dropdown filters on mobile */
+      .mobile-filter-toggle {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 12px;
+        background: var(--surface);
+        border: 1px solid var(--border-strong);
+        border-radius: 8px;
+        font-size: 0.84rem;
+        font-weight: 600;
+        color: var(--text);
+        cursor: pointer;
+        font-family: inherit;
+      }
+
+      .filter-grid {
+        display: none;
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-top: 8px;
+      }
+
+      .filter-grid.mobile-open {
+        display: grid;
+      }
+
+      .status-bar {
+        padding: 10px 12px 4px;
+        font-size: 0.82rem;
+      }
+
+      .main-content {
+        padding: 8px 10px 32px;
+      }
+
+      /* Compact session headers */
+      .session-group {
+        margin-bottom: 12px;
+        border-radius: 8px;
+      }
+
+      .session-header {
+        padding: 11px 12px;
+        gap: 8px;
+      }
+
+      .session-title {
+        font-size: 0.98rem;
+      }
+
+      .session-meta {
+        font-size: 0.78rem;
+      }
+
+      /* Focus on Title, Time, and Presenter on mobile cards */
+      .talk-item {
+        padding: 12px;
+      }
+
+      .talk-top {
+        flex-direction: row; /* Keep Save button aligned right, don't waste a row */
+        align-items: center;
+        margin-bottom: 6px;
+      }
+
+      .badge {
+        font-size: 0.73rem;
+        padding: 2px 6px;
+      }
+
+      /* Hide noisy Theme badge on mobile unless searching/filtered */
+      .badge-theme {
+        display: none;
+      }
+
+      .talk-title {
+        font-size: 0.98rem;
+        margin-bottom: 5px;
+      }
+
+      /* Clamp long author lists to 2 lines until expanded */
+      .talk-authors {
+        font-size: 0.84rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .talk-item.expanded .talk-authors {
+        display: block;
+        -webkit-line-clamp: unset;
+      }
+
+      /* Hide long institutional affiliations until card/abstract is expanded */
+      .talk-affiliations {
+        display: none;
+      }
+
+      .talk-item.expanded .talk-affiliations {
+        display: block;
+        margin-top: 4px;
+      }
+
+      .abstract-box {
+        padding: 10px 11px;
+        font-size: 0.86rem;
+      }
+
+      .site-footer {
+        padding: 16px 12px 28px;
+        font-size: 0.78rem;
+      }
     }
 
     @media print {
-      .controls-wrapper, .header-actions, .talk-actions, .pagination, .back-to-top, .view-toggle {
+      .controls-wrapper, .header-actions, .talk-actions, .pagination, .back-to-top, .view-toggle, .mobile-filter-toggle {
         display: none !important;
       }
       .abstract-box {
@@ -665,9 +738,7 @@
         border-left: 2px solid #666;
         background: #fff;
       }
-      .session-body.collapsed {
-        display: block !important;
-      }
+      .session-body.collapsed { display: block !important; }
       body { background: #fff; }
       .session-group, .flat-card { box-shadow: none; break-inside: avoid; }
     }
@@ -685,15 +756,15 @@
     <div class="container">
       <div class="header-top">
         <div class="header-title">
-          <h1>NeuroAlliance 2026 Conference Programme</h1>
-          <p>29 November - 2 December 2026 &bull; Interactive Schedule, Abstracts &amp; Personal Itinerary</p>
+          <h1>NeuroAlliance 2026 Programme</h1>
+          <p>29 Nov &ndash; 2 Dec 2026 &bull; Interactive Schedule &amp; Abstracts</p>
         </div>
         <div class="header-actions">
           <button id="savedFilterBtn" class="btn btn-header" type="button" title="View your bookmarked talks and posters">
             ★ My Itinerary (<span id="savedCount">0</span>)
           </button>
           <button id="exportCsvBtn" class="btn btn-header" type="button" title="Download currently filtered results as CSV">
-            ⬇ Export Filtered CSV
+            ⬇ Export CSV
           </button>
         </div>
       </div>
@@ -708,17 +779,22 @@
           <input
             type="search"
             id="searchInput"
-            placeholder="Search by title, author, affiliation, room, session, poster #, or abstract keywords..."
+            placeholder="Search title, author, room, poster #..."
             autocomplete="off"
           />
           <button id="clearSearchBtn" class="clear-search" type="button" aria-label="Clear search">✕</button>
         </div>
-        <button id="resetAllBtn" class="btn btn-outline" type="button">Reset Filters</button>
+        <button id="resetAllBtn" class="btn btn-outline" type="button">Reset</button>
       </div>
 
       <div class="day-tabs" id="dayTabs" role="tablist" aria-label="Filter by Date"></div>
 
-      <div class="filter-grid">
+      <button id="mobileFilterToggle" class="mobile-filter-toggle" type="button" aria-expanded="false">
+        <span id="mobileFilterLabel">⚙ Filter by Type, Track, Room, Session</span>
+        <span id="mobileFilterArrow">▼</span>
+      </button>
+
+      <div class="filter-grid" id="filterGrid">
         <select id="typeFilter" class="filter-select" aria-label="Filter by Presentation Type">
           <option value="">All Presentation Types</option>
         </select>
@@ -746,7 +822,7 @@
       <div class="status-right">
         <button id="toggleAbstractsBtn" class="btn btn-outline btn-sm" type="button">Expand All Abstracts</button>
         <div class="view-toggle" role="group" aria-label="Display Mode">
-          <button id="viewGroupedBtn" class="view-btn active" type="button">Grouped by Session</button>
+          <button id="viewGroupedBtn" class="view-btn active" type="button">Grouped</button>
           <button id="viewFlatBtn" class="view-btn" type="button">Flat List</button>
         </div>
       </div>
@@ -790,7 +866,6 @@
       "Poster Presentations": "Poster Presentations"
     };
 
-    // State
     const state = {
       query: "",
       date: "",
@@ -801,12 +876,12 @@
       savedOnly: false,
       viewMode: "grouped",
       expandAllAbstracts: false,
+      mobileFiltersOpen: false,
       page: 1,
       pageSize: 60,
       savedIds: new Set()
     };
 
-    // Load bookmarks from localStorage
     try {
       const stored = JSON.parse(localStorage.getItem("neuroalliance2026_saved") || "[]");
       if (Array.isArray(stored)) {
@@ -821,11 +896,14 @@
       document.getElementById("savedCount").textContent = state.savedIds.size;
     }
 
-    // Elements
     const searchInput = document.getElementById("searchInput");
     const clearSearchBtn = document.getElementById("clearSearchBtn");
     const resetAllBtn = document.getElementById("resetAllBtn");
     const dayTabs = document.getElementById("dayTabs");
+    const mobileFilterToggle = document.getElementById("mobileFilterToggle");
+    const mobileFilterLabel = document.getElementById("mobileFilterLabel");
+    const mobileFilterArrow = document.getElementById("mobileFilterArrow");
+    const filterGrid = document.getElementById("filterGrid");
     const typeFilter = document.getElementById("typeFilter");
     const themeFilter = document.getElementById("themeFilter");
     const roomFilter = document.getElementById("roomFilter");
@@ -871,13 +949,23 @@
       }).join("; ");
     }
 
+    function updateMobileFilterBadge() {
+      const activeCount = [state.type, state.theme, state.room, state.session].filter(Boolean).length;
+      mobileFilterLabel.textContent = activeCount > 0
+        ? `⚙ Filters (${activeCount} active)`
+        : "⚙ Filter by Type, Track, Room, Session";
+      mobileFilterArrow.textContent = state.mobileFiltersOpen ? "▲" : "▼";
+      filterGrid.classList.toggle("mobile-open", state.mobileFiltersOpen);
+      mobileFilterToggle.setAttribute("aria-expanded", String(state.mobileFiltersOpen));
+    }
+
     function initFilters() {
       const dates = [...new Set(PROGRAMME_DATA.map(d => d.d))].sort();
       const allBtn = document.createElement("button");
       allBtn.type = "button";
       allBtn.className = "day-tab active";
       allBtn.dataset.date = "";
-      allBtn.textContent = `All Days (${PROGRAMME_DATA.length})`;
+      allBtn.textContent = `All (${PROGRAMME_DATA.length})`;
       dayTabs.appendChild(allBtn);
 
       dates.forEach(dt => {
@@ -1007,7 +1095,7 @@
         submetaHtml = `<div class="talk-submeta">
           <strong>${escapeHtml(DAY_LABELS[item.d] || item.d)}</strong> &bull;
           <span>${highlightText(item.sn, terms)}</span>
-          ${item.rm ? ` &bull; <span>${highlightText(item.rm, terms)}</span>` : ""}
+          ${item.rm ? ` &bull; <strong>📍 ${highlightText(item.rm, terms)}</strong>` : ""}
         </div>`;
       }
 
@@ -1020,7 +1108,7 @@
         : "";
 
       return `
-        <article class="talk-item ${showSessionContext ? "flat-card" : ""}" data-id="${item.id}">
+        <article class="talk-item ${showSessionContext ? "flat-card" : ""} ${abstractOpen ? "expanded" : ""}" id="card-${item.id}" data-id="${item.id}">
           <div class="talk-top">
             <div class="talk-badges">
               <span class="badge badge-time">${escapeHtml(timeRange)}</span>
@@ -1038,7 +1126,7 @@
           ${hasAbstract ? `
             <div class="talk-actions">
               <button type="button" class="btn btn-outline btn-sm" data-toggle-abs="${item.id}">
-                ${abstractOpen ? "Hide Abstract ▲" : "Read Abstract ▼"}
+                ${abstractOpen ? "Hide Abstract ▲" : "Abstract & Details ▼"}
               </button>
             </div>
             <div class="abstract-box ${abstractOpen ? "open" : ""}" id="abs-${item.id}">${highlightText(item.ab, terms)}</div>
@@ -1052,11 +1140,12 @@
         btn.classList.toggle("active", btn.dataset.date === state.date);
       });
 
+      updateMobileFilterBadge();
       savedFilterBtn.classList.toggle("active", state.savedOnly);
       clearSearchBtn.classList.toggle("visible", state.query.length > 0);
       viewGroupedBtn.classList.toggle("active", state.viewMode === "grouped");
       viewFlatBtn.classList.toggle("active", state.viewMode === "flat");
-      toggleAbstractsBtn.textContent = state.expandAllAbstracts ? "Collapse All Abstracts" : "Expand All Abstracts";
+      toggleAbstractsBtn.textContent = state.expandAllAbstracts ? "Collapse Abstracts" : "Expand All Abstracts";
 
       const filtered = getFilteredData();
       const total = filtered.length;
@@ -1085,8 +1174,8 @@
         return;
       }
 
-      resultSummary.innerHTML = `Showing <strong>${startIdx + 1}-${endIdx}</strong> of <strong>${total}</strong> items` +
-        (state.savedOnly ? " (My Itinerary)" : "");
+      resultSummary.innerHTML = `Showing <strong>${startIdx + 1}-${endIdx}</strong> of <strong>${total}</strong>` +
+        (state.savedOnly ? " (Saved)" : "");
 
       if (state.viewMode === "flat") {
         resultsContainer.innerHTML = pageItems.map(item => renderTalkHtml(item, terms, true)).join("");
@@ -1152,12 +1241,11 @@
         return;
       }
 
-      let html = `
-        <button type="button" class="btn btn-outline btn-sm" ${state.page === 1 ? "disabled" : ""} data-page="${state.page - 1}">← Previous</button>
-        <span style="font-size:0.88rem;color:var(--text-muted);">Page <strong>${state.page}</strong> of <strong>${totalPages}</strong></span>
+      paginationContainer.innerHTML = `
+        <button type="button" class="btn btn-outline btn-sm" ${state.page === 1 ? "disabled" : ""} data-page="${state.page - 1}">← Prev</button>
+        <span style="font-size:0.86rem;color:var(--text-muted);">Page <strong>${state.page}</strong> of <strong>${totalPages}</strong></span>
         <button type="button" class="btn btn-outline btn-sm" ${state.page === totalPages ? "disabled" : ""} data-page="${state.page + 1}">Next →</button>
       `;
-      paginationContainer.innerHTML = html;
     }
 
     function resetAllFilters() {
@@ -1216,7 +1304,6 @@
       URL.revokeObjectURL(url);
     }
 
-    // Event Listeners
     let searchDebounce = null;
     searchInput.addEventListener("input", () => {
       clearTimeout(searchDebounce);
@@ -1236,6 +1323,11 @@
     });
 
     resetAllBtn.addEventListener("click", resetAllFilters);
+
+    mobileFilterToggle.addEventListener("click", () => {
+      state.mobileFiltersOpen = !state.mobileFiltersOpen;
+      updateMobileFilterBadge();
+    });
 
     typeFilter.addEventListener("change", () => {
       state.type = typeFilter.value;
@@ -1289,9 +1381,11 @@
       if (absBtn) {
         const id = absBtn.dataset.toggleAbs;
         const box = document.getElementById("abs-" + id);
+        const card = document.getElementById("card-" + id);
         if (box) {
           const isOpen = box.classList.toggle("open");
-          absBtn.textContent = isOpen ? "Hide Abstract ▲" : "Read Abstract ▼";
+          if (card) card.classList.toggle("expanded", isOpen);
+          absBtn.textContent = isOpen ? "Hide Abstract ▲" : "Abstract & Details ▼";
         }
         return;
       }
@@ -1339,7 +1433,6 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    // Boot
     persistSaved();
     initFilters();
     render();
