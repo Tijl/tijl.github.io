@@ -156,7 +156,7 @@
     .search-box input {
       width: 100%;
       padding: 10px 38px 10px 36px;
-      font-size: 16px; /* Prevents iOS auto-zoom on focus */
+      font-size: 16px;
       border: 1.5px solid var(--border-strong);
       border-radius: 9px;
       background: var(--surface);
@@ -293,7 +293,7 @@
 
     /* Main Content */
     .main-content {
-      padding: 10px 20px 40px;
+      padding: 10px 20px 24px;
     }
 
     /* Session Group Card */
@@ -412,8 +412,8 @@
     .badge-poster { background: var(--purple-soft); color: var(--purple); }
     .badge-theme { background: var(--amber-soft); color: var(--amber); }
     .badge-break { background: #e2e8f0; color: #334155; }
+    .badge-rank { background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; font-weight: 700; }
 
-    /* Clear visual hierarchy: Title -> Presenter/Authors -> Details */
     .talk-title {
       margin: 0 0 6px;
       font-size: 1.03rem;
@@ -444,6 +444,12 @@
     .talk-submeta {
       font-size: 0.81rem;
       color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .rec-keywords {
+      font-size: 0.79rem;
+      color: #047857;
       margin-bottom: 6px;
     }
 
@@ -497,13 +503,22 @@
       border-radius: 3px;
     }
 
+    /* Pagination & Infinite Scroll Sentinel */
     .pagination {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 10px;
-      margin-top: 20px;
+      margin-top: 16px;
+      margin-bottom: 24px;
       flex-wrap: wrap;
+    }
+
+    .scroll-sentinel {
+      text-align: center;
+      padding: 14px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
     }
 
     .empty-state {
@@ -546,6 +561,11 @@
 
     .back-to-top.visible { display: inline-flex; align-items: center; gap: 5px; }
 
+    /* Dedicated Print Schedule Sheet (hidden on screen) */
+    #printScheduleContainer {
+      display: none;
+    }
+
     /* =========================================================
        MOBILE OPTIMISATIONS (< 680px)
        ========================================================= */
@@ -573,12 +593,11 @@
       }
 
       .header-actions .btn {
-        flex: 1;
-        padding: 7px 10px;
-        font-size: 0.82rem;
+        flex: 1 1 auto;
+        padding: 7px 8px;
+        font-size: 0.78rem;
       }
 
-      /* Unstick the huge filter panel on mobile so content owns the screen */
       .controls-wrapper {
         position: static;
         padding: 10px 12px;
@@ -593,7 +612,6 @@
         font-size: 0.82rem;
       }
 
-      /* Single horizontal swipeable row for Day tabs */
       .day-tabs {
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -612,7 +630,6 @@
         font-size: 0.8rem;
       }
 
-      /* Collapsible dropdown filters on mobile */
       .mobile-filter-toggle {
         display: flex;
         width: 100%;
@@ -646,10 +663,10 @@
       }
 
       .main-content {
-        padding: 8px 10px 32px;
+        padding-left: 10px;
+        padding-right: 10px;
       }
 
-      /* Compact session headers */
       .session-group {
         margin-bottom: 12px;
         border-radius: 8px;
@@ -668,13 +685,12 @@
         font-size: 0.78rem;
       }
 
-      /* Focus on Title, Time, and Presenter on mobile cards */
       .talk-item {
         padding: 12px;
       }
 
       .talk-top {
-        flex-direction: row; /* Keep Save button aligned right, don't waste a row */
+        flex-direction: row;
         align-items: center;
         margin-bottom: 6px;
       }
@@ -684,7 +700,6 @@
         padding: 2px 6px;
       }
 
-      /* Hide noisy Theme badge on mobile unless searching/filtered */
       .badge-theme {
         display: none;
       }
@@ -694,7 +709,6 @@
         margin-bottom: 5px;
       }
 
-      /* Clamp long author lists to 2 lines until expanded */
       .talk-authors {
         font-size: 0.84rem;
         display: -webkit-box;
@@ -708,7 +722,6 @@
         -webkit-line-clamp: unset;
       }
 
-      /* Hide long institutional affiliations until card/abstract is expanded */
       .talk-affiliations {
         display: none;
       }
@@ -729,114 +742,212 @@
       }
     }
 
+    /* =========================================================
+       CLEAN PRINT / PDF SCHEDULE STYLING
+       ========================================================= */
     @media print {
-      .controls-wrapper, .header-actions, .talk-actions, .pagination, .back-to-top, .view-toggle, .mobile-filter-toggle {
+      @page {
+        margin: 14mm 12mm;
+      }
+
+      body {
+        background: #ffffff;
+        color: #111827;
+        font-size: 10.5pt;
+      }
+
+      #appShell, .back-to-top {
         display: none !important;
       }
-      .abstract-box {
+
+      #printScheduleContainer {
         display: block !important;
-        border-left: 2px solid #666;
-        background: #fff;
       }
-      .session-body.collapsed { display: block !important; }
-      body { background: #fff; }
-      .session-group, .flat-card { box-shadow: none; break-inside: avoid; }
+
+      .print-header {
+        border-bottom: 2px solid #0f4c81;
+        padding-bottom: 8px;
+        margin-bottom: 16px;
+      }
+
+      .print-header h1 {
+        margin: 0 0 2px;
+        font-size: 16pt;
+        color: #0f4c81;
+      }
+
+      .print-header p {
+        margin: 0;
+        font-size: 9pt;
+        color: #4b5563;
+      }
+
+      .print-day-heading {
+        background: #f0f4f9;
+        color: #0f4c81;
+        font-size: 11.5pt;
+        font-weight: 700;
+        padding: 5px 10px;
+        border-left: 4px solid #0f4c81;
+        margin: 16px 0 8px;
+        break-after: avoid;
+      }
+
+      .print-row {
+        display: flex;
+        gap: 12px;
+        padding: 7px 4px;
+        border-bottom: 1px solid #e5e7eb;
+        break-inside: avoid;
+      }
+
+      .print-time-col {
+        width: 115px;
+        flex-shrink: 0;
+        font-weight: 700;
+        font-size: 9.5pt;
+        color: #0f4c81;
+      }
+
+      .print-room {
+        display: block;
+        font-weight: 600;
+        color: #374151;
+        font-size: 8.5pt;
+        margin-top: 2px;
+      }
+
+      .print-detail-col {
+        flex: 1;
+      }
+
+      .print-title {
+        font-weight: 700;
+        font-size: 10pt;
+        color: #111827;
+        margin-bottom: 2px;
+      }
+
+      .print-meta {
+        font-size: 8.8pt;
+        color: #4b5563;
+      }
+
+      .print-footer {
+        margin-top: 20px;
+        padding-top: 8px;
+        border-top: 1px solid #d1d5db;
+        font-size: 8pt;
+        color: #6b7280;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="disclaimer-bar" role="note">
-    <div class="container">
-      <strong>Disclaimer:</strong> Unofficial programme viewer compiled by <strong>Dr Tijl Grootswagers</strong> (<a href="https://tijl.github.io" target="_blank">https://tijl.github.io</a>) with the assistance of Gemini. Provided for personal convenience only; accuracy and completeness cannot be guaranteed. Use at your own risk and verify critical session times and venues against the official NeuroAlliance 2026 conference programme.
+  <div id="appShell">
+    <div class="disclaimer-bar" role="note">
+      <div class="container">
+        <strong>Disclaimer:</strong> Unofficial programme viewer compiled by <strong>Dr Tijl Grootswagers</strong> (<a href="https://tijl.github.io" target="_blank">https://tijl.github.io</a>) with the assistance of Gemini. Provided for personal convenience only; accuracy and completeness cannot be guaranteed. Use at your own risk and verify critical session times and venues against the official NeuroAlliance 2026 conference programme.
+      </div>
     </div>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="header-top">
+          <div class="header-title">
+            <h1>NeuroAlliance 2026 Programme</h1>
+            <p>29 Nov &ndash; 2 Dec 2026 &bull; Interactive Schedule &amp; Abstracts</p>
+          </div>
+          <div class="header-actions">
+            <button id="savedFilterBtn" class="btn btn-header" type="button" title="View your bookmarked talks and posters">
+              ★ Saved (<span id="savedCount">0</span>)
+            </button>
+            <button id="suggestedFilterBtn" class="btn btn-header" type="button" title="Browse talks ranked by similarity to your saved items">
+              ✨ Suggested
+            </button>
+            <button id="exportPdfBtn" class="btn btn-header" type="button" title="Save or print your starred itinerary as a PDF">
+              🖨 PDF
+            </button>
+            <button id="exportCsvBtn" class="btn btn-header" type="button" title="Download currently filtered results as CSV">
+              ⬇ CSV
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="controls-wrapper" aria-label="Programme Search and Filters">
+      <div class="container">
+        <div class="search-row">
+          <div class="search-box">
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input
+              type="search"
+              id="searchInput"
+              placeholder="Search title, author, room, poster #..."
+              autocomplete="off"
+            />
+            <button id="clearSearchBtn" class="clear-search" type="button" aria-label="Clear search">✕</button>
+          </div>
+          <button id="resetAllBtn" class="btn btn-outline" type="button">Reset</button>
+        </div>
+
+        <div class="day-tabs" id="dayTabs" role="tablist" aria-label="Filter by Date"></div>
+
+        <button id="mobileFilterToggle" class="mobile-filter-toggle" type="button" aria-expanded="false">
+          <span id="mobileFilterLabel">⚙ Filter by Type, Track, Room, Session</span>
+          <span id="mobileFilterArrow">▼</span>
+        </button>
+
+        <div class="filter-grid" id="filterGrid">
+          <select id="typeFilter" class="filter-select" aria-label="Filter by Presentation Type">
+            <option value="">All Presentation Types</option>
+          </select>
+
+          <select id="themeFilter" class="filter-select" aria-label="Filter by Track or Theme">
+            <option value="">All Tracks / Themes</option>
+          </select>
+
+          <select id="roomFilter" class="filter-select" aria-label="Filter by Room">
+            <option value="">All Rooms / Venues</option>
+          </select>
+
+          <select id="sessionFilter" class="filter-select" aria-label="Filter by Session">
+            <option value="">All Sessions</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="status-bar">
+        <div class="status-left">
+          <span id="resultSummary">Loading programme...</span>
+        </div>
+        <div class="status-right">
+          <button id="toggleAbstractsBtn" class="btn btn-outline btn-sm" type="button">Expand All Abstracts</button>
+          <div class="view-toggle" id="viewToggleGroup" role="group" aria-label="Display Mode">
+            <button id="viewGroupedBtn" class="view-btn active" type="button">Grouped</button>
+            <button id="viewFlatBtn" class="view-btn" type="button">Flat List</button>
+          </div>
+        </div>
+      </div>
+
+      <main class="main-content" id="resultsContainer"></main>
+      <div class="pagination" id="paginationContainer"></div>
+      <div class="scroll-sentinel" id="scrollSentinel" aria-hidden="true"></div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <strong>Disclaimer:</strong> This unofficial searchable programme was created by <strong>Dr Tijl Grootswagers</strong> (<a href="https://tijl.github.io" target="_blank">https://tijl.github.io</a>) with the help of Gemini. It is intended strictly for personal, non-commercial use. While care was taken when parsing the schedule, accuracy, completeness, and timeliness cannot be guaranteed. Use entirely at your own risk and always confirm details with the official NeuroAlliance 2026 conference organisers.
+      </div>
+    </footer>
   </div>
 
-  <header class="site-header">
-    <div class="container">
-      <div class="header-top">
-        <div class="header-title">
-          <h1>NeuroAlliance 2026 Programme</h1>
-          <p>29 Nov &ndash; 2 Dec 2026 &bull; Interactive Schedule &amp; Abstracts</p>
-        </div>
-        <div class="header-actions">
-          <button id="savedFilterBtn" class="btn btn-header" type="button" title="View your bookmarked talks and posters">
-            ★ My Itinerary (<span id="savedCount">0</span>)
-          </button>
-          <button id="exportCsvBtn" class="btn btn-header" type="button" title="Download currently filtered results as CSV">
-            ⬇ Export CSV
-          </button>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <section class="controls-wrapper" aria-label="Programme Search and Filters">
-    <div class="container">
-      <div class="search-row">
-        <div class="search-box">
-          <span class="search-icon" aria-hidden="true">🔍</span>
-          <input
-            type="search"
-            id="searchInput"
-            placeholder="Search title, author, room, poster #..."
-            autocomplete="off"
-          />
-          <button id="clearSearchBtn" class="clear-search" type="button" aria-label="Clear search">✕</button>
-        </div>
-        <button id="resetAllBtn" class="btn btn-outline" type="button">Reset</button>
-      </div>
-
-      <div class="day-tabs" id="dayTabs" role="tablist" aria-label="Filter by Date"></div>
-
-      <button id="mobileFilterToggle" class="mobile-filter-toggle" type="button" aria-expanded="false">
-        <span id="mobileFilterLabel">⚙ Filter by Type, Track, Room, Session</span>
-        <span id="mobileFilterArrow">▼</span>
-      </button>
-
-      <div class="filter-grid" id="filterGrid">
-        <select id="typeFilter" class="filter-select" aria-label="Filter by Presentation Type">
-          <option value="">All Presentation Types</option>
-        </select>
-
-        <select id="themeFilter" class="filter-select" aria-label="Filter by Track or Theme">
-          <option value="">All Tracks / Themes</option>
-        </select>
-
-        <select id="roomFilter" class="filter-select" aria-label="Filter by Room">
-          <option value="">All Rooms / Venues</option>
-        </select>
-
-        <select id="sessionFilter" class="filter-select" aria-label="Filter by Session">
-          <option value="">All Sessions</option>
-        </select>
-      </div>
-    </div>
-  </section>
-
-  <div class="container">
-    <div class="status-bar">
-      <div class="status-left">
-        <span id="resultSummary">Loading programme...</span>
-      </div>
-      <div class="status-right">
-        <button id="toggleAbstractsBtn" class="btn btn-outline btn-sm" type="button">Expand All Abstracts</button>
-        <div class="view-toggle" role="group" aria-label="Display Mode">
-          <button id="viewGroupedBtn" class="view-btn active" type="button">Grouped</button>
-          <button id="viewFlatBtn" class="view-btn" type="button">Flat List</button>
-        </div>
-      </div>
-    </div>
-
-    <main class="main-content" id="resultsContainer"></main>
-    <div class="pagination" id="paginationContainer"></div>
-  </div>
-
-  <footer class="site-footer">
-    <div class="container">
-      <strong>Disclaimer:</strong> This unofficial searchable programme was created by <strong>Dr Tijl Grootswagers</strong> (<a href="https://tijl.github.io" target="_blank">https://tijl.github.io</a>) with the help of Gemini. It is intended strictly for personal, non-commercial use. While care was taken when parsing the schedule, accuracy, completeness, and timeliness cannot be guaranteed. Use entirely at your own risk and always confirm details with the official NeuroAlliance 2026 conference organisers.
-    </div>
-  </footer>
+  <!-- Populated dynamically when printing / saving schedule as PDF -->
+  <div id="printScheduleContainer" aria-hidden="true"></div>
 
   <button id="backToTopBtn" class="back-to-top" type="button" aria-label="Back to top">↑ Top</button>
 
@@ -866,6 +977,141 @@
       "Poster Presentations": "Poster Presentations"
     };
 
+    // =========================================================================
+    // LIGHTWEIGHT CLIENT-SIDE TF-IDF SIMILARITY ENGINE
+    // =========================================================================
+    const STOP_WORDS = new Set([
+      "a","about","above","across","after","against","all","also","among","an","and","any","are","as","at",
+      "be","because","been","before","being","between","both","but","by","can","could","did","do","does",
+      "doing","down","during","each","either","for","from","further","had","has","have","having","he","her",
+      "here","hers","herself","him","himself","his","how","however","if","in","into","is","it","its","itself",
+      "may","might","more","most","must","no","nor","not","now","of","off","on","once","only","or","other",
+      "our","ours","out","over","own","same","she","should","so","some","such","than","that","the","their",
+      "theirs","them","themselves","then","there","these","they","this","those","through","to","too","under",
+      "until","up","very","was","we","were","what","when","where","which","while","who","whom","why","will",
+      "with","would","you","your","yours","using","used","use","results","study","studies","data","show",
+      "showed","shown","shows","found","find","findings","method","methods","analysis","effect","effects",
+      "associated","between","including","however","therefore","whether","within","without","during","across",
+      "well","new","two","three","one","first","second","high","low","increased","decreased","significant",
+      "significantly","role","function","functions","mechanism","mechanisms","model","models","poster","session",
+      "symposium","presentation","presentations","talk","talks","track","australia","australian","university"
+    ]);
+
+    function tokenizeText(text) {
+      if (!text) return [];
+      const cleaned = text.replace(/^Poster\s*\d+\s*:\s*/i, "").toLowerCase();
+      const rawTokens = cleaned.match(/[a-z][a-z0-9-]{2,}/g) || [];
+      return rawTokens.filter(t => !STOP_WORDS.has(t));
+    }
+
+    const tfidfIndex = (() => {
+      const docFreq = new Map();
+      const docRawCounts = new Map();
+
+      PROGRAMME_DATA.forEach(item => {
+        if (item.at === "break activity" || item.at === "function") return;
+        const counts = new Map();
+
+        const addTokens = (tokens, weight) => {
+          for (let i = 0; i < tokens.length; i++) {
+            const tok = tokens[i];
+            counts.set(tok, (counts.get(tok) || 0) + weight);
+          }
+        };
+
+        addTokens(tokenizeText(item.ti), 3);
+        addTokens(tokenizeText(item.sn), 2);
+        addTokens(tokenizeText(item.ab), 1);
+
+        if (counts.size > 0) {
+          docRawCounts.set(item.id, counts);
+          counts.forEach((_, term) => {
+            docFreq.set(term, (docFreq.get(term) || 0) + 1);
+          });
+        }
+      });
+
+      const N = docRawCounts.size || 1;
+      const vectors = new Map();
+
+      docRawCounts.forEach((counts, id) => {
+        const vec = new Map();
+        let normSq = 0;
+        counts.forEach((tf, term) => {
+          const df = docFreq.get(term) || 1;
+          const idf = Math.log(1 + N / df);
+          const weight = (1 + Math.log(tf)) * idf;
+          vec.set(term, weight);
+          normSq += weight * weight;
+        });
+        const norm = Math.sqrt(normSq) || 1;
+        vec.forEach((val, term) => vec.set(term, val / norm));
+        vectors.set(id, vec);
+      });
+
+      return vectors;
+    })();
+
+    function getRankedSuggestions(candidateItems) {
+      if (state.savedIds.size === 0) return [];
+
+      const profile = new Map();
+      let hasAnyVector = false;
+
+      state.savedIds.forEach(id => {
+        const vec = tfidfIndex.get(id);
+        if (!vec) return;
+        hasAnyVector = true;
+        vec.forEach((weight, term) => {
+          profile.set(term, (profile.get(term) || 0) + weight);
+        });
+      });
+
+      if (!hasAnyVector) return [];
+
+      let pNormSq = 0;
+      profile.forEach(val => { pNormSq += val * val; });
+      const pNorm = Math.sqrt(pNormSq) || 1;
+      profile.forEach((val, term) => profile.set(term, val / pNorm));
+
+      const scored = [];
+      for (let i = 0; i < candidateItems.length; i++) {
+        const item = candidateItems[i];
+        if (state.savedIds.has(item.id)) continue;
+        if (item.at === "break activity" || item.at === "function") continue;
+
+        const vec = tfidfIndex.get(item.id);
+        let dot = 0;
+        const sharedTerms = [];
+
+        if (vec) {
+          vec.forEach((weight, term) => {
+            const pWeight = profile.get(term);
+            if (pWeight) {
+              const contrib = weight * pWeight;
+              dot += contrib;
+              sharedTerms.push({ term, contrib });
+            }
+          });
+        }
+
+        if (dot > 0) {
+          sharedTerms.sort((a, b) => b.contrib - a.contrib);
+          scored.push({
+            item,
+            score: dot,
+            topTerms: sharedTerms.slice(0, 4).map(x => x.term)
+          });
+        }
+      }
+
+      scored.sort((a, b) => b.score - a.score);
+      return scored;
+    }
+
+    // =========================================================================
+    // STATE & ELEMENTS
+    // =========================================================================
     const state = {
       query: "",
       date: "",
@@ -873,12 +1119,14 @@
       theme: "",
       room: "",
       session: "",
-      savedOnly: false,
+      mode: "all", // "all" | "saved" | "suggested"
       viewMode: "grouped",
       expandAllAbstracts: false,
       mobileFiltersOpen: false,
       page: 1,
       pageSize: 60,
+      infiniteLimit: 25,
+      infiniteStep: 25,
       savedIds: new Set()
     };
 
@@ -909,13 +1157,18 @@
     const roomFilter = document.getElementById("roomFilter");
     const sessionFilter = document.getElementById("sessionFilter");
     const savedFilterBtn = document.getElementById("savedFilterBtn");
+    const suggestedFilterBtn = document.getElementById("suggestedFilterBtn");
+    const exportPdfBtn = document.getElementById("exportPdfBtn");
     const exportCsvBtn = document.getElementById("exportCsvBtn");
     const toggleAbstractsBtn = document.getElementById("toggleAbstractsBtn");
+    const viewToggleGroup = document.getElementById("viewToggleGroup");
     const viewGroupedBtn = document.getElementById("viewGroupedBtn");
     const viewFlatBtn = document.getElementById("viewFlatBtn");
     const resultSummary = document.getElementById("resultSummary");
     const resultsContainer = document.getElementById("resultsContainer");
     const paginationContainer = document.getElementById("paginationContainer");
+    const scrollSentinel = document.getElementById("scrollSentinel");
+    const printScheduleContainer = document.getElementById("printScheduleContainer");
     const backToTopBtn = document.getElementById("backToTopBtn");
 
     function escapeHtml(str) {
@@ -982,7 +1235,7 @@
         const btn = e.target.closest(".day-tab");
         if (!btn) return;
         state.date = btn.dataset.date;
-        state.page = 1;
+        resetPaging();
         updateSessionDropdown();
         render();
       });
@@ -1042,12 +1295,12 @@
       return "Plenary / Ceremony";
     }
 
-    function getFilteredData() {
+    function getBaseFilteredData() {
       const q = state.query.trim().toLowerCase();
       const terms = q ? q.split(/\s+/).filter(Boolean) : [];
 
       return PROGRAMME_DATA.filter(item => {
-        if (state.savedOnly && !state.savedIds.has(item.id)) return false;
+        if (state.mode === "saved" && !state.savedIds.has(item.id)) return false;
         if (state.date && item.d !== state.date) return false;
         if (state.type && getItemCategoryLabel(item) !== state.type) return false;
         if (state.theme && item.th !== state.theme) return false;
@@ -1076,7 +1329,12 @@
       });
     }
 
-    function renderTalkHtml(item, terms, showSessionContext) {
+    function resetPaging() {
+      state.page = 1;
+      state.infiniteLimit = state.infiniteStep;
+    }
+
+    function renderTalkHtml(item, terms, showSessionContext, recMeta = null) {
       const isSaved = state.savedIds.has(item.id);
       const catLabel = getItemCategoryLabel(item);
       const isPoster = catLabel.toLowerCase().includes("poster");
@@ -1099,6 +1357,10 @@
         </div>`;
       }
 
+      const keywordsHtml = (recMeta && recMeta.topTerms.length)
+        ? `<div class="rec-keywords">Matching topics: <strong>${escapeHtml(recMeta.topTerms.join(", "))}</strong></div>`
+        : "";
+
       const authorsHtml = item.au
         ? `<div class="talk-authors">${formatAuthorsHtml(item.au, item.pa, terms)}</div>`
         : (item.ch ? `<div class="talk-authors">Speaker / Chair: ${highlightText(item.ch, terms)}</div>` : "");
@@ -1111,6 +1373,7 @@
         <article class="talk-item ${showSessionContext ? "flat-card" : ""} ${abstractOpen ? "expanded" : ""}" id="card-${item.id}" data-id="${item.id}">
           <div class="talk-top">
             <div class="talk-badges">
+              ${recMeta ? `<span class="badge badge-rank">#${recMeta.rank}</span>` : ""}
               <span class="badge badge-time">${escapeHtml(timeRange)}</span>
               <span class="badge ${badgeClass}">${escapeHtml(catLabel)}</span>
               ${item.th ? `<span class="badge badge-theme">${escapeHtml(TRACK_LABELS[item.th] || item.th)}</span>` : ""}
@@ -1120,6 +1383,7 @@
             </button>
           </div>
           ${submetaHtml}
+          ${keywordsHtml}
           <h4 class="talk-title">${highlightText(item.ti, terms)}</h4>
           ${authorsHtml}
           ${affHtml}
@@ -1135,47 +1399,111 @@
       `;
     }
 
+    let currentRankedSuggestions = [];
+
     function render() {
       document.querySelectorAll(".day-tab").forEach(btn => {
         btn.classList.toggle("active", btn.dataset.date === state.date);
       });
 
       updateMobileFilterBadge();
-      savedFilterBtn.classList.toggle("active", state.savedOnly);
+      savedFilterBtn.classList.toggle("active", state.mode === "saved");
+      suggestedFilterBtn.classList.toggle("active", state.mode === "suggested");
       clearSearchBtn.classList.toggle("visible", state.query.length > 0);
       viewGroupedBtn.classList.toggle("active", state.viewMode === "grouped");
       viewFlatBtn.classList.toggle("active", state.viewMode === "flat");
       toggleAbstractsBtn.textContent = state.expandAllAbstracts ? "Collapse Abstracts" : "Expand All Abstracts";
 
-      const filtered = getFilteredData();
-      const total = filtered.length;
+      viewToggleGroup.style.display = state.mode === "suggested" ? "none" : "inline-flex";
+
+      const q = state.query.trim();
+      const terms = q ? q.split(/\s+/).filter(Boolean) : [];
+      const baseFiltered = getBaseFilteredData();
+
+      if (state.mode === "suggested") {
+        paginationContainer.innerHTML = "";
+
+        if (state.savedIds.size === 0) {
+          currentRankedSuggestions = [];
+          scrollSentinel.textContent = "";
+          resultSummary.textContent = "Suggestions based on saved items";
+          resultsContainer.innerHTML = `
+            <div class="empty-state">
+              <h3>Star a few talks or posters first</h3>
+              <p>Tap <strong>☆ Save</strong> on any talk or poster you're interested in, and this view will rank the rest of the programme by topic similarity.</p>
+              <button type="button" class="btn btn-primary" id="emptyResetBtn">Browse Programme</button>
+            </div>
+          `;
+          const emptyReset = document.getElementById("emptyResetBtn");
+          if (emptyReset) emptyReset.addEventListener("click", () => {
+            state.mode = "all";
+            render();
+          });
+          return;
+        }
+
+        currentRankedSuggestions = getRankedSuggestions(baseFiltered);
+        const total = currentRankedSuggestions.length;
+
+        if (total === 0) {
+          scrollSentinel.textContent = "";
+          resultSummary.textContent = "Showing 0 suggested items";
+          resultsContainer.innerHTML = `
+            <div class="empty-state">
+              <h3>No matching suggestions found</h3>
+              <p>Try clearing your search or day/track filters to see similar talks across the whole conference.</p>
+              <button type="button" class="btn btn-primary" id="emptyResetBtn">Clear Filters</button>
+            </div>
+          `;
+          const emptyReset = document.getElementById("emptyResetBtn");
+          if (emptyReset) emptyReset.addEventListener("click", () => {
+            resetAllFilters(true);
+          });
+          return;
+        }
+
+        const visibleCount = Math.min(state.infiniteLimit, total);
+        const slice = currentRankedSuggestions.slice(0, visibleCount);
+
+        resultSummary.innerHTML = `Ranked top <strong>${visibleCount}</strong> of <strong>${total}</strong> matches (based on ${state.savedIds.size} saved)`;
+        resultsContainer.innerHTML = slice.map((entry, idx) =>
+          renderTalkHtml(entry.item, terms, true, { rank: idx + 1, topTerms: entry.topTerms })
+        ).join("");
+
+        scrollSentinel.textContent = visibleCount < total
+          ? `Scroll down to load more (${visibleCount} of ${total} shown)...`
+          : `End of ranked suggestions (${total} matches)`;
+        return;
+      }
+
+      currentRankedSuggestions = [];
+      scrollSentinel.textContent = "";
+
+      const total = baseFiltered.length;
       const totalPages = Math.max(1, Math.ceil(total / state.pageSize));
       if (state.page > totalPages) state.page = totalPages;
 
       const startIdx = (state.page - 1) * state.pageSize;
       const endIdx = Math.min(startIdx + state.pageSize, total);
-      const pageItems = filtered.slice(startIdx, endIdx);
-
-      const q = state.query.trim();
-      const terms = q ? q.split(/\s+/).filter(Boolean) : [];
+      const pageItems = baseFiltered.slice(startIdx, endIdx);
 
       if (total === 0) {
         resultSummary.textContent = "Showing 0 matching items";
         resultsContainer.innerHTML = `
           <div class="empty-state">
             <h3>No matching talks, posters, or sessions found</h3>
-            <p>${state.savedOnly ? "You haven't bookmarked any items matching these filters yet." : "Try broadening your search terms or resetting one or more filters."}</p>
+            <p>${state.mode === "saved" ? "You haven't bookmarked any items matching these filters yet." : "Try broadening your search terms or resetting one or more filters."}</p>
             <button type="button" class="btn btn-primary" id="emptyResetBtn">Reset All Filters</button>
           </div>
         `;
         paginationContainer.innerHTML = "";
         const emptyReset = document.getElementById("emptyResetBtn");
-        if (emptyReset) emptyReset.addEventListener("click", resetAllFilters);
+        if (emptyReset) emptyReset.addEventListener("click", () => resetAllFilters(false));
         return;
       }
 
       resultSummary.innerHTML = `Showing <strong>${startIdx + 1}-${endIdx}</strong> of <strong>${total}</strong>` +
-        (state.savedOnly ? " (Saved)" : "");
+        (state.mode === "saved" ? " (Saved)" : "");
 
       if (state.viewMode === "flat") {
         resultsContainer.innerHTML = pageItems.map(item => renderTalkHtml(item, terms, true)).join("");
@@ -1235,6 +1563,38 @@
       renderPagination(totalPages);
     }
 
+    function appendMoreSuggestions() {
+      if (state.mode !== "suggested") return;
+      const total = currentRankedSuggestions.length;
+      if (state.infiniteLimit >= total) return;
+
+      const prevCount = state.infiniteLimit;
+      state.infiniteLimit = Math.min(prevCount + state.infiniteStep, total);
+
+      const q = state.query.trim();
+      const terms = q ? q.split(/\s+/).filter(Boolean) : [];
+      const nextSlice = currentRankedSuggestions.slice(prevCount, state.infiniteLimit);
+
+      const htmlChunk = nextSlice.map((entry, idx) =>
+        renderTalkHtml(entry.item, terms, true, { rank: prevCount + idx + 1, topTerms: entry.topTerms })
+      ).join("");
+
+      resultsContainer.insertAdjacentHTML("beforeend", htmlChunk);
+      resultSummary.innerHTML = `Ranked top <strong>${state.infiniteLimit}</strong> of <strong>${total}</strong> matches (based on ${state.savedIds.size} saved)`;
+      scrollSentinel.textContent = state.infiniteLimit < total
+        ? `Scroll down to load more (${state.infiniteLimit} of ${total} shown)...`
+        : `End of ranked suggestions (${total} matches)`;
+    }
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        if (entries.some(e => e.isIntersecting)) {
+          appendMoreSuggestions();
+        }
+      }, { rootMargin: "350px" });
+      observer.observe(scrollSentinel);
+    }
+
     function renderPagination(totalPages) {
       if (totalPages <= 1) {
         paginationContainer.innerHTML = "";
@@ -1248,15 +1608,15 @@
       `;
     }
 
-    function resetAllFilters() {
+    function resetAllFilters(keepMode = false) {
       state.query = "";
       state.date = "";
       state.type = "";
       state.theme = "";
       state.room = "";
       state.session = "";
-      state.savedOnly = false;
-      state.page = 1;
+      if (!keepMode) state.mode = "all";
+      resetPaging();
 
       searchInput.value = "";
       typeFilter.value = "";
@@ -1266,8 +1626,74 @@
       render();
     }
 
+    function exportScheduleAsPdf() {
+      const savedItems = PROGRAMME_DATA.filter(item => state.savedIds.has(item.id));
+      if (savedItems.length === 0) {
+        alert("Your itinerary is currently empty. Star one or more talks or posters first, then tap PDF to save your schedule.");
+        return;
+      }
+
+      // Group saved items chronologically by day (PROGRAMME_DATA is already sorted by date & time)
+      const byDay = new Map();
+      savedItems.forEach(item => {
+        if (!byDay.has(item.d)) byDay.set(item.d, []);
+        byDay.get(item.d).push(item);
+      });
+
+      let daysHtml = "";
+      byDay.forEach((items, dateKey) => {
+        const dayHeading = FULL_DAY_LABELS[dateKey] || dateKey;
+        const rowsHtml = items.map(item => {
+          const timeRange = (item.ts && item.te && item.ts !== item.te)
+            ? `${item.ts} - ${item.te}`
+            : (item.ts || item.ss);
+          const catLabel = getItemCategoryLabel(item);
+          const presenter = item.pa || item.ch || "";
+          return `
+            <div class="print-row">
+              <div class="print-time-col">
+                ${escapeHtml(timeRange)}
+                ${item.rm ? `<span class="print-room">${escapeHtml(item.rm)}</span>` : ""}
+              </div>
+              <div class="print-detail-col">
+                <div class="print-title">${escapeHtml(item.ti)}</div>
+                <div class="print-meta">
+                  <strong>${escapeHtml(catLabel)}</strong>
+                  ${presenter ? ` &bull; ${escapeHtml(presenter)}` : ""}
+                  ${item.sn ? ` &bull; <em>${escapeHtml(item.sn)}</em>` : ""}
+                </div>
+              </div>
+            </div>
+          `;
+        }).join("");
+
+        daysHtml += `
+          <div class="print-day-heading">${escapeHtml(dayHeading)}</div>
+          ${rowsHtml}
+        `;
+      });
+
+      printScheduleContainer.innerHTML = `
+        <div class="print-header">
+          <h1>NeuroAlliance 2026 &mdash; My Personal Schedule</h1>
+          <p>29 Nov &ndash; 2 Dec 2026 &bull; ${savedItems.length} saved item${savedItems.length === 1 ? "" : "s"}</p>
+        </div>
+        ${daysHtml}
+        <div class="print-footer">
+          Unofficial personal itinerary generated via Dr Tijl Grootswagers' NeuroAlliance 2026 Programme Viewer. Please verify critical times and rooms against the official conference programme.
+        </div>
+      `;
+
+      const prevTitle = document.title;
+      document.title = "NeuroAlliance_2026_My_Schedule";
+      window.print();
+      document.title = prevTitle;
+    }
+
     function exportFilteredCsv() {
-      const rows = getFilteredData();
+      const rows = state.mode === "suggested"
+        ? currentRankedSuggestions.map(r => r.item)
+        : getBaseFilteredData();
       if (!rows.length) return;
 
       const headers = [
@@ -1293,95 +1719,27 @@
         ].map(csvEscape).join(","));
       });
 
+      const filename = state.mode === "saved"
+        ? "neuroalliance_2026_my_itinerary.csv"
+        : (state.mode === "suggested" ? "neuroalliance_2026_suggested.csv" : "neuroalliance_2026_filtered_programme.csv");
+
       const blob = new Blob(["\uFEFF" + lines.join("\n")], { type: "text/csv;charset=utf-8;" });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = state.savedOnly ? "neuroalliance_2026_my_itinerary.csv" : "neuroalliance_2026_filtered_programme.csv";
+      a.download = filename;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
     }
 
-    let searchDebounce = null;
-    searchInput.addEventListener("input", () => {
-      clearTimeout(searchDebounce);
-      searchDebounce = setTimeout(() => {
-        state.query = searchInput.value;
-        state.page = 1;
-        render();
-      }, 150);
-    });
-
-    clearSearchBtn.addEventListener("click", () => {
-      searchInput.value = "";
-      state.query = "";
-      state.page = 1;
-      render();
-      searchInput.focus();
-    });
-
-    resetAllBtn.addEventListener("click", resetAllFilters);
-
-    mobileFilterToggle.addEventListener("click", () => {
-      state.mobileFiltersOpen = !state.mobileFiltersOpen;
-      updateMobileFilterBadge();
-    });
-
-    typeFilter.addEventListener("change", () => {
-      state.type = typeFilter.value;
-      state.page = 1;
-      render();
-    });
-
-    themeFilter.addEventListener("change", () => {
-      state.theme = themeFilter.value;
-      state.page = 1;
-      render();
-    });
-
-    roomFilter.addEventListener("change", () => {
-      state.room = roomFilter.value;
-      state.page = 1;
-      render();
-    });
-
-    sessionFilter.addEventListener("change", () => {
-      state.session = sessionFilter.value;
-      state.page = 1;
-      render();
-    });
-
-    savedFilterBtn.addEventListener("click", () => {
-      state.savedOnly = !state.savedOnly;
-      state.page = 1;
-      render();
-    });
-
-    exportCsvBtn.addEventListener("click", exportFilteredCsv);
-
-    toggleAbstractsBtn.addEventListener("click", () => {
-      state.expandAllAbstracts = !state.expandAllAbstracts;
-      render();
-    });
-
-    viewGroupedBtn.addEventListener("click", () => {
-      state.viewMode = "grouped";
-      render();
-    });
-
-    viewFlatBtn.addEventListener("click", () => {
-      state.viewMode = "flat";
-      render();
-    });
-
-    resultsContainer.addEventListener("click", (e) => {
+    function handleCardInteractions(e) {
       const absBtn = e.target.closest("[data-toggle-abs]");
       if (absBtn) {
-        const id = absBtn.dataset.toggleAbs;
-        const box = document.getElementById("abs-" + id);
-        const card = document.getElementById("card-" + id);
+        const key = absBtn.dataset.toggleAbs;
+        const box = document.getElementById("abs-" + key);
+        const card = document.getElementById("card-" + key);
         if (box) {
           const isOpen = box.classList.toggle("open");
           if (card) card.classList.toggle("expanded", isOpen);
@@ -1403,7 +1761,7 @@
           bmBtn.textContent = "★ Saved";
         }
         persistSaved();
-        if (state.savedOnly) render();
+        if (state.mode === "saved") render();
         return;
       }
 
@@ -1415,7 +1773,88 @@
           body.classList.toggle("collapsed");
         }
       }
+    }
+
+    let searchDebounce = null;
+    searchInput.addEventListener("input", () => {
+      clearTimeout(searchDebounce);
+      searchDebounce = setTimeout(() => {
+        state.query = searchInput.value;
+        resetPaging();
+        render();
+      }, 150);
     });
+
+    clearSearchBtn.addEventListener("click", () => {
+      searchInput.value = "";
+      state.query = "";
+      resetPaging();
+      render();
+      searchInput.focus();
+    });
+
+    resetAllBtn.addEventListener("click", () => resetAllFilters(false));
+
+    mobileFilterToggle.addEventListener("click", () => {
+      state.mobileFiltersOpen = !state.mobileFiltersOpen;
+      updateMobileFilterBadge();
+    });
+
+    typeFilter.addEventListener("change", () => {
+      state.type = typeFilter.value;
+      resetPaging();
+      render();
+    });
+
+    themeFilter.addEventListener("change", () => {
+      state.theme = themeFilter.value;
+      resetPaging();
+      render();
+    });
+
+    roomFilter.addEventListener("change", () => {
+      state.room = roomFilter.value;
+      resetPaging();
+      render();
+    });
+
+    sessionFilter.addEventListener("change", () => {
+      state.session = sessionFilter.value;
+      resetPaging();
+      render();
+    });
+
+    savedFilterBtn.addEventListener("click", () => {
+      state.mode = state.mode === "saved" ? "all" : "saved";
+      resetPaging();
+      render();
+    });
+
+    suggestedFilterBtn.addEventListener("click", () => {
+      state.mode = state.mode === "suggested" ? "all" : "suggested";
+      resetPaging();
+      render();
+    });
+
+    exportPdfBtn.addEventListener("click", exportScheduleAsPdf);
+    exportCsvBtn.addEventListener("click", exportFilteredCsv);
+
+    toggleAbstractsBtn.addEventListener("click", () => {
+      state.expandAllAbstracts = !state.expandAllAbstracts;
+      render();
+    });
+
+    viewGroupedBtn.addEventListener("click", () => {
+      state.viewMode = "grouped";
+      render();
+    });
+
+    viewFlatBtn.addEventListener("click", () => {
+      state.viewMode = "flat";
+      render();
+    });
+
+    resultsContainer.addEventListener("click", handleCardInteractions);
 
     paginationContainer.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-page]");
