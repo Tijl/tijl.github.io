@@ -869,9 +869,6 @@
             <button id="exportPdfBtn" class="btn btn-header" type="button" title="Save or print your starred itinerary as a PDF">
               🖨 PDF
             </button>
-            <button id="exportCsvBtn" class="btn btn-header" type="button" title="Download currently filtered results as CSV">
-              ⬇ CSV
-            </button>
           </div>
         </div>
       </div>
@@ -1159,7 +1156,6 @@
     const savedFilterBtn = document.getElementById("savedFilterBtn");
     const suggestedFilterBtn = document.getElementById("suggestedFilterBtn");
     const exportPdfBtn = document.getElementById("exportPdfBtn");
-    const exportCsvBtn = document.getElementById("exportCsvBtn");
     const toggleAbstractsBtn = document.getElementById("toggleAbstractsBtn");
     const viewToggleGroup = document.getElementById("viewToggleGroup");
     const viewGroupedBtn = document.getElementById("viewGroupedBtn");
@@ -1633,7 +1629,6 @@
         return;
       }
 
-      // Group saved items chronologically by day (PROGRAMME_DATA is already sorted by date & time)
       const byDay = new Map();
       savedItems.forEach(item => {
         if (!byDay.has(item.d)) byDay.set(item.d, []);
@@ -1688,50 +1683,6 @@
       document.title = "NeuroAlliance_2026_My_Schedule";
       window.print();
       document.title = prevTitle;
-    }
-
-    function exportFilteredCsv() {
-      const rows = state.mode === "suggested"
-        ? currentRankedSuggestions.map(r => r.item)
-        : getBaseFilteredData();
-      if (!rows.length) return;
-
-      const headers = [
-        "Date", "Session Start", "Session End", "Room", "Agenda Type",
-        "Session Name", "Session Chairs / Speakers", "Presentation Type",
-        "Talk Start", "Talk End", "Title", "Presenting Author",
-        "Full Author List", "Affiliations", "Theme", "Abstract"
-      ];
-
-      const csvEscape = (val) => {
-        const s = (val == null ? "" : String(val)).replace(/\r?\n/g, " ");
-        if (/[",]/.test(s)) {
-          return '"' + s.replace(/"/g, '""') + '"';
-        }
-        return s;
-      };
-
-      const lines = [headers.join(",")];
-      rows.forEach(r => {
-        lines.push([
-          r.d, r.ss, r.se, r.rm, r.at, r.sn, r.ch, r.pt,
-          r.ts, r.te, r.ti, r.pa, r.au, r.af, r.th, r.ab
-        ].map(csvEscape).join(","));
-      });
-
-      const filename = state.mode === "saved"
-        ? "neuroalliance_2026_my_itinerary.csv"
-        : (state.mode === "suggested" ? "neuroalliance_2026_suggested.csv" : "neuroalliance_2026_filtered_programme.csv");
-
-      const blob = new Blob(["\uFEFF" + lines.join("\n")], { type: "text/csv;charset=utf-8;" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
     }
 
     function handleCardInteractions(e) {
@@ -1837,7 +1788,6 @@
     });
 
     exportPdfBtn.addEventListener("click", exportScheduleAsPdf);
-    exportCsvBtn.addEventListener("click", exportFilteredCsv);
 
     toggleAbstractsBtn.addEventListener("click", () => {
       state.expandAllAbstracts = !state.expandAllAbstracts;
